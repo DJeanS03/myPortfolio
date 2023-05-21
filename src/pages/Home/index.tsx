@@ -8,14 +8,28 @@ import { Services } from "./components/Services";
 import { Skills } from "./components/Skills";
 import { MainContainer } from "./styles";
 
+import { useState, useEffect } from "react"
 
 export function Main() {
+    const [scrolled, setScrolled] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;    
+                /* if(scrollTop > 10 && innerWidth > 898) { */
+                if(scrollTop > 10) {
+                    setScrolled(true);
+                } else {
+                    setScrolled(false)
+                }
+        };
+            window.addEventListener('scroll', handleScroll);
+    }, [])
 
     return (
         <>
             <MainContainer>
-                <Header />
+                <Header Catch={scrolled} />
                 <Home />
                 <About />
                 <Skills />

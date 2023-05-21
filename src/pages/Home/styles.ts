@@ -20,6 +20,7 @@ overflow: hidden;
     .home__data{
         text-align: center;
     }
+
 }
 
 @media screen and (min-width: 576px) {
@@ -48,6 +49,11 @@ overflow: hidden;
     .skills__container {
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
+    }
+
+    .home__education,
+    .home__subtitle {
+        font-size: var(--h1-font-size);
     }
 
     .home__data,
@@ -83,16 +89,6 @@ overflow: hidden;
 
     .nav {
         height: calc(var(--header-height) + 1.5rem);
-    }
-
-    .nav__close,
-    .nav__toggle {
-        display: none;
-    }
-
-    .nav__list {
-        flex-direction: row;
-        column-gap: 3rem;
     }
 
     .nav__menu {
