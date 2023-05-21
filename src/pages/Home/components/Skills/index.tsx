@@ -15,7 +15,7 @@ export function Skills(){
                     See what abilities I have and how I can use them to produce projects for you.
                     </p>
 
-                    <a href="" className="button">See my Projects</a>
+                    <a href="#projects" className="button">See my Projects</a>
                 </div>
                 <div className="skills__content">
                     <ol className="skills__group">

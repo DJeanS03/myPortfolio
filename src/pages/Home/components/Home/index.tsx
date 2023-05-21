@@ -22,10 +22,10 @@ export function Home(){
                         <a href="#contact" className="button">Let's Talk</a>
                     </div>
                     <div className="home__social">
-                        <a href="" target="_blank" className="home__social-link">
+                        <a href="https://github.com/DJeanS03" target="_blank" className="home__social-link">
                             <i className='bx bxl-github'></i>
                         </a>
-                        <a href="" target="_blank" className="home__social-link">
+                        <a href="https://www.linkedin.com/in/jean-victor-7bb04519a/" target="_blank" className="home__social-link">
                             <i className='bx bxl-linkedin-square' ></i>
                         </a>
                     </div>

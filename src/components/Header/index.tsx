@@ -43,31 +43,31 @@ window.addEventListener('scroll', scrollActive);
                     <ul className="nav__list">
                         <li className="nav__item">
                             {/* <a href="#home" onClick={() => setActiveNav('#home')} className={activeNav === "#home" ? "nav__link active-link" : "nav__link"}> */}
-                            <a href="#home"  className="nav__link active-link">
+                            <a href="#home" onClick={() => showMenu(!Toggle)} className="nav__link active-link">
                                 <i className='bx bx-home-alt-2 nav__icon'></i>
                                 Home
                             </a>
                         </li>
                         <li className="nav__item">
-                            <a href="#about" className="nav__link">
+                            <a href="#about" onClick={() => showMenu(!Toggle)} className="nav__link">
                                 <i className='bx bx-user nav__icon'></i>
                                 About
                             </a>
                         </li>
                         <li className="nav__item">
-                            <a href="#services" className="nav__link">
+                            <a href="#services" onClick={() => showMenu(!Toggle)} className="nav__link">
                             <i className='bx bx-briefcase-alt-2 nav__icon' ></i>
                                 Services
                             </a>
                         </li>
                         <li className="nav__item">
-                            <a href="#projects" className="nav__link">
+                            <a href="#projects" onClick={() => showMenu(!Toggle)} className="nav__link">
                                 <i className='bx bx-file nav__icon'></i>
                                 Projects
                             </a>
                         </li>
                         <li className="nav__item">
-                            <a href="#contact" className="nav__link">
+                            <a href="#contact" onClick={() => showMenu(!Toggle)} className="nav__link">
                                 <i className='bx bx-message nav__icon'></i>
                                 Contact
                             </a>

@@ -16,7 +16,7 @@ export function About() {
                         As a frontend developer, I utilize React to design web sites with intuitive and responsive interfaces. I've worked on testing and troubleshooting issues, as well as creating websites to increase usability.
                     </p>
 
-                    <a href="#" className="button">Contact Me</a>
+                    <a download={imagem} href="#" className="button">Download my CV</a>
                 </div>
                 <div className="about__image">
                     <svg className="about__blob" viewBox="0 0 550 592" fill="none" xmlns="http://www.w3.org/2000/svg">

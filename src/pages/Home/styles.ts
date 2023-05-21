@@ -40,10 +40,6 @@ overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
-    .nav__menu {
-        width: 55%;
-    }
-
     .home__container,
     .about__container,
     .skills__container {
