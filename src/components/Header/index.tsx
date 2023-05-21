@@ -32,7 +32,7 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive);
 
     return (
-       <HeaderContainer className="header">
+       <HeaderContainer>
             {/* <nav className="nav container blur-header"> */}
             <nav className={Catch ? "nav container blur-header" : "nav container"}>
                 <a href="#" className="nav__logo">

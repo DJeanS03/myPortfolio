@@ -80,8 +80,8 @@ z-index: var(--z-fixed);
     .nav__close {
         position: absolute;
         right: 1.5rem;
-        bottom: .7rem;
-        font-size: 1.5rem;
+        bottom: .5rem;
+        font-size: 1.95rem;
     }
 
     .nav {
@@ -92,12 +92,11 @@ z-index: var(--z-fixed);
         z-index: 1000;
         height: calc(var(--header-height) + .5rem);
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
         border-radius: 5rem;
-        background-color: pink;
+        background-color: hsla(0, 0%, 10%, .3);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px); 
+
 
         padding: 0 30px;
         margin: 0 30px;
@@ -105,13 +104,17 @@ z-index: var(--z-fixed);
 
     .nav__menu {
         position: fixed;
-        width: 94%;
-        left: 24px;
-        bottom: 2rem;
+        width: 100%;
+        left: 0;
+        bottom: -500%;
         margin: 0 auto;
-        background-color: lightblue;
         padding: 2rem 1.5rem 5rem;
         border-radius: 2rem;
+        
+        background-color: hsla(0, 0%, 0%, .7);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(24px); 
+        transition: bottom .5s;
 
     }
 
@@ -120,6 +123,7 @@ z-index: var(--z-fixed);
         grid-template-columns: repeat(3, max-content);
         justify-content: center;
         gap: 2rem 3rem;
+        transition: botton .5s;
     }
 
     .nav__link {
@@ -135,7 +139,7 @@ z-index: var(--z-fixed);
 
 
 .show-menu {
-    bottom: -100%;
+    bottom: 0;
 }
 
 

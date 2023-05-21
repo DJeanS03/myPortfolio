@@ -16,8 +16,7 @@ export function Main() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;    
-                /* if(scrollTop > 10 && innerWidth > 898) { */
-                if(scrollTop > 10) {
+                if(scrollTop > 10 && innerWidth > 898) {
                     setScrolled(true);
                 } else {
                     setScrolled(false)
