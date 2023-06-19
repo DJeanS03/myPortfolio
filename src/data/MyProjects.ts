@@ -40,14 +40,4 @@ export const myProjects = [
         name: "Projeto 6",
         photo: "https://source.unsplash.com/800x600/?cars",
       },
-
-      {
-        id: 7,
-        tags: "Web",
-        name: "Projeto 7",
-        photo: "https://source.unsplash.com/800x600/?family",
-      },
-
-    
-
 ]

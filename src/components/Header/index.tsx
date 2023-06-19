@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HeaderContainer } from "./styles";
 
+
 interface Props {
     Catch: boolean,
   
@@ -28,8 +29,8 @@ const scrollActive = () => {
     }
   });
 };
-
 window.addEventListener('scroll', scrollActive);
+
 
     return (
        <HeaderContainer>
@@ -83,6 +84,7 @@ window.addEventListener('scroll', scrollActive);
                     <i className='bx bx-menu'></i>
                 </div>
             </nav>        
+            <script src="https://unpkg.com/scrollreveal"></script>
        </HeaderContainer>
     )
 }

@@ -115,7 +115,6 @@ z-index: var(--z-fixed);
         backdrop-filter: blur(1px);
         -webkit-backdrop-filter: blur(24px); 
         transition: bottom .5s;
-
     }
 
     .nav__list {
