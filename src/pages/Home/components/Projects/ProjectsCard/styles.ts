@@ -8,6 +8,12 @@ export const CoffeeCardContainer = styled.nav`
   .projects__img {
     width: 100%;
     height: 100%;
+    transition: 0.5s ease-in-out;
+  }
+
+  .projects__card:hover .projects__img {
+    transform: scale(1.3);
+    filter: brightness(40%);
   }
 
   .projects__modal {

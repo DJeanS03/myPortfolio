@@ -1,4 +1,5 @@
 import { Header } from "../../components/Header";
+import { NewHeader } from "../../components/Header/NewHeader";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -27,7 +28,8 @@ export function Main() {
   return (
     <>
       <MainContainer>
-        <Header Catch={scrolled} />
+        {/* <Header Catch={scrolled} /> */}
+        <NewHeader Catch={scrolled} />
         <Home />
         <About />
         <Skills />

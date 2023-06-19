@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const FooterContainer = styled.section`
 padding-block: 3.5rem 2rem;
-background-color: var(--container-color);
+/* background-color: var(--container-color); */ 
 
 .footer__container {
     row-gap: 2rem;

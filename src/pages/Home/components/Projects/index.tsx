@@ -13,7 +13,7 @@ export function Projects() {
       <div className="projects__container container grid">
         {myProjects.map((myProjects) => (
           <ProjectsCard key={myProjects.id} myProjects={myProjects} />
-        ))}
+        ))}        
       </div>
     </ProjectsContainer>
   );

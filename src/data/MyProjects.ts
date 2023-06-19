@@ -17,7 +17,7 @@ export const myProjects = [
         id: 3,
         tags: "qualquer",
         name: "Projeto 3",
-        photo: "https://source.unsplash.com/800x600/?florest",
+        photo: "https://source.unsplash.com/800x600/?mafia",
       },
 
       {
