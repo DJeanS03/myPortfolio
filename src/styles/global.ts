@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -106,10 +106,6 @@ i {
     gap: 1.5rem;
 }
 
-/* .section {
-    padding-block: 5rem 2rem;
-} */
-
 .section__title,
 .section__subtitle {
     text-align: center;
@@ -163,4 +159,4 @@ i {
 ::-webkit-scrollbar-thumb:hover {
     background-color: hsl(228, 8%, 45%);
 }
-`
+`;

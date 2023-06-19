@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header";
+/* import { Header } from "../../components/Header"; */
 import { NewHeader } from "../../components/Header/NewHeader";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
