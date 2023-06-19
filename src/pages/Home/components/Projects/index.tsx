@@ -6,7 +6,7 @@ export function Projects() {
   return (
     <ProjectsContainer id="projects">
       <h3 className="section__subtitle">
-        My <span>Jobs</span>
+        My <span>Works</span>
       </h3>
       <h2 className="section__title">Recent Projects</h2>
 

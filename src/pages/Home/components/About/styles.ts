@@ -1,29 +1,29 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const AboutContainer = styled.section`
-padding-block: 5rem 2rem;
+  padding-block: 5rem 2rem;
 
-.about__container {
+  .about__container {
     row-gap: 2.5rem;
-}
+  }
 
-.about__data {
+  .about__data {
     text-align: center;
-}
+  }
 
-.about__description {
+  .about__description {
     margin-bottom: 2rem;
-}
+  }
 
-.about__image {
+  .about__image {
     justify-self: center;
-}
+  }
 
-.about__blob {
-    width: 320px;
-}
+  .about__blob {
+    width: 20rem;
+  }
 
-.about__blob path{
+  .about__blob path {
     stroke: var(--primary-color);
-}
-`
+  }
+`;
