@@ -8,69 +8,6 @@ interface Props {
 export function NewHeader({ Catch }: Props) {
   const [Toggle, showMenu] = useState(false);
 
-  /*   const sections: NodeListOf<HTMLElement> =
-    document.querySelectorAll("section[id]");
-
-  const scrollActive = () => {
-    const scrollY: number = window.pageYOffset;
-
-    sections.forEach((current: HTMLElement) => {
-      const sectionHeight: number = current.offsetHeight;
-      const sectionTop: number = current.offsetTop - 58;
-      const sectionId: string | null = current.getAttribute("id");
-      const sectionsClassI: HTMLAnchorElement | null = document.querySelector(
-        `.nav__menu a[href*= ${sectionId}] i`
-      );
-      const sectionsClassA: HTMLAnchorElement | null = document.querySelector(
-        `.nav__menu a[href*= ${sectionId}]`
-      );
-
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        sectionsClassI?.classList.add("active-link");
-        sectionsClassA?.classList.add("active-link");
-      } else {
-        sectionsClassI?.classList.remove("active-link");
-        sectionsClassA?.classList.remove("active-link");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", scrollActive); */
-
-  /*   const sections: NodeListOf<HTMLElement> =
-    document.querySelectorAll("section[id]");
-
-  const scrollActive = () => {
-    const scrollY: number =
-      window.pageYOffset || document.documentElement.scrollTop;
-
-    sections.forEach((current: HTMLElement) => {
-      const sectionHeight: number = current.offsetHeight;
-      const sectionTop: number =
-        current.getBoundingClientRect().top + window.pageYOffset;
-      const sectionId: string | null = current.getAttribute("id");
-      const sectionsClassI: HTMLAnchorElement | null = document.querySelector(
-        `.nav__menu a[href="#${sectionId}"] i`
-      );
-      const sectionsClassA: HTMLAnchorElement | null = document.querySelector(
-        `.nav__menu a[href="#${sectionId}"]`
-      );
-
-      if (
-        scrollY > sectionTop - window.innerHeight * 0.5 &&
-        scrollY <= sectionTop + sectionHeight - window.innerHeight * 0.5
-      ) {
-        sectionsClassI?.classList.add("active-link");
-        sectionsClassA?.classList.add("active-link");
-      } else {
-        sectionsClassI?.classList.remove("active-link");
-        sectionsClassA?.classList.remove("active-link");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", scrollActive); */
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
