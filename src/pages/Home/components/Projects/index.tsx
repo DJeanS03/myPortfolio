@@ -6,14 +6,14 @@ export function Projects() {
   return (
     <ProjectsContainer id="projects">
       <h3 className="section__subtitle">
-        My <span>Works</span>
+        Work <span>Examples</span>
       </h3>
       <h2 className="section__title">Recent Projects</h2>
 
       <div className="projects__container container grid">
         {myProjects.map((myProjects) => (
           <ProjectsCard key={myProjects.id} myProjects={myProjects} />
-        ))}        
+        ))}
       </div>
     </ProjectsContainer>
   );

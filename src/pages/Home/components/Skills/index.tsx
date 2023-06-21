@@ -2,7 +2,7 @@ import { SkilsContainer } from "./styles";
 
 export function Skills() {
   return (
-    <SkilsContainer>
+    <SkilsContainer id="skills">
       <div className="skills__container container grid">
         <div className="skills__data">
           <h3 className="section__subtitle">
@@ -10,8 +10,8 @@ export function Skills() {
           </h3>
           <h2 className="section__title">My Skills</h2>
           <p className="skills__description">
-            See what abilities I have and how I can use them to produce projects
-            for you.
+            Here, you can see which abilities I have and how I can use them to
+            produce projects for you.
           </p>
 
           <a href="#projects" className="button">

@@ -1,10 +1,10 @@
-/* import { Header } from "../../components/Header"; */
-import { NewHeader } from "../../components/Header/NewHeader";
+import { Header } from "../../components/Header";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Home } from "./components/Home";
 import { Projects } from "./components/Projects";
+import { ScrollButton } from "./components/ScrollButton";
 import { Services } from "./components/Services";
 import { Skills } from "./components/Skills";
 import { MainContainer } from "./styles";
@@ -28,8 +28,8 @@ export function Main() {
   return (
     <>
       <MainContainer>
-        {/* <Header Catch={scrolled} /> */}
-        <NewHeader Catch={scrolled} />
+        <Header Catch={scrolled} />
+        <ScrollButton />
         <Home />
         <About />
         <Skills />

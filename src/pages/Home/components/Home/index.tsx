@@ -8,15 +8,15 @@ export function Home() {
         <div className="home__content">
           <div className="home__data">
             <h3 className="home__subtitle">
-              Hello, <span>I'm</span>
+              Hello, <span>I&apos;m</span>
             </h3>
             <h1 className="home__title">Jean Victor</h1>
             <h3 className="home__education">Front-end Developer</h3>
 
             <p className="home__description">
-              Dedicated to producing the finest digital experiences.With a deep
-              love for technology and design, I dedicate my career to
-              transforming creative concepts into intuitive and interactive web
+              I am dedicated to produce the most excelent digital experience.
+              With a deep love for technology and design, I dedicate my career
+              to transforme creative concepts into intuitive and interactive web
               interfaces.
             </p>
           </div>

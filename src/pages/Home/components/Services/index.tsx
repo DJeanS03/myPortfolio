@@ -12,8 +12,8 @@ export function Services() {
           <i className="bx bx-layout services__icon"></i>
           <h2 className="services__title">Web Developer</h2>
           <p className="services__description">
-            Custom web page creation. Using contemporary labor-related
-            technologies and libraries.
+            I create customized webpages using libraries and contemporary
+            technologies.
           </p>
         </article>
 

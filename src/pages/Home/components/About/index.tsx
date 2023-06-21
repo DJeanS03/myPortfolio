@@ -1,5 +1,6 @@
 import { AboutContainer } from "./styles";
 import imagem from "../../../../assets/profile.png";
+/* import CV from "../../../../assets/CV-Jean-Victor.pdf"; */
 
 export function About() {
   return (
@@ -11,13 +12,12 @@ export function About() {
           </h3>
           <h2 className="section__title">About Me</h2>
           <p className="about__description">
-            As a frontend developer, I utilize React to design web sites with
-            intuitive and responsive interfaces. I've worked on testing and
-            troubleshooting issues, as well as creating websites to increase
-            usability.
+            As a front-end developer, I use React to create websites with
+            intuitive and responsive interfaces. I've worked testing codes and
+            solving problems, as well as creating sites with more accessibility
           </p>
 
-          <a download={imagem} href="#" className="button">
+          <a download="CV-Jean-Victor" /* href={CV}  */className="button">
             Download my CV
           </a>
         </div>
