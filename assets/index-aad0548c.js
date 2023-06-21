@@ -279,6 +279,10 @@ padding-block: 5rem 2rem;
   background-color: var(--container-color);
   padding: 50px 0;
 
+  @media screen and (max-width: 767px) {
+    padding: 0;
+  }
+
   .home__container {
     padding-top: 2rem;
     row-gap: 2.5rem;
