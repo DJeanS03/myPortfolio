@@ -67,4 +67,11 @@ export const CoffeeCardContainer = styled.nav`
   .projects__card:hover .projects__modal {
     bottom: 0;
   }
+
+  #concluded{
+    color: #66dbb9;
+  }
+  #in__progress{
+    color: #f8fc96;
+  }
 `;

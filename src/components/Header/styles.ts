@@ -17,6 +17,8 @@ export const HeaderContainer = styled.header`
   .nav__logo {
     color: var(--title-color);
     font-weight: var(--font-medium);
+    display: flex;
+    align-items: center;
   }
 
   .nav__logo span {

@@ -5,6 +5,9 @@ export interface Project {
   tags: string;
   name: string;
   photo: string;
+  link: string;
+  status: string;
+  state: string;
 }
 
 interface ProjectsProps {
@@ -19,8 +22,9 @@ export function ProjectsCard({ myProjects }: ProjectsProps) {
 
         <div className="projects__modal">
           <span className="projects__subtitle">{myProjects.tags}</span>
+          <span className="projects__subtitle" id={myProjects.state}>{myProjects.status}</span>
           <h2 className="projects__title">{myProjects.name}</h2>
-          <a href="" className="projects__button">
+          <a href={myProjects.link} className="projects__button" target="_blank">
             View demo <i className="bx bx-link-external"></i>
           </a>
         </div>

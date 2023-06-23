@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { HeaderContainer } from "./styles";
 
+import Logo from '../../assets/Logo.svg'
+
 interface Props {
   Catch: boolean;
 }
@@ -49,7 +51,7 @@ export function Header({ Catch }: Props) {
     <HeaderContainer>
       <nav className={Catch ? "nav container blur-header" : "nav container"}>
         <a href="#" className="nav__logo">
-          Jean <span>Victor</span>
+          <img src={Logo} width={30}/> Jean <span>Victor</span>
         </a>
 
         <div className="nav__menu" id="nav-menu">
