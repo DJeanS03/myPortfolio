@@ -3,7 +3,7 @@ export const myProjects = [
       id: 1,
       tags: "Design",
       name: "Projeto 1",
-      photo: "https://source.unsplash.com/800x600/?tank",
+      photo: "https://github.com/DJeanS03/Pomodoro_timer/assets/109162543/916fd366-3c16-4561-ae6c-a9c39f0de589",
     },
 
     {
