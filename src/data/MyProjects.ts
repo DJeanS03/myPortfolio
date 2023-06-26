@@ -4,7 +4,7 @@ export const myProjects = [
     tags: "Web",
     name: "Coffee Delivery",
     photo: "https://github.com/DJeanS03/ToDo_app/assets/109162543/cbb902b2-f526-47f9-b0fb-82f368504a1c",
-    link: "https://coffee-delivery-delta-six.vercel.app",
+    link: "https://coffee-delivery-ignite-chi.vercel.app",
     status: "In progress",
     state: "in__progress",
   },
