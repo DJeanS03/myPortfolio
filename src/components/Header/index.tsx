@@ -76,8 +76,9 @@ export function Header({ Catch, language, onLanguageChange }: Props) {
           <img src={Logo} width={30} /> Jean <span>Victor</span>
         </a>
 
-        <div className="language-container">
+        {/*       <div className="language-container">
           <button className="toggle-btn" onClick={handleToggleLanguageOptions}>
+            <i className="bx bx-globe"></i>
             {languageName}
           </button>
           {showLanguageOptions && (
@@ -90,7 +91,7 @@ export function Header({ Catch, language, onLanguageChange }: Props) {
               </button>
             </div>
           )}
-        </div>
+        </div> */}
 
         <div className="nav__menu" id="nav-menu">
           <ul className="nav__list">
@@ -130,6 +131,25 @@ export function Header({ Catch, language, onLanguageChange }: Props) {
                 {language === "en" ? "Contact" : "Contato"}
               </a>
             </li>
+            <div className="language-container">
+              <button
+                className="toggle-btn"
+                onClick={handleToggleLanguageOptions}
+              >
+                <i className="bx bx-globe"></i>
+                <span className="language__name">{languageName}</span>
+              </button>
+              {showLanguageOptions && (
+                <div className="language-options">
+                  <button onClick={() => handleLanguageChange("en")}>
+                    English (US)
+                  </button>
+                  <button onClick={() => handleLanguageChange("pt")}>
+                    Português (Brasil)
+                  </button>
+                </div>
+              )}
+            </div>
           </ul>
         </div>
       </nav>
