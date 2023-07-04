@@ -118,4 +118,46 @@ export const HeaderContainer = styled.header`
     top: 0;
     left: 0;
   }
+
+  .language-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .toggle-btn {
+    background-color: inherit;
+    min-width: 200px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .language-options {
+    position: absolute;
+    min-width: 200px;
+    top: 100%;
+    left: 0;
+    display: block;
+    margin-top: 5px;
+    padding: 5px 0;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .language-options button {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .language-options button:hover {
+    background-color: #e5e5e5;
+  }
 `;

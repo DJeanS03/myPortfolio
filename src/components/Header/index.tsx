@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { HeaderContainer } from "./styles";
 
-import Logo from '../../assets/Logo.svg'
+import Logo from "../../assets/Logo.svg";
 
 interface Props {
   Catch: boolean;
+  language: string;
+  onLanguageChange: (selectedLanguage: string) => void;
 }
 
-export function Header({ Catch }: Props) {
+export function Header({ Catch, language, onLanguageChange }: Props) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -47,49 +49,85 @@ export function Header({ Catch }: Props) {
     };
   }, []);
 
+  const [showLanguageOptions, setShowLanguageOptions] = useState(false);
+  const [languageName, setLanguageName] = useState("");
+
+  const handleToggleLanguageOptions = () => {
+    setShowLanguageOptions(!showLanguageOptions);
+  };
+
+  const handleLanguageChange = (lang: string) => {
+    onLanguageChange(lang);
+    setShowLanguageOptions(false);
+  };
+
+  useEffect(() => {
+    if (language === "en") {
+      setLanguageName("English (US)");
+    } else if (language === "pt") {
+      setLanguageName("Português (Brasil)");
+    }
+  }, [language]);
+
   return (
     <HeaderContainer>
       <nav className={Catch ? "nav container blur-header" : "nav container"}>
         <a href="#" className="nav__logo">
-          <img src={Logo} width={30}/> Jean <span>Victor</span>
+          <img src={Logo} width={30} /> Jean <span>Victor</span>
         </a>
+
+        <div className="language-container">
+          <button className="toggle-btn" onClick={handleToggleLanguageOptions}>
+            {languageName}
+          </button>
+          {showLanguageOptions && (
+            <div className="language-options">
+              <button onClick={() => handleLanguageChange("en")}>
+                English (US)
+              </button>
+              <button onClick={() => handleLanguageChange("pt")}>
+                Português (Brasil)
+              </button>
+            </div>
+          )}
+        </div>
 
         <div className="nav__menu" id="nav-menu">
           <ul className="nav__list">
             <li className="nav__item">
               <a href="#home" className="nav__link active-link">
                 <i className='bx bx-home-alt-2 nav__icon active-link"'></i>
-                Home
+                {language === "en" ? "Home" : "Início"}
               </a>
             </li>
             <li className="nav__item">
               <a href="#about" className="nav__link">
                 <i className="bx bx-user nav__icon"></i>
-                About
+                {language === "en" ? "About" : "Sobre"}
               </a>
             </li>
             <li className="nav__item">
               <a href="#skills" className="nav__link">
                 <i className="bx bx-trophy nav__icon"></i>
-                Skills
+                {language === "en" ? "Skills" : "Habilidades"}
               </a>
             </li>
             <li className="nav__item">
               <a href="#services" className="nav__link">
                 <i className="bx bx-briefcase-alt-2 nav__icon"></i>
-                Services
+                {language === "en" ? "Services" : "Serviços"}
               </a>
             </li>
             <li className="nav__item">
               <a href="#projects" className="nav__link">
                 <i className="bx bx-file nav__icon"></i>
-                Projects
+                {language === "en" ? "Projects" : "Projetos"}
               </a>
             </li>
             <li className="nav__item">
               <a href="#contact" className="nav__link">
                 <i className="bx bx-message nav__icon"></i>
-                Contact
+                {language === "en" ? "Contact" : "Contato"}
               </a>
             </li>
           </ul>

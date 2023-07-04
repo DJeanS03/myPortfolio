@@ -1,25 +1,54 @@
 import { HomeContainer } from "./styles";
 import imagem from "../../../../assets/profile.png";
 
-export function Home() {
+interface HomeProps {
+  language: string;
+}
+
+export function Home({ language }: HomeProps) {
+  const getText = () => {
+    if (language === "en") {
+      return (
+        <>
+          <h3 className="home__subtitle">
+            Hello, <span>I&apos;m</span>
+          </h3>
+          <h1 className="home__title">Jean Victor</h1>
+          <h3 className="home__education">Front-end Developer</h3>
+
+          <p className="home__description">
+            I am dedicated to produce the most excellent digital experience.
+            With a deep love for technology and design, I dedicate my career to
+            transform creative concepts into intuitive and interactive web
+            interfaces.
+          </p>
+        </>
+      );
+    } else if (language === "pt") {
+      return (
+        <>
+          <h3 className="home__subtitle">
+            Olá, <span>Eu sou</span>
+          </h3>
+          <h1 className="home__title">Jean Victor</h1>
+          <h3 className="home__education">Desenvolvedor Front-end</h3>
+
+          <p className="home__description">
+            Sou dedicado a produzir a melhor experiência digital. Com um amor
+            profundo por tecnologia e design, dedico minha carreira a
+            transformar conceitos criativos em interfaces web intuitivas e
+            interativas.
+          </p>
+        </>
+      );
+    }
+  };
+
   return (
     <HomeContainer id="home">
       <div className="home__container container grid">
         <div className="home__content">
-          <div className="home__data">
-            <h3 className="home__subtitle">
-              Hello, <span>I&apos;m</span>
-            </h3>
-            <h1 className="home__title">Jean Victor</h1>
-            <h3 className="home__education">Front-end Developer</h3>
-
-            <p className="home__description">
-              I am dedicated to produce the most excelent digital experience.
-              With a deep love for technology and design, I dedicate my career
-              to transforme creative concepts into intuitive and interactive web
-              interfaces.
-            </p>
-          </div>
+          <div className="home__data">{getText()}</div>
           <div className="home__social">
             <a
               href="https://github.com/DJeanS03"

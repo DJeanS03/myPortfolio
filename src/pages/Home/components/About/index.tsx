@@ -1,12 +1,16 @@
 import { AboutContainer } from "./styles";
 import imagem from "../../../../assets/profile.png";
-/* import CV from "../../../../assets/CV-Jean-Victor.pdf"; */
+import CV from "../../../../assets/CV-Jean-Victor.pdf";
 
-export function About() {
-  return (
-    <AboutContainer id="about">
-      <div className="about__container container grid">
-        <div className="about__data">
+interface AboutProps {
+  language: string;
+}
+
+export function About({ language }: AboutProps) {
+  const getText = () => {
+    if (language === "en") {
+      return (
+        <>
           <h3 className="section__subtitle">
             My <span>Intro</span>
           </h3>
@@ -16,11 +20,35 @@ export function About() {
             intuitive and responsive interfaces. I've worked testing codes and
             solving problems, as well as creating sites with more accessibility
           </p>
-
-          <a download="CV-Jean-Victor" /* href={CV}  */className="button">
+          <a download="CV-Jean-Victor" href={CV} className="button">
             Download my CV
           </a>
-        </div>
+        </>
+      );
+    } else if (language === "pt") {
+      return (
+        <>
+          <h3 className="section__subtitle">
+            Minha <span>Introdução</span>
+          </h3>
+          <h2 className="section__title">Sobre Mim</h2>
+          <p className="about__description">
+            Como desenvolvedor front-end, utilizo o React para criar websites
+            com interfaces intuitivas e responsivas. Já trabalhei testando
+            códigos e resolvendo problemas, além de criar sites com maior
+            acessibilidade.
+          </p>
+          <a download="CV-Jean-Victor" href={CV} className="button">
+            Baixar meu CV
+          </a>
+        </>
+      );
+    }
+  };
+  return (
+    <AboutContainer id="about">
+      <div className="about__container container grid">
+        <div className="about__data">{getText()}</div>
         <div className="about__image">
           <svg
             className="about__blob"

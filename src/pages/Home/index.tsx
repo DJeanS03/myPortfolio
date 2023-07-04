@@ -25,17 +25,27 @@ export function Main() {
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
+
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
+
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
+  };
   return (
     <>
       <MainContainer>
-        <Header Catch={scrolled} />
+        <Header Catch={scrolled} language={language} onLanguageChange={handleLanguageChange} />
         <ScrollButton />
-        <Home />
-        <About />
-        <Skills />
-        <Services />
-        <Projects />
-        <Contact />
+        <Home language={language}/>
+        <About language={language}/>
+        <Skills language={ language }/>
+        <Services language={ language }/>
+        <Projects language={ language }/>
+        <Contact language={ language }/>
         <Footer />
       </MainContainer>
     </>
