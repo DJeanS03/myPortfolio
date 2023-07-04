@@ -17,8 +17,12 @@ export function About({ language }: AboutProps) {
           <h2 className="section__title">About Me</h2>
           <p className="about__description">
             As a front-end developer, I use React to create websites with
-            intuitive and responsive interfaces. I've worked testing codes and
-            solving problems, as well as creating sites with more accessibility
+            intuitive and responsive interfaces. Additionally, I have experience
+            in testing code, troubleshooting, and enhancing website
+            accessibility. By combining my passion for design with my technical
+            skills, I strive to create engaging and functional digital
+            experiences for users. I am constantly updated on industry best
+            practices and trends, aiming to deliver high-quality results.
           </p>
           <a download="CV-Jean-Victor" href={CV} className="button">
             Download my CV
@@ -34,9 +38,13 @@ export function About({ language }: AboutProps) {
           <h2 className="section__title">Sobre Mim</h2>
           <p className="about__description">
             Como desenvolvedor front-end, utilizo o React para criar websites
-            com interfaces intuitivas e responsivas. Já trabalhei testando
-            códigos e resolvendo problemas, além de criar sites com maior
-            acessibilidade.
+            com interfaces intuitivas e responsivas. Além disso, possuo
+            experiência em testar códigos, solucionar problemas e aprimorar a
+            acessibilidade de sites. Ao combinar minha paixão pelo design com
+            minhas habilidades técnicas, busco criar experiências digitais
+            envolventes e funcionais para os usuários. Estou sempre atualizado
+            sobre as melhores práticas e tendências do setor, visando entregar
+            resultados de alta qualidade.
           </p>
           <a download="CV-Jean-Victor" href={CV} className="button">
             Baixar meu CV

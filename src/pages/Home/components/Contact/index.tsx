@@ -52,7 +52,7 @@ export function Contact({ language }: ContactProps) {
           <h3 className="section__subtitle">
             Entre em <span>Contato</span>
           </h3>
-          <h2 className="section__title">Entre em Contato</h2>
+          <h2 className="section__title">Envie Sua Mensagem</h2>
           <div className="contact__container container grid">
             <form action="" className="contact__form" id="contact-form">
               <div className="contact__group">

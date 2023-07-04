@@ -23,7 +23,7 @@ export function Projects({ language }: ProjectsProps) {
           <h3 className="section__subtitle">
             Exemplos de <span>Trabalho</span>
           </h3>
-          <h2 className="section__title">Projetos Recentes</h2>
+          <h2 className="section__title">Realizações Recentes</h2>
         </>
       );
     }

@@ -50,14 +50,14 @@ export const HeaderContainer = styled.header`
   .toggle-btn {
     background-color: rgb(110, 87, 224);
     color: #fff;
-    padding: 10px;
+    padding: 0.625rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 0.625rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -74,18 +74,18 @@ export const HeaderContainer = styled.header`
     left: 0;
     display: block;
     margin-top: 5px;
-    padding: 5px 0;
+    padding: 0.313rem 0;
     background-color: hsla(0, 0%, 10%, 0.3);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-radius: 5px;
+    border-radius: 0.313rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .language-options button {
     display: block;
     width: 100%;
-    padding: 5px 10px;
+    padding: 0.313rem 0.625rem;
     border: none;
     background-color: transparent;
     color: #fff;
@@ -153,7 +153,7 @@ export const HeaderContainer = styled.header`
       transform: translateX(-50%);
       margin-top: 0;
       margin-bottom: 5px;
-      min-width: 170px;
+      min-width: 11rem;
     }
 
     .language__name {

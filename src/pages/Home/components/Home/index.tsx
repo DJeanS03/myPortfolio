@@ -17,10 +17,11 @@ export function Home({ language }: HomeProps) {
           <h3 className="home__education">Front-end Developer</h3>
 
           <p className="home__description">
-            I am dedicated to produce the most excellent digital experience.
-            With a deep love for technology and design, I dedicate my career to
-            transform creative concepts into intuitive and interactive web
-            interfaces.
+            I am dedicated to providing the best possible digital experience.
+            With a genuine passion for technology and design, I focus my career
+            on transforming creative concepts into intuitive and engaging web
+            interfaces. I am committed to creating products that not only meet
+            the needs of clients but also exceed their expectations.
           </p>
         </>
       );
@@ -34,10 +35,12 @@ export function Home({ language }: HomeProps) {
           <h3 className="home__education">Desenvolvedor Front-end</h3>
 
           <p className="home__description">
-            Sou dedicado a produzir a melhor experiência digital. Com um amor
-            profundo por tecnologia e design, dedico minha carreira a
-            transformar conceitos criativos em interfaces web intuitivas e
-            interativas.
+            Sou dedicado a proporcionar a melhor experiência digital possível.
+            Com uma paixão genuína por tecnologia e design, concentro minha
+            carreira em transformar conceitos criativos em interfaces web
+            intuitivas e envolventes. Estou comprometido em criar produtos que
+            não apenas atendam às necessidades dos clientes, mas também superem
+            suas expectativas.
           </p>
         </>
       );

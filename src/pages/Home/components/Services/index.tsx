@@ -18,8 +18,9 @@ export function Services({ language }: ServicesProps) {
               <i className="bx bx-layout services__icon"></i>
               <h2 className="services__title">Web Developer</h2>
               <p className="services__description">
-                I create customized webpages using libraries and contemporary
-                technologies.
+                I have expertise in creating custom web pages, utilizing
+                contemporary libraries and technologies to ensure a professional
+                design and a seamless and engaging user experience.
               </p>
             </article>
 
@@ -27,8 +28,11 @@ export function Services({ language }: ServicesProps) {
               <i className="bx bx-pen services__icon"></i>
               <h2 className="services__title">Graphic Design</h2>
               <p className="services__description">
-                I create designs for clients, such as banners, posters, and
-                digital graphics, among other things.
+                As a designer, I have the ability to create professional and
+                attractive designs for clients, encompassing a variety of
+                projects. I am committed to providing visually impactful and
+                coherent solutions, always striving to exceed clients'
+                expectations.
               </p>
             </article>
           </div>
@@ -46,8 +50,10 @@ export function Services({ language }: ServicesProps) {
               <i className="bx bx-layout services__icon"></i>
               <h2 className="services__title">Desenvolvedor Web</h2>
               <p className="services__description">
-                Crio páginas da web personalizadas usando bibliotecas e
-                tecnologias contemporâneas.
+                Tenho expertise na criação de páginas web personalizadas,
+                utilizando bibliotecas e tecnologias contemporâneas para
+                garantir um design profissional e uma experiência de usuário
+                fluida e envolvente.
               </p>
             </article>
 
@@ -55,8 +61,11 @@ export function Services({ language }: ServicesProps) {
               <i className="bx bx-pen services__icon"></i>
               <h2 className="services__title">Design Gráfico</h2>
               <p className="services__description">
-                Crio designs para clientes, como banners, cartazes e gráficos
-                digitais, entre outros.
+                Como designer, tenho a habilidade de criar designs profissionais
+                e atrativos para clientes, abrangendo uma variedade de projetos.
+                Estou comprometido em oferecer soluções visualmente impactantes
+                e coerentes, buscando sempre superar as expectativas dos
+                clientes.
               </p>
             </article>
           </div>

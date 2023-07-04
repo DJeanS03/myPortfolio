@@ -28,7 +28,7 @@ export function Skills({ language }: SkillsProps) {
           <h3 className="section__subtitle">
             Habilidades <span>favoritas</span>
           </h3>
-          <h2 className="section__title">Minhas Habilidades</h2>
+          <h2 className="section__title">Meus Conhecimentos</h2>
           <p className="skills__description">
             Aqui você pode ver quais habilidades possuo e como posso utilizá-las
             para produzir projetos para você.
