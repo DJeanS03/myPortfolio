@@ -1,5 +1,6 @@
 import { HomeContainer } from "./styles";
-import imagem from "../../../../assets/profile.png";
+import imagem from "../../../../assets/profile2.jpeg";
+import { RoundImage } from "../Home/styles";
 
 interface HomeProps {
   language: string;
@@ -70,7 +71,7 @@ export function Home({ language }: HomeProps) {
           </div>
         </div>
         <div className="home__image">
-          <svg
+          {/* <svg
             className="home__blob"
             viewBox="0 0 550 591"
             xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +133,9 @@ export function Home({ language }: HomeProps) {
                 href={imagem}
               />
             </defs>
-          </svg>
+          </svg> */}
+
+          <RoundImage src={imagem} alt="Imagem Redonda" />
         </div>
       </div>
     </HomeContainer>

@@ -1,10 +1,46 @@
 import { ContactContainer } from "./styles";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 interface ContactProps {
   language: string;
 }
 
 export function Contact({ language }: ContactProps) {
+  const form = useRef<HTMLFormElement | null>(null);
+  const [sendSuccess, setSendSuccess] = useState<boolean>(false);
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        "service_qv2or9g",
+        "template_843ueyv",
+        form.current as HTMLFormElement,
+        "zEguyX8_OVejwyTS4"
+      );
+
+      setSendSuccess(true);
+
+      // Limpar os campos após o envio
+      if (form.current) {
+        form.current.reset();
+      }
+
+      setTimeout(() => {
+        setSendSuccess(false);
+      }, 2000); // 10000 milissegundos = 10 segundos
+    } catch (error) {
+      console.error("Erro ao enviar o email:", error);
+    }
+  };
+
+  //service_qv2or9g
+  //template_843ueyv
+  // #contact__form
+  //zEguyX8_OVejwyTS4
+
   const getText = () => {
     if (language === "en") {
       return (
@@ -14,7 +50,13 @@ export function Contact({ language }: ContactProps) {
           </h3>
           <h2 className="section__title">Contact Me</h2>
           <div className="contact__container container grid">
-            <form action="" className="contact__form" id="contact-form">
+            <form
+              action=""
+              className="contact__form"
+              id="contact-form"
+              ref={form}
+              onSubmit={sendEmail}
+            >
               <div className="contact__group">
                 <input
                   type="text"
@@ -37,7 +79,11 @@ export function Contact({ language }: ContactProps) {
                 placeholder="Enter your message"
                 className="contact__input"
               ></textarea>
-              {/* <p className="contact__message" id="contact-message">ddd</p> */}
+              {sendSuccess && (
+                <p className="contact__message" id="contact-message">
+                  A mensagem foi enviada com sucesso!
+                </p>
+              )}
 
               <button type="submit" className="contact__button button">
                 Send Message
@@ -54,7 +100,13 @@ export function Contact({ language }: ContactProps) {
           </h3>
           <h2 className="section__title">Envie Sua Mensagem</h2>
           <div className="contact__container container grid">
-            <form action="" className="contact__form" id="contact-form">
+            <form
+              action=""
+              className="contact__form"
+              id="contact-form"
+              ref={form}
+              onSubmit={sendEmail}
+            >
               <div className="contact__group">
                 <input
                   type="text"
@@ -77,6 +129,11 @@ export function Contact({ language }: ContactProps) {
                 placeholder="Digite sua mensagem"
                 className="contact__input"
               ></textarea>
+              {sendSuccess && (
+                <p className="contact__message" id="contact-message">
+                  A mensagem foi enviada com sucesso!
+                </p>
+              )}
               <button type="submit" className="contact__button button">
                 Enviar Mensagem
               </button>

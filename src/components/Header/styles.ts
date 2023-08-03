@@ -75,7 +75,7 @@ export const HeaderContainer = styled.header`
     display: block;
     margin-top: 5px;
     padding: 0.313rem 0;
-    background-color: hsla(0, 0%, 10%, 0.3);
+    background-color: hsla(0, 0%, 10%, 0.8);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border-radius: 0.313rem;

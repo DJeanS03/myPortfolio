@@ -71,9 +71,15 @@ export const HomeContainer = styled.section`
     filter: drop-shadow(0 12px 12px rgb(90, 67, 203));
   }
 
-  svg { 
+  svg {
     width: 700px;
     fill: var(--primary-color);
     filter: drop-shadow(0 12px 12px rgb(90, 67, 203));
   }
+`;
+
+export const RoundImage = styled.img`
+  width: 420px; /* Ajuste o valor conforme necessário */
+  border: 4px solid rgb(90, 67, 203);
+  border-radius: 50%; /* Define a forma redonda */
 `;

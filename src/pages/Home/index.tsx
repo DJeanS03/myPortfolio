@@ -47,6 +47,8 @@ export function Main() {
         <Projects language={ language }/>
         <Contact language={ language }/>
         <Footer />
+
+        
       </MainContainer>
     </>
   );
