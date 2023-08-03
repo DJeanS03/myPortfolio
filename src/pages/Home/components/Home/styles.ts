@@ -70,4 +70,10 @@ export const HomeContainer = styled.section`
     fill: var(--primary-color);
     filter: drop-shadow(0 12px 12px rgb(90, 67, 203));
   }
+
+  svg { 
+    width: 700px;
+    fill: var(--primary-color);
+    filter: drop-shadow(0 12px 12px rgb(90, 67, 203));
+  }
 `;
