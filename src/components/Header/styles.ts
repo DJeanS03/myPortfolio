@@ -178,6 +178,12 @@ export const HeaderContainer = styled.header`
     }
   }
 
+  @media screen and (max-width: 321px) {
+    .nav__list {
+      column-gap: 0.75rem;
+    }
+  }
+
   .nav__link {
     color: var(--title-color);
     font-weight: var(--font-medium);
