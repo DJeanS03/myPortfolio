@@ -174,12 +174,6 @@ export const HeaderContainer = styled.header`
 
   @media screen and (max-width: 376px) {
     .nav__list {
-      column-gap: 1rem;
-    }
-  }
-
-  @media screen and (max-width: 321px) {
-    .nav__list {
       column-gap: 0.75rem;
     }
   }
