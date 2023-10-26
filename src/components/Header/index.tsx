@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { HeaderContainer } from "./styles";
 
 import Logo from "../../assets/Logo.svg";
+import { LanguageButton } from "../../pages/Home/components/LanguageButton";
 
 interface Props {
   Catch: boolean;
@@ -49,49 +50,12 @@ export function Header({ Catch, language, onLanguageChange }: Props) {
     };
   }, []);
 
-  const [showLanguageOptions, setShowLanguageOptions] = useState(false);
-  const [languageName, setLanguageName] = useState("");
-
-  const handleToggleLanguageOptions = () => {
-    setShowLanguageOptions(!showLanguageOptions);
-  };
-
-  const handleLanguageChange = (lang: string) => {
-    onLanguageChange(lang);
-    setShowLanguageOptions(false);
-  };
-
-  useEffect(() => {
-    if (language === "en") {
-      setLanguageName("English (US)");
-    } else if (language === "pt") {
-      setLanguageName("Português (Brasil)");
-    }
-  }, [language]);
-
   return (
     <HeaderContainer>
       <nav className={Catch ? "nav container blur-header" : "nav container"}>
         <a href="#" className="nav__logo">
           <img src={Logo} width={30} /> Jean <span>Victor</span>
         </a>
-
-        {/*       <div className="language-container">
-          <button className="toggle-btn" onClick={handleToggleLanguageOptions}>
-            <i className="bx bx-globe"></i>
-            {languageName}
-          </button>
-          {showLanguageOptions && (
-            <div className="language-options">
-              <button onClick={() => handleLanguageChange("en")}>
-                English (US)
-              </button>
-              <button onClick={() => handleLanguageChange("pt")}>
-                Português (Brasil)
-              </button>
-            </div>
-          )}
-        </div> */}
 
         <div className="nav__menu" id="nav-menu">
           <ul className="nav__list">
@@ -131,28 +95,15 @@ export function Header({ Catch, language, onLanguageChange }: Props) {
                 {language === "en" ? "Contact" : "Contato"}
               </a>
             </li>
-            <div className="language-container">
-              <button
-                className="toggle-btn"
-                onClick={handleToggleLanguageOptions}
-              >
-                <i className="bx bx-globe"></i>
-                <span className="language__name">{languageName}</span>
-              </button>
-              {showLanguageOptions && (
-                <div className="language-options">
-                  <button onClick={() => handleLanguageChange("en")}>
-                    English (US)
-                  </button>
-                  <button onClick={() => handleLanguageChange("pt")}>
-                    Português (Brasil)
-                  </button>
-                </div>
-              )}
-            </div>
           </ul>
         </div>
       </nav>
+          <div className="haha">
+            <LanguageButton
+              language={language}
+              onLanguageChange={onLanguageChange}
+            />
+          </div>
     </HeaderContainer>
   );
 }
