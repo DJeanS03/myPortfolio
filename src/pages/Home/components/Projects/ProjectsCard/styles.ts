@@ -25,7 +25,7 @@ export const CoffeeCardContainer = styled.nav`
     background: linear-gradient(
       180deg,
       hsla(0, 0%, 0%, 0) 0%,
-      rgb(110, 87, 224)
+      ${({ theme }) => theme.colors["primaryColorAlt"]}
     );
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px); /*for safari*/
@@ -39,8 +39,8 @@ export const CoffeeCardContainer = styled.nav`
 
   .projects__subtitle,
   .projects__button {
-    color: var(--title-color);
-    font-size: var(--small-font-size);
+    color: ${({ theme }) => theme.colors["titleColor"]};
+    font-size: ${({ theme }) => theme.fontSizes["small"]};
   }
 
   .projects__subtitle {
@@ -49,7 +49,7 @@ export const CoffeeCardContainer = styled.nav`
   }
 
   .projects__title {
-    font-size: var(--h2-font-size);
+    font-size: ${({ theme }) => theme.fontSizes["h2"]};
     margin-bottom: 0.75rem;
   }
 
@@ -57,7 +57,7 @@ export const CoffeeCardContainer = styled.nav`
     display: flex;
     align-items: center;
     column-gap: 0.5rem;
-    font-weight: var(--font-medium);
+    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
   }
 
   .projects__button i {
@@ -68,10 +68,10 @@ export const CoffeeCardContainer = styled.nav`
     bottom: 0;
   }
 
-  #concluded{
-    color: #66dbb9;
+  #concluded {
+    color: ${({ theme }) => theme.colors["concluded"]};
   }
-  #in__progress{
-    color: #f8fc96;
+  #in__progress {
+    color: ${({ theme }) => theme.colors["inProgress"]};
   }
 `;
