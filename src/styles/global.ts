@@ -7,6 +7,40 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --primary-color: rgb(110, 87, 224);
+    --primary-color-alt: rgb(90, 67, 203);
+    --primary-color-lighter: rgb(193, 182, 252);
+    --title-color: rgb(240, 238, 252);
+    --text-color: rgb(109, 106, 124);
+    --text-lighter: rgb(161, 159, 173);
+    --input-color: rgb(240, 238, 252);
+    --body-color: hsl(228, 15%, 20%);
+    --container-color: hsl(228, 15%, 15%);
+
+
+    --biggest-font-size: 2rem;
+    --bigger-font-size: 1.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*Font weight*/
+    --font-regular:400;
+    --font-medium:500;
+    --font-semi-bold:600;
+
+    /*z-index*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+    
+    --header-height: 3.5rem;
+}
+
 @media screen and (min-width: 968px) {
     :root {
         --biggest-font-size: 4rem;
@@ -25,14 +59,14 @@ html {
 }
   
 body {
-    background: ${({ theme }) => theme.colors["bodyColor"]};
-    color: ${({ theme }) => theme.colors["textColor"]};
+    background: var(--body-color);
+    color: var(--text-color);
     -webkit-font-smoothing: antialiased;
 }
 
 body, input, textarea, button {
     font-family: 'Poppins', sans-serif;
-    font-size: ${({ theme }) => theme.fontSizes["normal"]};
+    font-size: var(--normal-font-size);
  }
 
 input, textarea, button {
@@ -41,8 +75,8 @@ input, textarea, button {
  }
 
 h1, h2, h3, h4 {
-    color: ${({ theme }) => theme.colors["titleColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
+    color: var(--title-color);
+    font-weight: var(--font-medium);
 }
 
 ul {
@@ -75,22 +109,22 @@ i {
 .section__title,
 .section__subtitle {
     text-align: center;
-    color: ${({ theme }) => theme.colors["titleColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["semiBold"]};
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
 }
 
 .section__title {
-    font-size: ${({ theme }) => theme.fontSizes["h1"]};
+    font-size: var(--h1-font-size);
     margin-bottom: 1.5rem;
 }
 
 .section__subtitle {
-    font-size: ${({ theme }) => theme.fontSizes["small"]};
+    font-size: var(--small-font-size);
     margin-bottom: .25rem;
 }
 
 .section__subtitle span {
-    color: ${({ theme }) => theme.colors["primaryColor"]};
+    color: var(--primary-color);
 }
 
 .main {
@@ -99,16 +133,16 @@ i {
 
 .button {
     display: inline-block;
-    background-color: ${({ theme }) => theme.colors["primaryColor"]};
+    background-color: var(--primary-color);
     padding: 1rem 1.75rem;
     border-radius: 0%.5rem;
-    color: ${({ theme }) => theme.colors["titleColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
+    color: var(--title-color);
+    font-weight: var(--font-medium);
     transition: box-shadow .4s;
 }
 
 .button:hover {
-    box-shadow: 0 8px 24px ${({ theme }) => theme.colors["primaryColorAlt"]};;
+    box-shadow: 0 8px 24px rgb(90, 67, 203);
 }
 
 ::-webkit-scrollbar {
