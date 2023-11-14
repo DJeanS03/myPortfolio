@@ -5,16 +5,16 @@ export const myProjects = [
     name: "Coffee Delivery",
     photo: "https://github.com/DJeanS03/ToDo_app/assets/109162543/cbb902b2-f526-47f9-b0fb-82f368504a1c",
     link: "https://coffee-delivery-ignite-chi.vercel.app",
-    status: "Concluded",
-    state: "concluded",
+    status: "in__progress",
+    state: "in__progress",
     translations: {
       en: {
         name: "Coffee Delivery",
-        status: "Concluded",
+        status: "Em progresso",
       },
       pt: {
         name: "Entrega de Café",
-        status: "Concluído",
+        status: "In Progress",
       },
     },
   },
