@@ -48,7 +48,7 @@ export const MainContainer = styled.main`
 
     .home__education,
     .home__subtitle {
-      font-size: ${({ theme }) => theme.fontWeights["h1"]};
+      font-size: var(--h1-font-size);
     }
 
     .home__data,
@@ -85,11 +85,11 @@ export const MainContainer = styled.main`
     }
 
     .section__subtitle {
-      font-size: ${({ theme }) => theme.fontSizes["normal"]};
+      font-size: var(--normal-font-size);
     }
 
     .nav {
-      height: 5rem;
+      height: calc(var(--header-height) + 1.5rem);
     }
 
     .nav__menu {
@@ -144,7 +144,7 @@ export const MainContainer = styled.main`
     }
 
     .skills__item {
-      font-size: ${({ theme }) => theme.fontSizes["h3"]};
+      font-size: var(--h3-font-size);
     }
 
     .services__container {
@@ -162,7 +162,7 @@ export const MainContainer = styled.main`
     }
 
     .projects__button {
-      font-size: ${({ theme }) => theme.fontSizes["normal"]};
+      font-size: var(--normal-font-size);
     }
 
     .contact__container {

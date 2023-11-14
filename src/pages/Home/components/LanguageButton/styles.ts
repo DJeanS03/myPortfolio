@@ -7,7 +7,7 @@ export const LanguageButtonContainer = styled.header`
   }
 
   .toggle-btn {
-    background-color: ${({ theme }) => theme.colors["primaryColor"]};
+    background-color: rgb(110, 87, 224);
     color: #fff;
     padding: 0.625rem;
     border: none;
@@ -47,12 +47,12 @@ export const LanguageButtonContainer = styled.header`
     padding: 0.313rem 0.625rem;
     border: none;
     background-color: transparent;
-    color: ${({ theme }) => theme.colors["white"]};
-  
+    color: #fff;
+    cursor: pointer;
   }
 
   .language-options button:hover {
-    background-color: ${({ theme }) => theme.colors["primaryColorAlt"]};
+    background-color: rgb(90, 67, 203);
   }
 
   @media screen and (max-width: 898px) {

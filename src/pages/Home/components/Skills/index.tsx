@@ -1,4 +1,3 @@
-import { Button } from "../Button";
 import { SkilsContainer } from "./styles";
 
 interface SkillsProps {
@@ -18,7 +17,9 @@ export function Skills({ language }: SkillsProps) {
             Here, you can see which abilities I have and how I can use them to
             produce projects for you.
           </p>
-          <Button text="See my Projects" url="#projects" />
+          <a href="#projects" className="button">
+            See my Projects
+          </a>
         </>
       );
     } else if (language === "pt") {
@@ -32,7 +33,9 @@ export function Skills({ language }: SkillsProps) {
             Aqui você pode ver quais habilidades possuo e como posso utilizá-las
             para produzir projetos para você.
           </p>
-          <Button text="Veja meus Projetos" url="#projects" />
+          <a href="#projects" className="button">
+            Veja meus Projetos
+          </a>
         </>
       );
     }
