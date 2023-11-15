@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-@media screen and (min-width: 968px) {
+/* @media screen and (min-width: 968px) {
     :root {
         --biggest-font-size: 4rem;
         --bigger-font-size: 3rem;
@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
-}
+} */
 
 html {
     scroll-behavior: smooth;
