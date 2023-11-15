@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
-}
+
 
 html {
     scroll-behavior: smooth;
