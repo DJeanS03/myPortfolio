@@ -48,7 +48,7 @@ export const MainContainer = styled.main`
 
     .home__education,
     .home__subtitle {
-      font-size: ${({ theme }) => theme.fontWeights["h1"]};
+      font-size: ${({ theme }) => theme.fontSizes["h1"]};
     }
 
     .home__data,
