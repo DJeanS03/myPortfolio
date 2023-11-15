@@ -7,9 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-
-/*
-@media screen and (min-width: 968px) 
+/* @media screen and (min-width: 968px) {
     :root {
         --biggest-font-size: 4rem;
         --bigger-font-size: 3rem;
@@ -20,22 +18,21 @@ export const GlobalStyle = createGlobalStyle`
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
- }
-*/
+} */
 
 html {
     scroll-behavior: smooth;
 }
   
 body {
-    background: var(--body-color);
-    color: var(--text-color);
+    background: ${({ theme }) => theme.colors["bodyColor"]};
+    color: ${({ theme }) => theme.colors["textColor"]};
     -webkit-font-smoothing: antialiased;
 }
 
 body, input, textarea, button {
     font-family: 'Poppins', sans-serif;
-    font-size: var(--normal-font-size);
+    font-size: ${({ theme }) => theme.fontSizes["normal"]};
  }
 
 input, textarea, button {
@@ -44,8 +41,8 @@ input, textarea, button {
  }
 
 h1, h2, h3, h4 {
-    color: var(--title-color);
-    font-weight: var(--font-medium);
+    color: ${({ theme }) => theme.colors["titleColor"]};
+    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
 }
 
 ul {
@@ -78,22 +75,22 @@ i {
 .section__title,
 .section__subtitle {
     text-align: center;
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
+    color: ${({ theme }) => theme.colors["titleColor"]};
+    font-weight: ${({ theme }) => theme.fontWeights["semiBold"]};
 }
 
 .section__title {
-    font-size: var(--h1-font-size);
+    font-size: ${({ theme }) => theme.fontSizes["h1"]};
     margin-bottom: 1.5rem;
 }
 
 .section__subtitle {
-    font-size: var(--small-font-size);
+    font-size: ${({ theme }) => theme.fontSizes["small"]};
     margin-bottom: .25rem;
 }
 
 .section__subtitle span {
-    color: var(--primary-color);
+    color: ${({ theme }) => theme.colors["primaryColor"]};
 }
 
 .main {
@@ -102,16 +99,16 @@ i {
 
 .button {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: ${({ theme }) => theme.colors["primaryColor"]};
     padding: 1rem 1.75rem;
     border-radius: 0%.5rem;
-    color: var(--title-color);
-    font-weight: var(--font-medium);
+    color: ${({ theme }) => theme.colors["titleColor"]};
+    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
     transition: box-shadow .4s;
 }
 
 .button:hover {
-    box-shadow: 0 8px 24px rgb(90, 67, 203);
+    box-shadow: 0 8px 24px ${({ theme }) => theme.colors["primaryColorAlt"]};;
 }
 
 ::-webkit-scrollbar {

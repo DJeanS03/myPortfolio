@@ -1,6 +1,7 @@
 import { AboutContainer } from "./styles";
 import imagem from "../../../../assets/profile.png";
 import CV from "../../../../assets/CV-Jean-Victor.pdf";
+import { Button } from "../Button";
 
 interface AboutProps {
   language: string;
@@ -24,9 +25,7 @@ export function About({ language }: AboutProps) {
             experiences for users. I am constantly updated on industry best
             practices and trends, aiming to deliver high-quality results.
           </p>
-          <a download="CV-Jean-Victor" href={CV} className="button">
-            Download my CV
-          </a>
+          <Button text=" Download my CV" url={CV} fileName={"CV-Jean-Victor"} />
         </>
       );
     } else if (language === "pt") {
@@ -46,9 +45,7 @@ export function About({ language }: AboutProps) {
             sobre as melhores práticas e tendências do setor, visando entregar
             resultados de alta qualidade.
           </p>
-          <a download="CV-Jean-Victor" href={CV} className="button">
-            Baixar meu CV
-          </a>
+          <Button text="Baixar meu CV" url={CV} fileName={"CV-Jean-Victor"} />
         </>
       );
     }
