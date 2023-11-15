@@ -7,41 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  :root {
-    --primary-color: rgb(110, 87, 224);
-    --primary-color-alt: rgb(90, 67, 203);
-    --primary-color-lighter: rgb(193, 182, 252);
-    --title-color: rgb(240, 238, 252);
-    --text-color: rgb(109, 106, 124);
-    --text-lighter: rgb(161, 159, 173);
-    --input-color: rgb(240, 238, 252);
-    --body-color: hsl(228, 15%, 20%);
-    --container-color: hsl(228, 15%, 15%);
-
-
-    --biggest-font-size: 2rem;
-    --bigger-font-size: 1.25rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-    --smaller-font-size: .75rem;
-
-    /*Font weight*/
-    --font-regular:400;
-    --font-medium:500;
-    --font-semi-bold:600;
-
-    /*z-index*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
-    
-    --header-height: 3.5rem;
-}
-
-@media screen and (min-width: 968px) {
     :root {
         --biggest-font-size: 4rem;
         --bigger-font-size: 3rem;
