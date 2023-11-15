@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-/* @media screen and (min-width: 968px) {
     :root {
         --biggest-font-size: 4rem;
         --bigger-font-size: 3rem;
@@ -18,21 +17,21 @@ export const GlobalStyle = createGlobalStyle`
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
-} */
+}
 
 html {
     scroll-behavior: smooth;
 }
   
 body {
-    background: ${({ theme }) => theme.colors["bodyColor"]};
-    color: ${({ theme }) => theme.colors["textColor"]};
+    background: var(--body-color);
+    color: var(--text-color);
     -webkit-font-smoothing: antialiased;
 }
 
 body, input, textarea, button {
     font-family: 'Poppins', sans-serif;
-    font-size: ${({ theme }) => theme.fontSizes["normal"]};
+    font-size: var(--normal-font-size);
  }
 
 input, textarea, button {
@@ -41,8 +40,8 @@ input, textarea, button {
  }
 
 h1, h2, h3, h4 {
-    color: ${({ theme }) => theme.colors["titleColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
+    color: var(--title-color);
+    font-weight: var(--font-medium);
 }
 
 ul {
@@ -75,22 +74,22 @@ i {
 .section__title,
 .section__subtitle {
     text-align: center;
-    color: ${({ theme }) => theme.colors["titleColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["semiBold"]};
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
 }
 
 .section__title {
-    font-size: ${({ theme }) => theme.fontSizes["h1"]};
+    font-size: var(--h1-font-size);
     margin-bottom: 1.5rem;
 }
 
 .section__subtitle {
-    font-size: ${({ theme }) => theme.fontSizes["small"]};
+    font-size: var(--small-font-size);
     margin-bottom: .25rem;
 }
 
 .section__subtitle span {
-    color: ${({ theme }) => theme.colors["primaryColor"]};
+    color: var(--primary-color);
 }
 
 .main {
@@ -99,16 +98,16 @@ i {
 
 .button {
     display: inline-block;
-    background-color: ${({ theme }) => theme.colors["primaryColor"]};
+    background-color: var(--primary-color);
     padding: 1rem 1.75rem;
     border-radius: 0%.5rem;
-    color: ${({ theme }) => theme.colors["titleColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
+    color: var(--title-color);
+    font-weight: var(--font-medium);
     transition: box-shadow .4s;
 }
 
 .button:hover {
-    box-shadow: 0 8px 24px ${({ theme }) => theme.colors["primaryColorAlt"]};;
+    box-shadow: 0 8px 24px rgb(90, 67, 203);
 }
 
 ::-webkit-scrollbar {

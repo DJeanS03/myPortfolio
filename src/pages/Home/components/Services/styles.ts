@@ -9,26 +9,26 @@ export const ServicesContainer = styled.section`
 
   .services__card {
     text-align: center;
-    background-color: ${({ theme }) => theme.colors["containerColor"]};
+    background-color: var(--container-color);
     padding: 3rem 1.25rem;
     border-radius: 1rem;
-    border: 2px solid ${({ theme }) => theme.colors["containerColor"]};
+    border: 2px solid var(--container-color);
     transition: border 0.4s;
   }
 
   .services__card:hover {
-    border: 2px solid ${({ theme }) => theme.colors["primaryColor"]};
+    border: 2px solid var(--primary-color);
   }
 
   .services__icon {
     display: block;
     font-size: 4rem;
-    color: ${({ theme }) => theme.colors["primaryColor"]};
+    color: var(--primary-color);
     margin-bottom: 0.75rem;
   }
 
   .services__title {
-    font-size: ${({ theme }) => theme.fontSizes["h2"]};
+    font-size: var(--h2-font-size);
     margin-bottom: 1.5rem;
   }
 `;
