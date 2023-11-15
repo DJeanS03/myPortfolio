@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.section`
   padding-block: 3.5rem 2rem;
-  background-color: ${({ theme }) => theme.colors["containerColor"]};
+  background-color: var(--container-color);
 
   .footer__container {
     row-gap: 2rem;
@@ -11,17 +11,16 @@ export const FooterContainer = styled.section`
   }
 
   .footer__title {
-    font-size: ${({ theme }) => theme.fontSizes["h1"]};
-    font-weight: ${({ theme }) => theme.colors["primaryColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["semiBold"]};
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
     margin-bottom: 0.25rem;
   }
 
   .footer__title span {
-    color: ${({ theme }) => theme.colors["primaryColor"]};
+    color: var(--primary-color);
   }
 
   .footer__education {
-    font-size: ${({ theme }) => theme.fontSizes["normal"]};
+    font-size: var(--normal-font-size);
   }
 `;

@@ -24,6 +24,6 @@ export const AboutContainer = styled.section`
   }
 
   .about__blob path {
-    stroke: ${({ theme }) => theme.colors["primaryColor"]};
+    stroke: var(--primary-color);
   }
 `;
