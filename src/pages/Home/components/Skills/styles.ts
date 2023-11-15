@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SkilsContainer = styled.section`
   padding-block: 5rem 2rem;
-  background-color: ${({ theme }) => theme.colors["containerColor"]};
+  background-color: var(--container-color);
 
   .skills__container {
     padding-bottom: 2rem;
@@ -35,11 +35,11 @@ export const SkilsContainer = styled.section`
   }
 
   .skills__item {
-    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
-    color: ${({ theme }) => theme.colors["titleColor"]};
+    font-weight: var(--font-medium);
+    color: var(--title-color);
   }
 
   .skills__item::marker {
-    color: ${({ theme }) => theme.colors["primaryColor"]};
+    color: var(--primary-color);
   }
 `;

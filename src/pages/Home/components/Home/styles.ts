@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.section`
-  background-color: ${({ theme }) => theme.colors["containerColor"]};
+  background-color: var(--container-color);
   padding: 50px 0;
 
   @media screen and (max-width: 767px) {
@@ -24,17 +24,17 @@ export const HomeContainer = styled.section`
 
   .home__subtitle,
   .home__education {
-    font-size: ${({ theme }) => theme.fontSizes["bigger"]};
+    font-size: var(--bigger-font-size);
   }
 
   .home__subtitle span,
   .home__title {
-    color: ${({ theme }) => theme.colors["primaryColor"]};
+    color: var(--primary-color);
   }
 
   .home__title {
-    font-size: ${({ theme }) => theme.fontSizes["biggest"]};
-    font-weight: ${({ theme }) => theme.fontWeights["semiBold"]};
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-semi-bold);
   }
 
   .home__description {
@@ -49,9 +49,9 @@ export const HomeContainer = styled.section`
 
   .home__social-link {
     display: flex;
-    background-color: ${({ theme }) => theme.colors["primaryColorAlt"]};
+    background-color: var(--primary-color-alt);
     padding: 0.5rem;
-    color: ${({ theme }) => theme.colors["titleColor"]};
+    color: var(--title-color);
     font-size: 1.5rem;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     transition: transform 0.4s;
@@ -67,19 +67,19 @@ export const HomeContainer = styled.section`
 
   .home__blob {
     width: 320px;
-    fill: ${({ theme }) => theme.colors["primaryColor"]};
+    fill: var(--primary-color);
     filter: drop-shadow(0 12px 12px rgb(90, 67, 203));
   }
 
   svg {
     width: 700px;
-    fill: ${({ theme }) => theme.colors["primaryColor"]};
+    fill: var(--primary-color);
     filter: drop-shadow(0 12px 12px rgb(90, 67, 203));
   }
 `;
 
 export const RoundImage = styled.img`
-  width: 420px; 
-  border: 4px solid ${({ theme }) => theme.colors["primaryColor"]};
-  border-radius: 50%;
+  width: 420px; /* Ajuste o valor conforme necessário */
+  border: 4px solid rgb(90, 67, 203);
+  border-radius: 50%; /* Define a forma redonda */
 `;
