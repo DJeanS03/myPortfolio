@@ -1,7 +1,6 @@
 import { ContactContainer } from "./styles";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Button } from "../Button";
 
 interface ContactProps {
   language: string;
@@ -86,7 +85,9 @@ export function Contact({ language }: ContactProps) {
                 </p>
               )}
 
-              <Button text="Send Message" isSubmit={true} />
+              <button type="submit" className="contact__button button">
+                Send Message
+              </button>
             </form>
           </div>
         </>
@@ -133,7 +134,9 @@ export function Contact({ language }: ContactProps) {
                   A mensagem foi enviada com sucesso!
                 </p>
               )}
-              <Button text="Enviar Mensagem" isSubmit={true} />
+              <button type="submit" className="contact__button button">
+                Enviar Mensagem
+              </button>
             </form>
           </div>
         </>
