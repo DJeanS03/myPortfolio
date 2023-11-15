@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-/* 
+/*
 @media screen and (min-width: 968px) {
     :root {
         --biggest-font-size: 4rem;
