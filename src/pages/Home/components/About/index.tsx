@@ -43,7 +43,7 @@ export function About({ language }: AboutProps) {
             minhas habilidades técnicas, busco criar experiências digitais
             envolventes e funcionais para os usuários. Estou sempre atualizado
             sobre as melhores práticas e tendências do setor, visando entregar
-            resultados de alta qualidade..
+            resultados de alta qualidade.
           </p>
           <Button text="Baixar meu CV" url={CV} fileName={"CV-Jean-Victor"} />
         </>
