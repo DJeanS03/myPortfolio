@@ -20,12 +20,12 @@ padding-block: 5rem 2rem;
 .contact__input {
     padding: 1rem 1.25rem;
     border-radius: .5rem;
-    background-color: var(--container-color);
-    color: var(--title-color);
+    background-color: ${({ theme }) => theme.colors["containerColor"]};
+    color: ${({ theme }) => theme.colors["titleColor"]};
 }
 
 .contact__input::placeholder {
-    color: var(--text-color);
+    color: ${({ theme }) => theme.colors["textColor"]};
 }
 
 .contact__form textarea{
@@ -43,8 +43,8 @@ padding-block: 5rem 2rem;
     position: absolute;
     left: 0;
     bottom: 4.5rem; 
-    font-size: var(--small-font-size);
-    color: var(--title-color);
+    font-size: ${({ theme }) => theme.fontSizes["small"]};
+    color: ${({ theme }) => theme.colors["titleColor"]};
 }
 
 `
