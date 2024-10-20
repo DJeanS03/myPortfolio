@@ -11,11 +11,11 @@ export function Footer() {
                     <h2 className="footer__education">
                         Front-end Developer
                     </h2>
+                    <p>V1.2.0</p>
                 </div>
-
-                <div className="footer__social">
+                {/* <div className="footer__social">
                     <a href="" target="_blank" className="footer__social-link"></a>
-                </div>
+                </div> */}
             </div>
         </FooterContainer>
     )

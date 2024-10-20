@@ -8,7 +8,7 @@ export function Services({ language }: ServicesProps) {
   const getText = () => {
     if (language === "en") {
       return (
-        <>
+        <div className="box">
           <h3 className="section__subtitle">
             My <span>Services</span>
           </h3>
@@ -36,11 +36,11 @@ export function Services({ language }: ServicesProps) {
               </p>
             </article>
           </div>
-        </>
+        </div>
       );
     } else if (language === "pt") {
       return (
-        <>
+        <div className="box">
           <h3 className="section__subtitle">
             Meus <span>Serviços</span>
           </h3>
@@ -69,7 +69,7 @@ export function Services({ language }: ServicesProps) {
               </p>
             </article>
           </div>
-        </>
+        </div>
       );
     }
   };

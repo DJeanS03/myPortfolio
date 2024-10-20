@@ -45,7 +45,7 @@ export function Contact({ language }: ContactProps) {
   const getText = () => {
     if (language === "en") {
       return (
-        <>
+        <div className="box">
           <h3 className="section__subtitle">
             Get in <span>Touch</span>
           </h3>
@@ -89,11 +89,11 @@ export function Contact({ language }: ContactProps) {
               <Button text="Send Message" isSubmit={true} />
             </form>
           </div>
-        </>
+        </div>
       );
     } else if (language === "pt") {
       return (
-        <>
+        <div className="box">
           <h3 className="section__subtitle">
             Entre em <span>Contato</span>
           </h3>
@@ -136,7 +136,7 @@ export function Contact({ language }: ContactProps) {
               <Button text="Enviar Mensagem" isSubmit={true} />
             </form>
           </div>
-        </>
+        </div>
       );
     }
   };

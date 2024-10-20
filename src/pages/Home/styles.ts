@@ -80,6 +80,10 @@ export const MainContainer = styled.main`
   }
 
   @media screen and (min-width: 1023px) {
+    .box {
+      min-height: calc(100vh - 5.5rem);
+    }
+
     .section {
       padding-block: 7rem 2rem;
     }
