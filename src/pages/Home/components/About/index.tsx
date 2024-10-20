@@ -2,6 +2,7 @@ import { AboutContainer } from "./styles";
 import imagem from "../../../../assets/profile.png";
 import CV from "../../../../assets/CV-Jean-Victor.pdf";
 import { Button } from "../Button";
+import { myTexts } from "../../../../data/MyTexts";
 
 interface AboutProps {
   language: string;
@@ -13,9 +14,20 @@ export function About({ language }: AboutProps) {
       return (
         <>
           <h3 className="section__subtitle">
-            My <span>Intro</span>
+            {myTexts.map((myTexts) => (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: myTexts.aboutMe.translations.en.section__subtitle, //interpreta o span com html element
+                }}
+              />
+            ))}
           </h3>
-          <h2 className="section__title">About Me</h2>
+          <h2 className="section__title">
+            {" "}
+            {myTexts.map((myTexts) => (
+              <>{myTexts.aboutMe.translations.en.section__title}</>
+            ))}
+          </h2>
           <p className="about__description">
             As a front-end developer, I use React to create websites with
             intuitive and responsive interfaces. Additionally, I have experience
@@ -24,6 +36,9 @@ export function About({ language }: AboutProps) {
             skills, I strive to create engaging and functional digital
             experiences for users. I am constantly updated on industry best
             practices and trends, aiming to deliver high-quality results.
+            {/* {myTexts.map((myTexts) => (
+              <>{myTexts.aboutMe.translations.en.about__description}</>
+            ))} */}
           </p>
           <Button text=" Download my CV" url={CV} fileName={"CV-Jean-Victor"} />
         </>
@@ -32,9 +47,19 @@ export function About({ language }: AboutProps) {
       return (
         <>
           <h3 className="section__subtitle">
-            Minha <span>Introdução</span>
+            {myTexts.map((myTexts) => (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: myTexts.aboutMe.translations.pt.section__subtitle, //interpreta o span com html element
+                }}
+              />
+            ))}
           </h3>
-          <h2 className="section__title">Sobre Mim</h2>
+          <h2 className="section__title">
+            {myTexts.map((myTexts) => (
+              <>{myTexts.aboutMe.translations.pt.section__title}</>
+            ))}
+          </h2>
           <p className="about__description">
             Como desenvolvedor front-end, utilizo o React para criar websites
             com interfaces intuitivas e responsivas. Além disso, possuo
@@ -44,6 +69,9 @@ export function About({ language }: AboutProps) {
             envolventes e funcionais para os usuários. Estou sempre atualizado
             sobre as melhores práticas e tendências do setor, visando entregar
             resultados de alta qualidade.
+            {/* {myTexts.map((myTexts) => (
+              <>{myTexts.aboutMe.translations.pt.about__description}</>
+            ))} */}
           </p>
           <Button text="Baixar meu CV" url={CV} fileName={"CV-Jean-Victor"} />
         </>
@@ -52,8 +80,9 @@ export function About({ language }: AboutProps) {
   };
   return (
     <AboutContainer id="about">
-      <div className="about__container container grid">
+      <div className="about__container container grid box">
         <div className="about__data">{getText()}</div>
+        {/* //TODO: remover a foto e colocar um painel com o que eu sei fazer  */}
         <div className="about__image">
           <svg
             className="about__blob"

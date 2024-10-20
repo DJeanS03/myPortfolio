@@ -32,7 +32,7 @@ export function Projects({ language }: ProjectsProps) {
     <ProjectsContainer id="projects">
       {getText()}
 
-      <div className="projects__container container grid">
+      <div className="projects__container container grid box">
         {myProjects.map((myProjects) => (
           <ProjectsCard
             key={myProjects.id}
