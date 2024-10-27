@@ -44,16 +44,12 @@ export const HeaderContainer = styled.header`
     gap: 2rem;
   }
 
-  .haha {
-    position: absolute;
-    right: 20px;
-  }
-
   @media screen and (max-width: 898px) {
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
+    background-color: ${({ theme }) => theme.colors["containerColor"]};
 
     .nav__logo {
       display: none;
@@ -90,9 +86,10 @@ export const HeaderContainer = styled.header`
       font-size: 0;
     }
 
-    .haha {
+    .language__toggle {
       position: absolute;
       left: 0;
+      top: 0;
     }
   }
 

@@ -9,7 +9,7 @@ interface Props {
 export function LanguageButton({ language, onLanguageChange }: Props) {
   const [showLanguageOptions, setShowLanguageOptions] = useState(false);
   const [languageName, setLanguageName] = useState("");
-  const [scrolled, setScrolled] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   const handleToggleLanguageOptions = () => {
     setShowLanguageOptions(!showLanguageOptions);
@@ -21,37 +21,41 @@ export function LanguageButton({ language, onLanguageChange }: Props) {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
+    const handleResize = () => {
       const innerWidth = window.innerWidth;
 
-      if (scrollTop > 10 && innerWidth > 898) {
-        setScrolled(true);
+      if (innerWidth <= 768) {
+        setIsMobileView(true);
       } else {
-        setScrolled(false);
+        setIsMobileView(false);
       }
     };
-    window.addEventListener("scroll", handleScroll);
 
-    // Certifique-se de remover o ouvinte de rolagem ao desmontar o componente
+    // Definimos o estado inicialmente com base no tamanho da janela
+    handleResize();
+
+    // Adiciona o ouvinte para detectar a alteração no tamanho da tela
+    window.addEventListener("resize", handleResize);
+
+    // Remove o ouvinte ao desmontar o componente
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   useEffect(() => {
-    if (scrolled) {
+    if (isMobileView) {
       // Se a página foi rolada e a largura da janela é maior que 898px, defina a classe "hidden" em "language__name"
       setLanguageName("hidden");
     } else {
       // Caso contrário, defina o texto normalmente
       if (language === "en") {
-        setLanguageName("English (US)");
+        setLanguageName("English");
       } else if (language === "pt") {
-        setLanguageName("Português (Brasil)");
+        setLanguageName("Português");
       }
     }
-  }, [language, scrolled]);
+  }, [language, isMobileView]);
 
   return (
     <LanguageButtonContainer>
@@ -59,7 +63,7 @@ export function LanguageButton({ language, onLanguageChange }: Props) {
         <button className="toggle-btn" onClick={handleToggleLanguageOptions}>
           <i className="bx bx-globe"></i>
           <span
-            className={`language__name ${scrolled ? "hidden" : ""}`}
+            className={`language__name ${isMobileView ? "hidden" : ""}`}
             style={{ transition: "opacity 0.3s" }}
           >
             {languageName}
