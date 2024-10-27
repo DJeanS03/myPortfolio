@@ -1,5 +1,5 @@
-import { myProjects } from "../../../../data/MyProjects";
-import { ProjectsCard } from "./ProjectsCard";
+import { myProjects } from "../../../data/MyProjects";
+import { ProjectsCard } from "../../UI/ProjectsCard";
 import { ProjectsContainer } from "./styles";
 
 interface ProjectsProps {
@@ -32,7 +32,7 @@ export function Projects({ language }: ProjectsProps) {
     <ProjectsContainer id="projects">
       {getText()}
 
-      <div className="projects__container container grid box">
+      <div className="projects__container container grid">
         {myProjects.map((myProjects) => (
           <ProjectsCard
             key={myProjects.id}

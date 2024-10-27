@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { HeaderContainer } from "./styles";
 
-import Logo from "../../assets/Logo.svg";
-import { LanguageButton } from "../../pages/Home/components/LanguageButton";
+import Logo from "../../../assets/Logo.svg";
+import { LanguageButton } from "../../UI/LanguageButton";
 
 interface Props {
   Catch: boolean;

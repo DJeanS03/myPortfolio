@@ -1,4 +1,4 @@
-import { Button } from "../Button";
+import { Button } from "../../UI/Button";
 import { SkilsContainer } from "./styles";
 
 interface SkillsProps {
