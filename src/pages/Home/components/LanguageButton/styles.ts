@@ -28,7 +28,7 @@ export const LanguageButtonContainer = styled.header`
 
   .language-options {
     position: absolute;
-    min-width: 100%;
+    min-width: 12.5rem;
     top: 100%;
     right: 0px;
     display: block;
@@ -48,7 +48,6 @@ export const LanguageButtonContainer = styled.header`
     border: none;
     background-color: transparent;
     color: ${({ theme }) => theme.colors["white"]};
-  
   }
 
   .language-options button:hover {
@@ -58,16 +57,21 @@ export const LanguageButtonContainer = styled.header`
   @media screen and (max-width: 898px) {
     position: relative;
     width: 100%;
-    top: 20px;
-    left: 30px;
+    top: 5px;
+    left: 20px;
     background-color: hsl(228, 15%, 15%);
-  }
 
-  .language__name {
-    transition: all 10s;
-  }
+    .language-options {
+      left: 0;
+      min-width: 12.5rem;
+    }
 
-  .hidden {
-    display: none;
+    .language__name {
+      transition: all 10s;
+    }
+
+    .hidden {
+      display: none;
+    }
   }
 `;

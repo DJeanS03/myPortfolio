@@ -40,7 +40,8 @@ export function About({ language }: AboutProps) {
               <>{myTexts.aboutMe.translations.en.about__description}</>
             ))} */}
           </p>
-          <Button text=" Download my CV" url={CV} fileName={"CV-Jean-Victor"} />
+          {/* <Button text=" Download my CV" url={CV} fileName={"CV-Jean-Victor"} /> */}
+          <Button text=" Download my CV" />
         </>
       );
     } else if (language === "pt") {

@@ -97,13 +97,15 @@ export function Header({ Catch, language, onLanguageChange }: Props) {
             </li>
           </ul>
         </div>
-      </nav>
-          <div className="haha">
+        <div className="nav__menu">
+          <div className="language__toggle">
             <LanguageButton
               language={language}
               onLanguageChange={onLanguageChange}
             />
           </div>
+        </div>
+      </nav>
     </HeaderContainer>
   );
 }
