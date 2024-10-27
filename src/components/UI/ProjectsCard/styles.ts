@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CoffeeCardContainer = styled.nav`
+export const ProjectsCardContainer = styled.nav`
   position: relative;
   border-radius: 1rem;
   overflow: hidden;

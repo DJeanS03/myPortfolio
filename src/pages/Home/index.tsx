@@ -8,8 +8,9 @@ import { ScrollButton } from "../../components/UI/ScrollButton";
 import { Services } from "../../components/Sections/Services";
 import { Skills } from "../../components/Sections/Skills";
 import { MainContainer } from "./styles";
-
 import { useState, useEffect } from "react";
+
+export type Language = 'en' | 'pt';
 
 export function Main() {
   const [scrolled, setScrolled] = useState(false);

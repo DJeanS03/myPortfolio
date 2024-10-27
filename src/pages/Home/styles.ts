@@ -126,7 +126,7 @@ export const MainContainer = styled.main`
     }
 
     .about__container {
-      grid-template-columns: 34.375rem 28.75rem;
+      grid-template-columns: 36rem 30rem;
       column-gap: 4.5rem;
       padding-bottom: 1rem;
     }
