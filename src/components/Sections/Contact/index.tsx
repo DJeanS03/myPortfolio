@@ -1,7 +1,8 @@
 import { ContactContainer } from "./styles";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Button } from "../Button";
+import { Button } from "../../UI/Button";
+
 
 interface ContactProps {
   language: string;

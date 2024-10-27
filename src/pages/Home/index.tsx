@@ -1,12 +1,12 @@
-import { Header } from "../../components/Header";
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
-import { Home } from "./components/Home";
-import { Projects } from "./components/Projects";
-import { ScrollButton } from "./components/ScrollButton";
-import { Services } from "./components/Services";
-import { Skills } from "./components/Skills";
+import { Header } from "../../components/Layout/Header";
+import { About } from "../../components/Sections/About";
+import { Contact } from "../../components/Sections/Contact";
+import { Footer } from "../../components/Layout/Footer";
+import { Home } from "../../components/Sections/Home";
+import { Projects } from "../../components/Sections/Projects";
+import { ScrollButton } from "../../components/UI/ScrollButton";
+import { Services } from "../../components/Sections/Services";
+import { Skills } from "../../components/Sections/Skills";
 import { MainContainer } from "./styles";
 
 import { useState, useEffect } from "react";

@@ -1,7 +1,8 @@
 import { HomeContainer } from "./styles";
-import imagem from "../../../../assets/profile2.jpeg";
+import imagem from "../../../assets/profile2.jpeg";
 import { RoundImage } from "../Home/styles";
-import { myTexts } from "../../../../data/MyTexts";
+import { myTexts } from "../../../data/MyTexts";
+
 
 interface HomeProps {
   language: string;

@@ -1,8 +1,8 @@
 import { AboutContainer } from "./styles";
-import imagem from "../../../../assets/profile.png";
-import CV from "../../../../assets/CV-Jean-Victor.pdf";
-import { Button } from "../Button";
-import { myTexts } from "../../../../data/MyTexts";
+import imagem from "../../../assets/profile.png";
+import CV from "../../../assets/CV-Jean-Victor.pdf";
+import { Button } from "../../UI/Button";
+import { myTexts } from "../../../data/MyTexts";
 
 interface AboutProps {
   language: string;
