@@ -5,7 +5,7 @@ import { Footer } from "../../components/Layout/Footer";
 import { Home } from "../../components/Sections/Home";
 import { Projects } from "../../components/Sections/Projects";
 import { ScrollButton } from "../../components/UI/ScrollButton";
-import { Services } from "../../components/Sections/Services";
+import { Experiences } from "../../components/Sections/Services";
 import { Skills } from "../../components/Sections/Skills";
 import { MainContainer } from "./styles";
 import { useState, useEffect } from "react";
@@ -51,7 +51,7 @@ export function Main() {
         <Home language={language} />
         <About language={language} />
         <Skills language={language} />
-        <Services language={language} />
+        <Experiences language={language} />
         <Projects language={language} />
         <Contact language={language} />
         <Footer />

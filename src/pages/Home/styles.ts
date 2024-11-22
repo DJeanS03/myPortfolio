@@ -26,7 +26,6 @@ export const MainContainer = styled.main`
     .home__container,
     .about__container,
     .skills__container,
-    .services__container,
     .projects__container,
     .contact__container {
       grid-template-columns: 29.375rem;
@@ -73,7 +72,6 @@ export const MainContainer = styled.main`
       order: 1;
     }
 
-    .services__container,
     .projects__container {
       grid-template-columns: repeat(2, 22rem);
     }

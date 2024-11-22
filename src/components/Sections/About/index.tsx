@@ -1,5 +1,5 @@
 import { AboutContainer } from "./styles";
-import CV from "../../../assets/CV-Jean-Victor.pdf";
+//import CV from "../../../assets/CV-Jean-Victor.pdf";
 import { Button } from "../../UI/Button";
 import { myTexts } from "../../../data/MyTexts";
 import { ExpertiseCard } from "../../UI/ExpertiseCard";
