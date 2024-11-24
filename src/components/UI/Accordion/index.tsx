@@ -6,45 +6,85 @@ import {
   Arrow,
   InfoLine,
 } from "./styles";
+import { Language } from "../../../pages/Home";
 
-interface AccordionProps {
-  companyName: string;
-  jobTitle: string;
-  employmentType: string;
-  startDate: Date; // Data de início
-  location: string;
-  children: React.ReactNode;
+export interface Experiences {
+  id: number;
+  translations: Translations;
 }
 
-export function Accordion({
-  companyName,
-  jobTitle,
-  employmentType,
-  startDate,
-  location,
-  children,
-}: AccordionProps) {
+interface Translations {
+  en: {
+    companyName: string;
+    jobTitle: string;
+    employmentType: string;
+    startDate: Date;
+    status: string;
+    location: string;
+    children: React.ReactNode;
+  };
+  pt: {
+    companyName: string;
+    jobTitle: string;
+    employmentType: string;
+    startDate: Date;
+    status: string;
+    location: string;
+    children: React.ReactNode;
+  };
+}
+
+interface ExperiencesProps {
+  myExperiences: Experiences;
+  language: Language;
+}
+
+export function Accordion({ myExperiences, language }: ExperiencesProps) {
+  const getTranslation = () => {
+    if (language === "en") {
+      return myExperiences.translations.en;
+    } else if (language === "pt") {
+      return myExperiences.translations.pt;
+    } else {
+      return myExperiences.translations.en;
+    }
+  };
+
+  const translation = getTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
 
-  // Função para calcular o tempo desde a data de início
   const calculateDuration = (startDate: Date) => {
     const now = new Date();
-    const duration = now.getTime() - startDate.getTime();
-    const days = Math.floor(duration / (1000 * 60 * 60 * 24) - 1); //verificar data correta
-    const years = Math.floor(days / 365);
-    const months = Math.floor((days % 365) / 30);
-    const remainingDays = days % 30;
 
-    return { years, months, remainingDays };
+    let years = now.getFullYear() - startDate.getFullYear();
+
+    let months = now.getMonth() - startDate.getMonth();
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    let days = now.getDate() - startDate.getDate();
+
+    if (days < 0) {
+      months--;
+
+      const lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 0);
+      days += lastMonth.getDate();
+    }
+
+    return { years, months, days };
   };
 
-  const { years, months, remainingDays } = calculateDuration(startDate);
+  const { years, months, days } = calculateDuration(translation.startDate);
 
-  const formattedStartDate = startDate.toLocaleString("default", {
+  const formattedStartDate = translation.startDate.toLocaleString("default", {
     month: "short",
     year: "numeric",
   });
@@ -54,10 +94,13 @@ export function Accordion({
       <div>
         <AccordionHeader onClick={toggleAccordion}>
           <div>
-            <strong>{jobTitle}</strong> - {companyName} ({employmentType})
+            <strong>{translation.jobTitle}</strong> - {translation.companyName}{" "}
+            ({translation.employmentType})
             <InfoLine>
-              {formattedStartDate} - Present • {years} years {months} months{" "}
-              {remainingDays} days • {location}.
+              {formattedStartDate} - {translation.status} • {years}{" "}
+              {language == "pt" ? "anos" : "years"} {months}{" "}
+              {language == "pt" ? "meses" : "months"} {days}{" "}
+              {language == "pt" ? "dias" : "days"} • {translation.location}.
             </InfoLine>
           </div>
 
@@ -65,7 +108,19 @@ export function Accordion({
             <i className="bx bx-up-arrow-alt experiences__icon"></i>
           </Arrow>
         </AccordionHeader>
-        <AccordionContent isOpen={isOpen}>{children}</AccordionContent>
+        <AccordionContent isOpen={isOpen}>
+          {/* {Array.isArray(translation.children) &&
+          translation.children.length > 0 ? (
+            <ul>
+              {translation.children.map((activity, index) => (
+                <li key={index}>{activity}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>No activities available.</p> // Exibe uma mensagem ou renderiza algo caso não haja atividades
+          )} */}
+          {translation.children}
+        </AccordionContent>
       </div>
     </AccordionContainer>
   );
