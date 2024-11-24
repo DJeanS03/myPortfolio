@@ -10,9 +10,7 @@ export const myExperiences = [
         startDate: new Date("2023-05-01"), // Adicionando startDate
         status: "present",
         children: [
-          "Developed the front-end of various web applications.",
-          "Collaborated with back-end developers to integrate APIs.",
-          "Implemented responsive design using CSS frameworks like Bootstrap and Tailwind CSS.",
+          
         ],
       },
       pt: {
@@ -20,18 +18,15 @@ export const myExperiences = [
         jobTitle: "Desenvolvedor Front-end",
         employmentType: "Estágio",
         location: "Salvador, BA",
-        startDate: new Date("2023-02-01"), // Adicionando startDate
+        startDate: new Date("2023-05-15"), // Adicionando startDate
         status: "Atualmente",
-        children:
-          "O que faço? Estou criando e aprimorando funcionalidades para as plataformas utilizando React JS." +
-          " " +
-          "Meu trabalho é garantir a melhor experiência para o usuário, resolvendo problemas de desempenho e projetando recursos simples, úteis e intuitivos." +
-          " " +
-          "Foco na melhoria contínua da base de código, escrevendo códigos eficientes, escaláveis e bem estruturados, enquanto sigo as melhores práticas de desenvolvimento. " +
-          " " +
-          "Além disso, participo ativamente de revisões de código e testes unitários para garantir a qualidade das funcionalidades." +
-          " " +
-          "Em casos de problemas ou bugs em produção, sou rápido na resolução para manter a integridade e a performance do sistema.",
+        children:  [
+          "Responsável pela criação e melhoria contínua de funcionalidades em aplicações web e móveis utilizando React JS.",
+          "Meu objetivo é proporcionar a melhor experiência para o usuário, resolvendo problemas de desempenho e criando recursos simples, úteis e intuitivos.",
+          "Trabalho com a base de código, escrevendo código eficiente, escalável e bem estruturado, enquanto sigo as melhores práticas de desenvolvimento.",
+          "Participo ativamente de revisões de código e testes unitários, garantindo que as funcionalidades atendam aos mais altos padrões de qualidade.",
+          "Resolvo problemas e bugs em produção rapidamente para manter a integridade e o desempenho do sistema."
+        ],
       },
     },
   },
@@ -43,19 +38,23 @@ export const myExperiences = [
         jobTitle: "Senior Full-stack Developer",
         employmentType: "Freelancer",
         location: "New York, NY",
-        startDate: new Date("2019-06-15"), // Adicionando startDate
+        startDate: new Date("2019-06-15"), 
         status: "present",
-        children: "Worked on several full-stack web development projects.", // Adicionando children
+        children: "Worked on several full-stack web development projects.", 
       },
       pt: {
-        companyName: "Inovações Tecnológicas",
-        jobTitle: "Desenvolvedor Pleno Full-stack",
-        employmentType: "Autônomo",
-        location: "Nova York, NY",
-        startDate: new Date("2019-06-15"), // Adicionando startDate
-        status: "present",
-        children:
-          "Trabalhei em vários projetos de desenvolvimento full-stack para a web.", // Adicionando children
+        companyName: "InfoJr",
+        jobTitle: "Gerente de Projetos | DPROJ",
+        employmentType: "Estágio",
+        location: "Salvador, BA",
+        startDate: new Date("2023-08-07"), 
+        status: "Atualmente",
+        children: [
+          "Lidero e coordeno equipes em projetos complexos, garantindo a entrega dentro do prazo e orçamento, sempre com foco nos melhores resultados.",
+          "Minha missão é planejar e executar cada fase do projeto, incluindo cronogramas, alocação de recursos e definição de metas para garantir o sucesso do projeto.",
+          "Inovo implementando tecnologias como o Tailwind CSS, o que resulta em uma interface mais intuitiva e uma experiência de usuário aprimorada.",
+          "Com foco em resultados de alta qualidade, contribuo para a satisfação das partes interessadas e busco sempre melhorar a eficiência do time."
+        ]
       },
     },
   },
@@ -72,12 +71,12 @@ export const myExperiences = [
         children: "Worked on various web applications.",
       },
       pt: {
-        companyName: "Terra Verde",
-        jobTitle: "Designer UX/UI",
-        employmentType: "Empregado(a)",
-        startDate: new Date("2022-01-01"),
-        location: "Londres, Reino Unido",
-        status: "present",
+        companyName: "Fundação José Silveira",
+        jobTitle: "Estagiário de Desenvolvimento",
+        employmentType: "Estágio",
+        startDate: new Date("2024-08-12"),
+        location: "Salvador, BA",
+        status: "Atualmente",
         children: "Trabalhei em várias aplicações web.",
       },
     },

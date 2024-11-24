@@ -60,21 +60,15 @@ export function Accordion({ myExperiences, language }: ExperiencesProps) {
 
   const calculateDuration = (startDate: Date) => {
     const now = new Date();
-
     let years = now.getFullYear() - startDate.getFullYear();
-
     let months = now.getMonth() - startDate.getMonth();
-
     if (months < 0) {
       years--;
       months += 12;
     }
-
     let days = now.getDate() - startDate.getDate();
-
     if (days < 0) {
       months--;
-
       const lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 0);
       days += lastMonth.getDate();
     }
@@ -109,7 +103,7 @@ export function Accordion({ myExperiences, language }: ExperiencesProps) {
           </Arrow>
         </AccordionHeader>
         <AccordionContent isOpen={isOpen}>
-          {/* {Array.isArray(translation.children) &&
+          {Array.isArray(translation.children) &&
           translation.children.length > 0 ? (
             <ul>
               {translation.children.map((activity, index) => (
@@ -118,8 +112,7 @@ export function Accordion({ myExperiences, language }: ExperiencesProps) {
             </ul>
           ) : (
             <p>No activities available.</p> // Exibe uma mensagem ou renderiza algo caso não haja atividades
-          )} */}
-          {translation.children}
+          )} 
         </AccordionContent>
       </div>
     </AccordionContainer>

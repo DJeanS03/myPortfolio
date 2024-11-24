@@ -47,10 +47,12 @@ export const InfoLine = styled.div`
 export const AccordionContent = styled.div<{ isOpen: boolean }>`
   color: ${({ theme }) => theme.colors["textColor"]};
   padding: ${(props) => (props.isOpen ? "15px" : "0 15px")};
-  max-height: ${(props) =>
-    props.isOpen ? "300px" : "0"}; /* Ajuste o valor conforme necessário */
-  overflow: hidden;
-  transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+max-height: ${(props) =>
+  props.isOpen ? "1000px" : "0"}; /* Ajuste o valor conforme necessário */
+overflow: hidden;
+transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+            padding 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
 
   ul {
     list-style-type: disc;
