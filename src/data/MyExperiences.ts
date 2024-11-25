@@ -1,26 +1,22 @@
 export const myExperiences = [
   {
     id: 1,
-    defaultValues: {},
+    defaultValues: {
+      companyName: "My Company",
+      location: "São Paulo, SP",
+      startDate: new Date("2023-05-01"), // Adicionando startDate
+      exitDate: new Date("2028-05-15"), // Adicionando startDate
+      status: "a",
+    },  
     translations: {
       en: {
-        companyName: "My Company",
         jobTitle: "Desenvolvedor Front-end",
         employmentType: "CLT",
-        location: "São Paulo, SP",
-        startDate: new Date("2023-05-01"), // Adicionando startDate
-        exitDate: new Date("2028-05-15"), // Adicionando startDate
-        status: "a",
         children: [],
       },
       pt: {
-        companyName: "InfoJR",
         jobTitle: "Desenvolvedor Front-end",
         employmentType: "Estágio",
-        location: "Salvador, BA",
-        startDate: new Date("2023-05-15"), // Adicionando startDate
-        exitDate: new Date("2025-05-15"), // Adicionando startDate
-        status: "a",
         children: [
           "Responsável pela criação e melhoria contínua de funcionalidades em aplicações web e móveis utilizando React JS.",
           "Meu objetivo é proporcionar a melhor experiência para o usuário, resolvendo problemas de desempenho e criando recursos simples, úteis e intuitivos.",
