@@ -5,12 +5,12 @@ import { Footer } from "../../components/Layout/Footer";
 import { Home } from "../../components/Sections/Home";
 import { Projects } from "../../components/Sections/Projects";
 import { ScrollButton } from "../../components/UI/ScrollButton";
-import { Services } from "../../components/Sections/Services";
+import { Experiences } from "../../components/Sections/Services";
 import { Skills } from "../../components/Sections/Skills";
 import { MainContainer } from "./styles";
 import { useState, useEffect } from "react";
 
-export type Language = 'en' | 'pt';
+export type Language = "en" | "pt";
 
 export function Main() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,15 +27,16 @@ export function Main() {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  const [language, setLanguage] = useState(
-    localStorage.getItem("language") || "en"
+  const [language, setLanguage] = useState<Language>(
+    () => (localStorage.getItem("language") as Language) || "en"
   );
+  
 
   useEffect(() => {
     localStorage.setItem("language", language);
   }, [language]);
 
-  const handleLanguageChange = (lang: string) => {
+  const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
   };
 
@@ -51,7 +52,7 @@ export function Main() {
         <Home language={language} />
         <About language={language} />
         <Skills language={language} />
-        <Services language={language} />
+        <Experiences language={language} />
         <Projects language={language} />
         <Contact language={language} />
         <Footer />

@@ -48,15 +48,15 @@ export const myTexts = [
         },
       },
     },
-    services: {
+    experiences: {
       translations: {
         en: {
-          section__subtitle: "My <span>Services</span>",
-          section__title: "What I Do",
+          experiences__subtitle: "Professional <span>Experience</span>",
+          experiences__title: "Places Where I've Made an Impact",
         },
         pt: {
-          section__subtitle: "Meus <span>Serviços</span>",
-          section__title: "O Que Eu Faço",
+          experiences__subtitle: "Experiência <span>Profissional</span>",
+          experiences__title: "Locais Onde Deixei Minha Marca",
         },
       },
     },

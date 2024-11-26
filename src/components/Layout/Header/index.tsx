@@ -3,11 +3,12 @@ import { HeaderContainer } from "./styles";
 
 import Logo from "../../../assets/Logo.svg";
 import { LanguageButton } from "../../UI/LanguageButton";
+import { Language } from "../../../pages/Home";
 
 interface Props {
   Catch: boolean;
-  language: string;
-  onLanguageChange: (selectedLanguage: string) => void;
+  language: Language;
+  onLanguageChange: (selectedLanguage: Language) => void;
 }
 
 export function Header({ Catch, language, onLanguageChange }: Props) {
