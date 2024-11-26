@@ -2,112 +2,97 @@ export const myExperiences = [
   {
     id: 1,
     defaultValues: {
-      companyName: "My Company",
-      location: "São Paulo, SP",
-      startDate: new Date("2023-05-01"), // Adicionando startDate
-      exitDate: new Date("2028-05-15"), // Adicionando startDate
+      companyName: "Fundação José Silveira",
+      location: "Salvador, BA",
+      startDate: new Date("2024-08-12"), // Adicionando startDate
+      exitDate: new Date("2028-08-12"), // Adicionando startDate
       status: "a",
-    },  
+    },
     translations: {
       en: {
-        jobTitle: "Desenvolvedor Front-end",
-        employmentType: "CLT",
-        children: [],
+        jobTitle: "Development Intern",
+        employmentType: "Internship",
+        children: [
+          "I develop and implement integrations between internal systems, ensuring efficient communication and connectivity between the company's tools.",
+          "I work in an agile environment, applying best practices in front-end and back-end development to deliver robust, high-quality solutions focused on measurable results.",
+          "I act as a full-stack developer on the Fluig platform, responsible for creating and customizing forms, applying technical solutions that optimize processes and enhance operational efficiency.",
+          "I develop and implement integrations between internal systems, ensuring efficient communication and connectivity between the company's tools.",
+        ],
       },
       pt: {
-        jobTitle: "Desenvolvedor Front-end",
+        jobTitle: "Estagiário de Desenvolvimento",
         employmentType: "Estágio",
         children: [
-          "Responsável pela criação e melhoria contínua de funcionalidades em aplicações web e móveis utilizando React JS.",
-          "Meu objetivo é proporcionar a melhor experiência para o usuário, resolvendo problemas de desempenho e criando recursos simples, úteis e intuitivos.",
-          "Trabalho com a base de código, escrevendo código eficiente, escalável e bem estruturado, enquanto sigo as melhores práticas de desenvolvimento.",
-          "Participo ativamente de revisões de código e testes unitários, garantindo que as funcionalidades atendam aos mais altos padrões de qualidade.",
-          "Resolvo problemas e bugs em produção rapidamente para manter a integridade e o desempenho do sistema.",
+          "Desenvolvo e implemento integrações entre sistemas internos, garantindo uma comunicação eficiente e conectividade entre as ferramentas da empresa.",
+          "Faço parte de um ambiente ágil, aplicando boas práticas de desenvolvimento front-end e back-end, entregando soluções robustas e de alta qualidade com foco em resultados mensuráveis.",
+          "Atuo como desenvolvedor full-stack na plataforma Fluig, sendo responsável pela criação e customização de formulários, aplicando soluções técnicas que otimizam processos e aumentam a eficiência operacional.",
+          "Desenvolvo e implemento integrações entre sistemas internos, garantindo uma comunicação eficiente e conectividade entre as ferramentas da empresa.",
         ],
       },
     },
   },
-
-
- /*  {
-    id: 1,
+  {
+    id: 2,
     defaultValues: {
-      companyName: "My Company",
-      location: "São Paulo, SP",
-      startDate: new Date("2023-05-01"), // Adicionando startDate
+      companyName: "InfoJr",
+      location: "Salvador, BA",
+      startDate: new Date("2023-08-01"), // Adicionando startDate
       exitDate: new Date("2028-05-15"), // Adicionando startDate
       status: "a",
     },
     translations: {
       en: {
-        jobTitle: "Desenvolvedor Front-end",
-        employmentType: "CLT",
-        children: [],
-      },
-      pt: {
-        jobTitle: "Desenvolvedor Front-end",
-        employmentType: "Estágio",
+        jobTitle: "Project Manager | DPROJ",
+        employmentType: "Internship",
         children: [
-          "Responsável pela criação e melhoria contínua de funcionalidades em aplicações web e móveis utilizando React JS.",
-          "Meu objetivo é proporcionar a melhor experiência para o usuário, resolvendo problemas de desempenho e criando recursos simples, úteis e intuitivos.",
-          "Trabalho com a base de código, escrevendo código eficiente, escalável e bem estruturado, enquanto sigo as melhores práticas de desenvolvimento.",
-          "Participo ativamente de revisões de código e testes unitários, garantindo que as funcionalidades atendam aos mais altos padrões de qualidade.",
-          "Resolvo problemas e bugs em produção rapidamente para manter a integridade e o desempenho do sistema.",
+          "My main mission is to plan and manage every phase of the project, from defining schedules and allocating resources to setting clear goals, ensuring the team's success and efficiency.",
+          "I lead and coordinate teams in complex projects, ensuring deliveries are on time and within budget, with a continuous focus on achieving the best results.",
+          "With a strategic and collaborative approach, I encourage effective communication between teams and stakeholders, fostering a productive and motivated work environment.",
+          "I am recognized for delivering high-quality results that exceed expectations, constantly striving to optimize processes and raise execution standards.",
         ],
       },
-    },
-  }, */
-
-
-  /* {
-    id: 2,
-    translations: {
-      en: {
-        companyName: "Tech Innovations",
-        jobTitle: "Senior Full-stack Developer",
-        employmentType: "Freelancer",
-        location: "New York, NY",
-        startDate: new Date("2019-06-15"), 
-        status: "present",
-        children: "Worked on several full-stack web development projects.", 
-      },
       pt: {
-        companyName: "InfoJr",
         jobTitle: "Gerente de Projetos | DPROJ",
         employmentType: "Estágio",
-        location: "Salvador, BA",
-        startDate: new Date("2023-08-07"), 
-        status: "Atualmente",
         children: [
-          "Lidero e coordeno equipes em projetos complexos, garantindo a entrega dentro do prazo e orçamento, sempre com foco nos melhores resultados.",
-          "Minha missão é planejar e executar cada fase do projeto, incluindo cronogramas, alocação de recursos e definição de metas para garantir o sucesso do projeto.",
-          "Inovo implementando tecnologias como o Tailwind CSS, o que resulta em uma interface mais intuitiva e uma experiência de usuário aprimorada.",
-          "Com foco em resultados de alta qualidade, contribuo para a satisfação das partes interessadas e busco sempre melhorar a eficiência do time."
-        ]
+          "Minha principal missão é planejar e gerenciar cada etapa do projeto, desde a definição de cronogramas e alocação de recursos até o estabelecimento de metas claras, garantindo o sucesso e a eficiência do time.",
+          "Lidero e coordeno equipes em projetos complexos, assegurando entregas dentro do prazo e orçamento, com um foco contínuo em alcançar os melhores resultados.",
+          "Com uma abordagem estratégica e colaborativa, incentivo a comunicação eficaz entre as equipes e partes interessadas, promovendo um ambiente de trabalho produtivo e motivado.",
+          "Sou reconhecido por entregar resultados de alta qualidade que superam as expectativas, buscando constantemente otimizar processos e elevar os padrões de execução.",
+        ],
       },
     },
   },
   {
     id: 3,
+    defaultValues: {
+      companyName: "InfoJr",
+      location: "Salvador, BA",
+      startDate: new Date("2023-05-01"), // Adicionando startDate
+      exitDate: new Date("2028-05-15"), // Adicionando startDate
+      status: "a",
+    },
     translations: {
       en: {
-        companyName: "Green Earth",
-        jobTitle: "UX/UI Designer",
-        employmentType: "Full-time",
-        startDate: new Date("2022-01-01"),
-        location: "London, UK",
-        status: "present",
-        children: "Worked on various web applications.",
+        jobTitle: "Full-stack Developer",
+        employmentType: "Internship",
+        children: [
+          "I am responsible for the creation and continuous evolution of features in web and mobile applications, using React JS, Node.js, and databases like PostgreSQL to deliver modern and impactful solutions.",
+          "My main goal is to ensure an exceptional user experience, developing intuitive, useful, and high-performance features while optimizing the overall performance of applications.",
+          "I develop efficient, scalable, and well-structured code using technologies like TypeScript, Next.js, and Tailwind CSS, and strictly follow best development practices to ensure the quality and long-term maintainability of the project.",
+          "I actively contribute to code reviews, perform unit testing, and implement continuous integration and delivery (CI/CD) using tools like Jest, Cypress, and GitHub Actions, ensuring each feature aligns with the highest standards of excellence.",
+        ],
       },
       pt: {
-        companyName: "Fundação José Silveira",
-        jobTitle: "Estagiário de Desenvolvimento",
+        jobTitle: "Desenvolvedor Full-stack",
         employmentType: "Estágio",
-        startDate: new Date("2024-08-12"),
-        location: "Salvador, BA",
-        status: "Atualmente",
-        children: "Trabalhei em várias aplicações web.",
+        children: [
+          "Sou responsável pela criação e evolução contínua de funcionalidades em aplicações web e móveis, utilizando React JS, Node.js, e bancos de dados como PostgreSQL, para entregar soluções modernas e impactantes.",
+          "Minha principal meta é garantir uma experiência do usuário excepcional, desenvolvendo recursos intuitivos, úteis e de alto desempenho, enquanto otimizando a performance geral das aplicações.",
+          "Desenvolvo código eficiente, escalável e bem estruturado, utilizando tecnologias como TypeScript, Next.js e Tailwind CSS, e sigo rigorosamente as melhores práticas de desenvolvimento para assegurar a qualidade e a manutenção do projeto no longo prazo.",
+          "Contribuo ativamente para revisões de código, realizo testes unitários e integração contínua (CI/CD) com ferramentas como Jest, Cypress e GitHub Actions, garantindo que cada funcionalidade esteja alinhada aos mais altos padrões de excelência.",
+        ],
       },
     },
-  }, */
+  },
 ];

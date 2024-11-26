@@ -9,10 +9,8 @@ export const AccordionContainer = styled.div`
   width: 100%;
   transition: border 0.5s ease, box-shadow 0.3s ease;
   margin-bottom: 0.5rem;
-
-  //em caso de n ser a lista
   white-space: normal;
-  // ----------------------------------------------------------------
+
 
   &:hover {
     border-color: ${({ theme }) => theme.colors["primaryColorLighter"]};
@@ -47,12 +45,11 @@ export const InfoLine = styled.div`
 export const AccordionContent = styled.div<{ isOpen: boolean }>`
   color: ${({ theme }) => theme.colors["textColor"]};
   padding: ${(props) => (props.isOpen ? "15px" : "0 15px")};
-max-height: ${(props) =>
-  props.isOpen ? "1000px" : "0"}; /* Ajuste o valor conforme necessário */
-overflow: hidden;
-transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-            padding 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
+  max-height: ${(props) =>
+    props.isOpen ? "1000px" : "0"}; /* Ajuste o valor conforme necessário */
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   ul {
     list-style-type: disc;

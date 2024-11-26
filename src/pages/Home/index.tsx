@@ -10,7 +10,7 @@ import { Skills } from "../../components/Sections/Skills";
 import { MainContainer } from "./styles";
 import { useState, useEffect } from "react";
 
-export type Language = 'en' | 'pt';
+export type Language = "en" | "pt";
 
 export function Main() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,9 +48,9 @@ export function Main() {
           onLanguageChange={handleLanguageChange}
         />
         <ScrollButton />
-     {/*    <Home language={language} />
+        <Home language={language} />
         <About language={language} />
-        <Skills language={language} /> */}
+        <Skills language={language} />
         <Experiences language={language} />
         <Projects language={language} />
         <Contact language={language} />
