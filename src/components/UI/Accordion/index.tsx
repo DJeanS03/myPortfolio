@@ -23,23 +23,13 @@ interface defaultValues {
 }
 interface Translations {
   en: {
-    companyName: string;
     jobTitle: string;
     employmentType: string;
-    startDate: Date;
-    exitDate: Date;
-    status: string;
-    location: string;
     children: React.ReactNode;
   };
   pt: {
-    companyName: string;
     jobTitle: string;
     employmentType: string;
-    startDate: Date;
-    exitDate: Date;
-    status: string;
-    location: string;
     children: React.ReactNode;
   };
 }
@@ -62,7 +52,6 @@ export function Accordion({ myExperiences, language }: ExperiencesProps) {
     };
   };
 
-  // Usando a função refatorada
   const { translation, defaultValues } = getExperienceData();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -78,7 +67,6 @@ export function Accordion({ myExperiences, language }: ExperiencesProps) {
   ) => {
     const now = new Date();
 
-    // Se o status for "a" (ativo), usamos a data atual (now)
     const endDate = status === "a" ? now : exitDate;
 
     let years = endDate.getFullYear() - startDate.getFullYear();
@@ -122,8 +110,8 @@ export function Accordion({ myExperiences, language }: ExperiencesProps) {
       <div>
         <AccordionHeader onClick={toggleAccordion}>
           <div>
-            <strong>{translation.jobTitle}</strong> - {defaultValues.companyName}{" "}
-            ({translation.employmentType})
+            <strong>{translation.jobTitle}</strong> -{" "}
+            {defaultValues.companyName} ({translation.employmentType})
             <InfoLine>
               {formattedStartDate} -{" "}
               {defaultValues.status == "a"

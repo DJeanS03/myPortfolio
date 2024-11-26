@@ -27,15 +27,16 @@ export function Main() {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  const [language, setLanguage] = useState(
-    localStorage.getItem("language") || "en"
+  const [language, setLanguage] = useState<Language>(
+    () => (localStorage.getItem("language") as Language) || "en"
   );
+  
 
   useEffect(() => {
     localStorage.setItem("language", language);
   }, [language]);
 
-  const handleLanguageChange = (lang: string) => {
+  const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
   };
 

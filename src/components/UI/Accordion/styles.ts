@@ -8,7 +8,6 @@ export const AccordionContainer = styled.div`
   white-space: nowrap;
   width: 100%;
   transition: border 0.5s ease, box-shadow 0.3s ease;
-  margin-bottom: 0.5rem;
   white-space: normal;
 
 
@@ -33,7 +32,6 @@ export const AccordionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 25px;
 `;
 
 export const InfoLine = styled.div`
