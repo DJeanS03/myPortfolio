@@ -22,14 +22,14 @@ export function About({ language }: AboutProps) {
 
   return (
     <AboutContainer id="about">
+      <h3
+        className="section__subtitle"
+        dangerouslySetInnerHTML={{ __html: translation.aboutMe__subtitle }}
+      />
+      <h2 className="section__title">{translation.aboutMe__title}</h2>
+      
       <div className="about__container container grid box">
-        {/* <div className="about__data">{getText()}</div> */}
         <div className="about__data">
-          <h3
-            className="section__subtitle"
-            dangerouslySetInnerHTML={{ __html: translation.aboutMe__subtitle }}
-          />
-          <h2 className="section__title">{translation.aboutMe__title}</h2>
           <p
             className="about__description"
             dangerouslySetInnerHTML={{
@@ -39,6 +39,7 @@ export function About({ language }: AboutProps) {
           {/* <Button text={translation.aboutMe__button} url={CV} fileName={"CV-Jean-Victor"} /> */}
           <Button text={translation.aboutMe__button} />
         </div>
+
         <div className="about__expertise">
           {myExpertise.map((myExpertise) => (
             <ExpertiseCard

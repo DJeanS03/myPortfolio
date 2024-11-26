@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const ExpertiseContainer = styled.article`
-  min-width: 550px;
+  width: 100%;  
+  max-width: 550px;  
   margin-bottom: 1rem;
 
   .expertise__card {

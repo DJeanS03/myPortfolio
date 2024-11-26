@@ -18,4 +18,11 @@ export const AboutContainer = styled.section`
   .about__expertise {
     justify-self: center;
   }
+
+  @media screen and (max-width: 464px) {
+    .about__container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
