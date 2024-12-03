@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { LanguageButtonContainer } from "./styles";
+import { Language } from "../../../pages/Home";
 
 interface Props {
-  language: string;
-  onLanguageChange: (selectedLanguage: string) => void;
+  language: Language;
+  onLanguageChange: (selectedLanguage: Language) => void;
 }
 
 export function LanguageButton({ language, onLanguageChange }: Props) {
@@ -15,7 +16,7 @@ export function LanguageButton({ language, onLanguageChange }: Props) {
     setShowLanguageOptions(!showLanguageOptions);
   };
 
-  const handleLanguageChange = (lang: string) => {
+  const handleLanguageChange = (lang: Language) => {
     onLanguageChange(lang);
     setShowLanguageOptions(false);
   };

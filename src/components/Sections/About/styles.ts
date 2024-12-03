@@ -15,15 +15,14 @@ export const AboutContainer = styled.section`
     margin-bottom: 2rem;
   }
 
-  .about__image {
+  .about__expertise {
     justify-self: center;
   }
 
-  .about__blob {
-    width: 20rem;
-  }
-
-  .about__blob path {
-    stroke: ${({ theme }) => theme.colors["primaryColor"]};
+  @media screen and (max-width: 464px) {
+    .about__container {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;

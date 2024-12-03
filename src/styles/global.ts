@@ -28,6 +28,7 @@ body {
     background: ${({ theme }) => theme.colors["bodyColor"]};
     color: ${({ theme }) => theme.colors["textColor"]};
     -webkit-font-smoothing: antialiased;
+    user-select: none; //evita que algum texto seja selecionado
 }
 
 body, input, textarea, button {
