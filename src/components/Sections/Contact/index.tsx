@@ -19,8 +19,6 @@ export function Contact({ language }: ContactProps) {
 
   const translation = getTranslation();
 
-  //=========================================================================================================
-
   const form = useRef<HTMLFormElement | null>(null);
   const [sendSuccess, setSendSuccess] = useState<boolean>(false);
   const [sendFailed, setSendFailed] = useState<boolean>(false);
@@ -30,10 +28,10 @@ export function Contact({ language }: ContactProps) {
 
     try {
       await emailjs.sendForm(
-        "service_qv2or9g",
-        "template_843ueyv",
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         form.current as HTMLFormElement,
-        "zEguyX8_OVejwyTS4"
+        import.meta.env.VITE_APP_EMAILJS_USER_ID
       );
 
       setSendSuccess(true);
@@ -51,11 +49,6 @@ export function Contact({ language }: ContactProps) {
       setSendFailed(true);
     }
   };
-
-  //service_qv2or9g
-  //template_843ueyv
-  // #contact__form
-  //zEguyX8_OVejwyTS4
 
   return (
     <ContactContainer>
@@ -90,7 +83,7 @@ export function Contact({ language }: ContactProps) {
               />
             </div>
             <textarea
-              name="user_project"
+              name="user_message"
               required
               placeholder={translation.contact__placeholder__message}
               className="contact__input"
