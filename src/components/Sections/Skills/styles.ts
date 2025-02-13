@@ -42,4 +42,9 @@ export const SkilsContainer = styled.section`
   .skills__item::marker {
     color: ${({ theme }) => theme.colors["primaryColor"]};
   }
+
+  @media screen and (max-width: 464px) {
+    .skills__content {
+    }
+  }
 `;
