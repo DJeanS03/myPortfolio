@@ -59,7 +59,6 @@ export function Skills({ language }: SkillsProps) {
           <ol className="skills__group">
             <li className="skills__item">HTML & CSS</li>
             <li className="skills__item">JavaScript/TypeScript</li>
-
             <li className="skills__item">React</li>
             <li className="skills__item">Next</li>
           </ol>
