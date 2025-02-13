@@ -2,15 +2,28 @@ import { ContactContainer } from "./styles";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Button } from "../../UI/Button";
-
+import { myTexts } from "../../../data/MyTexts";
+import { Language } from "../../../pages/Home";
 
 interface ContactProps {
-  language: string;
+  language: Language;
 }
 
 export function Contact({ language }: ContactProps) {
+  const getTranslation = () => {
+    const translation =
+      myTexts[0].contact.translations[language] ||
+      myTexts[0].contact.translations.en;
+    return translation;
+  };
+
+  const translation = getTranslation();
+
+  //=========================================================================================================
+
   const form = useRef<HTMLFormElement | null>(null);
   const [sendSuccess, setSendSuccess] = useState<boolean>(false);
+  const [sendFailed, setSendFailed] = useState<boolean>(false);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,6 +48,7 @@ export function Contact({ language }: ContactProps) {
       }, 2000); // 10000 milissegundos = 10 segundos
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
+      setSendFailed(true);
     }
   };
 
@@ -43,104 +57,59 @@ export function Contact({ language }: ContactProps) {
   // #contact__form
   //zEguyX8_OVejwyTS4
 
-  const getText = () => {
-    if (language === "en") {
-      return (
-        <div className="box">
-          <h3 className="section__subtitle">
-            Get in <span>Touch</span>
-          </h3>
-          <h2 className="section__title">Contact Me</h2>
-          <div className="contact__container container grid">
-            <form
-              action=""
-              className="contact__form"
-              id="contact-form"
-              ref={form}
-              onSubmit={sendEmail}
-            >
-              <div className="contact__group">
-                <input
-                  type="text"
-                  name="user_name"
-                  required
-                  placeholder="Enter your name"
-                  className="contact__input"
-                />
-                <input
-                  type="email"
-                  name="user_email"
-                  required
-                  placeholder="Enter your best email"
-                  className="contact__input"
-                />
-              </div>
-              <textarea
-                name="user_project"
+  return (
+    <ContactContainer>
+      <div className="box">
+        <h3
+          className="section__subtitle"
+          dangerouslySetInnerHTML={{ __html: translation.contact__subtitle }}
+        />
+        <h2 className="section__title">{translation.contact__title}</h2>
+        <div className="contact__container container grid">
+          <form
+            action=""
+            className="contact__form"
+            id="contact-form"
+            ref={form}
+            onSubmit={sendEmail}
+          >
+            <div className="contact__group">
+              <input
+                type="text"
+                name="user_name"
                 required
-                placeholder="Enter your message"
+                placeholder={translation.contact__placeholder__name}
                 className="contact__input"
-              ></textarea>
-              {sendSuccess && (
-                <p className="contact__message" id="contact-message">
-                  A mensagem foi enviada com sucesso!
-                </p>
-              )}
-
-              <Button text="Send Message" isSubmit={true} />
-            </form>
-          </div>
-        </div>
-      );
-    } else if (language === "pt") {
-      return (
-        <div className="box">
-          <h3 className="section__subtitle">
-            Entre em <span>Contato</span>
-          </h3>
-          <h2 className="section__title">Envie Sua Mensagem</h2>
-          <div className="contact__container container grid">
-            <form
-              action=""
-              className="contact__form"
-              id="contact-form"
-              ref={form}
-              onSubmit={sendEmail}
-            >
-              <div className="contact__group">
-                <input
-                  type="text"
-                  name="user_name"
-                  required
-                  placeholder="Digite seu nome"
-                  className="contact__input"
-                />
-                <input
-                  type="email"
-                  name="user_email"
-                  required
-                  placeholder="Digite seu melhor e-mail"
-                  className="contact__input"
-                />
-              </div>
-              <textarea
-                name="user_project"
+              />
+              <input
+                type="email"
+                name="user_email"
                 required
-                placeholder="Digite sua mensagem"
+                placeholder={translation.contact__placeholder__mail}
                 className="contact__input"
-              ></textarea>
-              {sendSuccess && (
-                <p className="contact__message" id="contact-message">
-                  A mensagem foi enviada com sucesso!
-                </p>
-              )}
-              <Button text="Enviar Mensagem" isSubmit={true} />
-            </form>
-          </div>
-        </div>
-      );
-    }
-  };
+              />
+            </div>
+            <textarea
+              name="user_project"
+              required
+              placeholder={translation.contact__placeholder__message}
+              className="contact__input"
+            ></textarea>
+            {sendSuccess && (
+              <p className="contact__message" id="contact-message">
+                {translation.contact__message__success}
+              </p>
+            )}
+            {sendFailed && (
+              <p className="contact__message" id="contact-message">
+                {translation.contact__message__error}
+              </p>
+            )}
 
-  return <ContactContainer id="contact">{getText()}</ContactContainer>;
+            <Button text={translation.contact__button} isSubmit={true} />
+          </form>
+        </div>
+      </div>
+    </ContactContainer>
+  );
 }

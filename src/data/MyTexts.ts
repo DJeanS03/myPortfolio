@@ -18,6 +18,7 @@ export const myTexts = [
         },
       },
     },
+    skill: {},
     aboutMe: {
       translations: {
         en: {
@@ -57,6 +58,32 @@ export const myTexts = [
         pt: {
           experiences__subtitle: "Experiência <span>Profissional</span>",
           experiences__title: "Locais Onde Deixei Minha Marca",
+        },
+      },
+    },
+    projects: {},
+    contact: {
+      translations: {
+        en: {
+          contact__subtitle: "Get in <span>Touch</span>",
+          contact__title: "Contact Me",
+          contact__placeholder__name: "Enter your name",
+          contact__placeholder__mail: "Enter your best email",
+          contact__placeholder__message: "Enter your message",
+          contact__message__success: "Your message was sent successfully!",
+          contact__message__error:
+            "An error occurred while sending your message!",
+          contact__button: "Send Message",
+        },
+        pt: {
+          contact__subtitle: "Entre em <span>Contato</span>",
+          contact__title: "Envie Sua Mensagem",
+          contact__placeholder__name: "Digite seu nome",
+          contact__placeholder__mail: "Digite seu melhor e-mail",
+          contact__placeholder__message: "Digite sua mensagem",
+          contact__message__success: "A mensagem foi enviada com sucesso!",
+          contact__message__error: "Ocorreu um erro ao enviar sua mensagem!",
+          contact__button: "Enviar Mensagem",
         },
       },
     },
