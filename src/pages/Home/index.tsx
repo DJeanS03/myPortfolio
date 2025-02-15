@@ -49,11 +49,11 @@ export function Main() {
           onLanguageChange={handleLanguageChange}
         />
         <ScrollButton />
-        <Home language={language} />
+        {/* <Home language={language} /> */}
         <About language={language} />
-        <Skills language={language} />
+       {/*  <Skills language={language} />
         <Experiences language={language} />
-        <Projects language={language} />
+        <Projects language={language} /> */}
         <Contact language={language} />
         <Footer />
       </MainContainer>

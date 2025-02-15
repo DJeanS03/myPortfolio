@@ -40,7 +40,8 @@ export const MainContainer = styled.main`
   @media screen and (min-width: 768px) {
     .home__container,
     .about__container,
-    .skills__container {
+    .skills__container,
+    .contact__container {
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
     }
@@ -123,7 +124,8 @@ export const MainContainer = styled.main`
       column-gap: 1.5rem;
     }
 
-    .about__container {
+    .about__container,
+    .contact__container {
       grid-template-columns: 36rem 30rem;
       column-gap: 4.5rem;
       padding-bottom: 1rem;
@@ -168,7 +170,8 @@ export const MainContainer = styled.main`
     }
 
     .contact__container {
-      grid-template-columns: 42.5rem;
+      //grid-template-columns: 42.5rem;
+      //grid-template-columns: repeat(2, 1fr);
       padding-block: 2.5rem 2rem;
     }
 

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const ContactContainer = styled.section`
 padding-block: 5rem 2rem;
 
+
 .contact__container {
     padding-top: 1rem;
 }
@@ -15,6 +16,7 @@ padding-block: 5rem 2rem;
 
 .contact__form {
     position: relative;
+    //max-height: 10px;
 }
 
 .contact__input {
