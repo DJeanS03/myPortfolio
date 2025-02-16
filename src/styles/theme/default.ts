@@ -12,6 +12,8 @@ export const defaultTheme = {
     white: "#fff",
     concluded: "#66dbb9",
     inProgress: "#f8fc96",
+    errorMessage: "#ff4d4d",
+    //FF4D4D 
   },
   fontSizes: {
     biggest: "2.5rem",  
