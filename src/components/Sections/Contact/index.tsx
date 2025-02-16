@@ -1,4 +1,4 @@
-import { ContactContainer } from "./styles";
+import { ContactContainer, ContactMessage } from "./styles";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Button } from "../../UI/Button";
@@ -31,7 +31,7 @@ export function Contact({ language }: ContactProps) {
 
     try {
       await emailjs.sendForm(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_IDs, // mudar antes de subir
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         form.current as HTMLFormElement,
         import.meta.env.VITE_APP_EMAILJS_USER_ID
@@ -39,18 +39,21 @@ export function Contact({ language }: ContactProps) {
 
       setSendSuccess(true);
 
-      // Limpar os campos após o envio
       if (form.current) {
         form.current.reset();
       }
 
       setTimeout(() => {
         setSendSuccess(false);
-      }, 2000); // 10000 milissegundos = 10 segundos
+      }, 5000); // 10000 milissegundos = 10 segundos
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
       setSendFailed(true);
     }
+
+    setTimeout(() => {
+      setSendFailed(false);
+    }, 5000);
   };
 
   return (
@@ -61,7 +64,7 @@ export function Contact({ language }: ContactProps) {
       />
       <h2 className="section__title">{translation.contact__title}</h2>
 
-      <div className="contact__container container grid box">
+      <div className="contact__container container grid">
         <form
           action=""
           className="contact__form"
@@ -77,6 +80,7 @@ export function Contact({ language }: ContactProps) {
               placeholder={translation.contact__placeholder__name}
               className="contact__input"
             />
+
             <input
               type="email"
               name="user_email"
@@ -91,23 +95,39 @@ export function Contact({ language }: ContactProps) {
             placeholder={translation.contact__placeholder__message}
             className="contact__input"
           ></textarea>
-          {sendSuccess && (
-            <p className="contact__message" id="contact-message">
-              {translation.contact__message__success}
-            </p>
-          )}
-          {sendFailed && (
-            <p className="contact__message" id="contact-message">
-              {translation.contact__message__error}
-            </p>
-          )}
+
+          <ContactMessage>
+            {sendSuccess && (
+              <div className="__sucess">
+                <p id="contact-message">
+                  {translation.contact__message__success}
+                </p>
+                <p id="contact-message">
+                  {translation.contact__message__success__follow__up}
+                </p>
+              </div>
+            )}
+            {sendFailed && (
+              <div className="__error">
+                <p id="contact-message">
+                  {translation.contact__message__error}
+                </p>
+                <p id="contact-message">
+                  {translation.contact__message__error__follow__up}
+                </p>
+              </div>
+            )}
+          </ContactMessage>
 
           <Button text={translation.contact__button} isSubmit={true} />
         </form>
 
         <div>
           <a href="https://lorempicsum.com" target="_blank">
-            <img src="https://picsum.photos/500/500?category=water" alt="Imagem aleatória" />
+            <img
+              src="https://picsum.photos/500/500?category=water"
+              alt="Imagem aleatória"
+            />
           </a>
         </div>
       </div>
