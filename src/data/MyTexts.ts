@@ -70,9 +70,10 @@ export const myTexts = [
           contact__placeholder__name: "Enter your name",
           contact__placeholder__mail: "Enter your best email",
           contact__placeholder__message: "Enter your message",
-          contact__message__success: "Your message was sent successfully!",
-          contact__message__error:
-            "An error occurred while sending your message!",
+          contact__message__success: "Your message has been sent successfully!",
+          contact__message__success__follow__up: "We will get in touch with you shortly!",
+          contact__message__error: "An error occurred while sending your message!",
+          contact__message__error__follow__up: "Please try again later.",          
           contact__button: "Send Message",
         },
         pt: {
@@ -82,7 +83,9 @@ export const myTexts = [
           contact__placeholder__mail: "Digite seu melhor e-mail",
           contact__placeholder__message: "Digite sua mensagem",
           contact__message__success: "A mensagem foi enviada com sucesso!",
+          contact__message__success__follow__up: " Entraremos em contato em breve!",
           contact__message__error: "Ocorreu um erro ao enviar sua mensagem!",
+          contact__message__error__follow__up: "Por favor, tente novamente mais tarde.",
           contact__button: "Enviar Mensagem",
         },
       },

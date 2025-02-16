@@ -15,6 +15,7 @@ declare module "styled-components" {
       white: string;
       concluded: string;
       inProgress: string;
+      errorMessage: string;
     };
     fontSizes: {
       biggest: string;
