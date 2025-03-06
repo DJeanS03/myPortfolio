@@ -9,8 +9,16 @@ export const ContactContainer = styled.section`
     row-gap: 1rem;
   }
 
-  .contact__input {
+  .form__field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact__input,
+  .user_category {
     width: 100%;
+    height: 100%;
     padding: 1rem 1.25rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => theme.colors["containerColor"]};

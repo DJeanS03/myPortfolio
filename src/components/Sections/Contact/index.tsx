@@ -10,7 +10,6 @@ interface ContactProps {
 }
 
 export function Contact({ language }: ContactProps) {
-  //=========================SEND MAIL=======================================
   const getTranslation = () => {
     const translation =
       myTexts[0].contact.translations[language] ||
@@ -73,14 +72,30 @@ export function Contact({ language }: ContactProps) {
           onSubmit={sendEmail}
         >
           <div className="contact__group">
-            <input
-              type="text"
-              name="user_name"
-              required
-              placeholder={translation.contact__placeholder__name}
-              className="contact__input"
-            />
+            <div className="form__field-group">
+              <label htmlFor="user_name">{translation.contact__name}</label>
+              <input
+                type="text"
+                name="user_name"
+                required
+                placeholder={translation.contact__placeholder__name}
+                className="contact__input"
+              />
+            </div>
 
+            <div className="form__field-group">
+							<label htmlFor="user_category">Selecione uma categoria</label>
+							<select className="user_category" id="user_category" name="user_category">
+								<option value="default" selected disabled hidden>Selecione uma categoria</option>
+								<option value="job_opportunity">Oportunidade de emprego</option>
+								<option value="freelance">Freelance</option>
+								<option value="other">Outro</option>
+							</select>
+						</div>
+          </div>
+
+          <div className="form__field-group">
+            <label htmlFor="user_email">{translation.contact__mail}</label>
             <input
               type="email"
               name="user_email"
@@ -89,12 +104,16 @@ export function Contact({ language }: ContactProps) {
               className="contact__input"
             />
           </div>
-          <textarea
-            name="user_message"
-            required
-            placeholder={translation.contact__placeholder__message}
-            className="contact__input"
-          ></textarea>
+
+          <div className="form__field-group">
+            <label htmlFor="user_message">{translation.contact__message}</label>
+            <textarea
+              name="user_message"
+              required
+              placeholder={translation.contact__placeholder__message}
+              className="contact__input"
+            ></textarea>
+          </div>
 
           <ContactMessage>
             {sendSuccess && (
@@ -122,14 +141,14 @@ export function Contact({ language }: ContactProps) {
           <Button text={translation.contact__button} isSubmit={true} />
         </form>
 
-        <div>
+      {/*   <div>
           <a href="https://lorempicsum.com" target="_blank">
             <img
               src="https://picsum.photos/500/500?category=water"
               alt="Imagem aleatória"
             />
           </a>
-        </div>
+        </div> */}
       </div>
     </ContactContainer>
   );

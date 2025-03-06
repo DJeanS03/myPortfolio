@@ -36,10 +36,16 @@ body, input, textarea, button {
     font-size: ${({ theme }) => theme.fontSizes["normal"]};
  }
 
-input, textarea, button {
+input, textarea, button, select {
     border: none;
     outline: none;
  }
+
+/*  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+} */
 
 h1, h2, h3, h4 {
     color: ${({ theme }) => theme.colors["titleColor"]};
