@@ -86,18 +86,26 @@ export function Contact({ language }: ContactProps) {
             </div>
 
             <div className="form__field-group">
-              <label htmlFor="user_category">Selecione uma categoria</label>
+              <label htmlFor="user_category">
+                {translation.contact__category__label}
+              </label>
               <select
                 className="user__category"
                 id="user_category"
                 name="user_category"
               >
                 <option value="default" selected disabled hidden>
-                  Selecione a categoria
+                  {translation.contact__category__option__0}
                 </option>
-                <option value="job_opportunity">Oportunidade de emprego</option>
-                <option value="freelance">Freelance</option>
-                <option value="other">Outro</option>
+                <option value="job_opportunity">
+                  {translation.contact__category__option__1}
+                </option>
+                <option value="freelance">
+                  {translation.contact__category__option__2}
+                </option>
+                <option value="other">
+                  {translation.contact__category__option__3}
+                </option>
               </select>
             </div>
           </div>
@@ -150,7 +158,7 @@ export function Contact({ language }: ContactProps) {
         </form>
 
         <div>
-          <a href="https://lorempicsum.com" target="_blank">
+          <a href="https://github.com/DJeanS03" target="_blank">
             <img className="image" src={imagem} alt="Imagem aleatória" />
           </a>
         </div>

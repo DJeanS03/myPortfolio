@@ -69,6 +69,13 @@ export const myTexts = [
           contact__title: "Contact Me",
           contact__name: "Name",
           contact__placeholder__name: "Enter your name",
+
+          contact__category__label: "Select a category",
+          contact__category__option__0: "Select category",
+          contact__category__option__1: "Job Opportunity",
+          contact__category__option__2: "Freelance",
+          contact__category__option__3: "Other",
+
           contact__mail: "Email",
           contact__placeholder__mail: "Enter your best email",
           contact__message: "Message",
@@ -84,6 +91,13 @@ export const myTexts = [
           contact__title: "Envie Sua Mensagem",
           contact__name: "Nome",
           contact__placeholder__name: "Digite seu nome",
+
+          contact__category__label: "Selecione uma categoria",
+          contact__category__option__0: "Selecione a categoria",
+          contact__category__option__1: "Oportunidade de emprego",
+          contact__category__option__2: "Freelance",
+          contact__category__option__3: "Outro",
+
           contact__mail: "Email",
           contact__placeholder__mail: "Digite seu melhor e-mail",
           contact__message: "Mensagem",
