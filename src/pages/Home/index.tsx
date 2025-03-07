@@ -30,7 +30,6 @@ export function Main() {
   const [language, setLanguage] = useState<Language>(
     () => (localStorage.getItem("language") as Language) || "en"
   );
-  
 
   useEffect(() => {
     localStorage.setItem("language", language);

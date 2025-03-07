@@ -67,8 +67,18 @@ export const myTexts = [
         en: {
           contact__subtitle: "Get in <span>Touch</span>",
           contact__title: "Contact Me",
+          contact__name: "Name",
           contact__placeholder__name: "Enter your name",
+
+          contact__category__label: "Select a category",
+          contact__category__option__0: "Select category",
+          contact__category__option__1: "Job Opportunity",
+          contact__category__option__2: "Freelance",
+          contact__category__option__3: "Other",
+
+          contact__mail: "Email",
           contact__placeholder__mail: "Enter your best email",
+          contact__message: "Message",
           contact__placeholder__message: "Enter your message",
           contact__message__success: "Your message has been sent successfully!",
           contact__message__success__follow__up: "We will get in touch with you shortly!",
@@ -79,8 +89,18 @@ export const myTexts = [
         pt: {
           contact__subtitle: "Entre em <span>Contato</span>",
           contact__title: "Envie Sua Mensagem",
+          contact__name: "Nome",
           contact__placeholder__name: "Digite seu nome",
+
+          contact__category__label: "Selecione uma categoria",
+          contact__category__option__0: "Selecione a categoria",
+          contact__category__option__1: "Oportunidade de emprego",
+          contact__category__option__2: "Freelance",
+          contact__category__option__3: "Outro",
+
+          contact__mail: "Email",
           contact__placeholder__mail: "Digite seu melhor e-mail",
+          contact__message: "Mensagem",
           contact__placeholder__message: "Digite sua mensagem",
           contact__message__success: "A mensagem foi enviada com sucesso!",
           contact__message__success__follow__up: " Entraremos em contato em breve!",

@@ -5,6 +5,8 @@ import { Button } from "../../UI/Button";
 import { myTexts } from "../../../data/MyTexts";
 import { Language } from "../../../pages/Home";
 
+import imagem from "../../../assets/dev.svg";
+
 interface ContactProps {
   language: Language;
 }
@@ -18,6 +20,8 @@ export function Contact({ language }: ContactProps) {
   };
 
   const translation = getTranslation();
+
+  //=========================SEND MAIL=======================================
 
   const form = useRef<HTMLFormElement | null>(null);
   const [sendSuccess, setSendSuccess] = useState<boolean>(false);
@@ -46,31 +50,32 @@ export function Contact({ language }: ContactProps) {
     } catch (error) {
       console.error("Erro ao enviar o email:", error);
       setSendFailed(true);
-
-      setTimeout(() => {
-        setSendFailed(false);
-      }, 5000);
     }
+
+    setTimeout(() => {
+      setSendFailed(false);
+    }, 5000);
   };
 
   return (
     <ContactContainer id="contact">
-      <div className="box">
-        <h3
-          className="section__subtitle"
-          dangerouslySetInnerHTML={{ __html: translation.contact__subtitle }}
-        />
-        <h2 className="section__title">{translation.contact__title}</h2>
+      <h3
+        className="section__subtitle"
+        dangerouslySetInnerHTML={{ __html: translation.contact__subtitle }}
+      />
+      <h2 className="section__title">{translation.contact__title}</h2>
 
-        <div className="contact__container container grid">
-          <form
-            action=""
-            className="contact__form"
-            id="contact-form"
-            ref={form}
-            onSubmit={sendEmail}
-          >
-            <div className="contact__group">
+      <div className="contact__container container grid">
+        <form
+          action=""
+          className="contact__form"
+          id="contact-form"
+          ref={form}
+          onSubmit={sendEmail}
+        >
+          <div className="contact__group">
+            <div className="form__field-group">
+              <label htmlFor="user_name">{translation.contact__name}</label>
               <input
                 type="text"
                 name="user_name"
@@ -78,46 +83,84 @@ export function Contact({ language }: ContactProps) {
                 placeholder={translation.contact__placeholder__name}
                 className="contact__input"
               />
-
-              <input
-                type="email"
-                name="user_email"
-                required
-                placeholder={translation.contact__placeholder__mail}
-                className="contact__input"
-              />
             </div>
+
+            <div className="form__field-group">
+              <label htmlFor="user_category">
+                {translation.contact__category__label}
+              </label>
+              <select
+                className="user__category"
+                id="user_category"
+                name="user_category"
+              >
+                <option value="default" selected disabled hidden>
+                  {translation.contact__category__option__0}
+                </option>
+                <option value="job_opportunity">
+                  {translation.contact__category__option__1}
+                </option>
+                <option value="freelance">
+                  {translation.contact__category__option__2}
+                </option>
+                <option value="other">
+                  {translation.contact__category__option__3}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div className="form__field-group">
+            <label htmlFor="user_email">{translation.contact__mail}</label>
+            <input
+              type="email"
+              name="user_email"
+              required
+              placeholder={translation.contact__placeholder__mail}
+              className="contact__input"
+            />
+          </div>
+
+          <div className="form__field-group">
+            <label htmlFor="user_message">{translation.contact__message}</label>
             <textarea
               name="user_message"
               required
               placeholder={translation.contact__placeholder__message}
               className="contact__input"
             ></textarea>
-            <ContactMessage>
-              {sendSuccess && (
-                <div className="__sucess">
-                  <p id="contact-message">
-                    {translation.contact__message__success}
-                  </p>
-                  <p id="contact-message">
-                    {translation.contact__message__success__follow__up}
-                  </p>
-                </div>
-              )}
-              {sendFailed && (
-                <div className="__error">
-                  <p id="contact-message">
-                    {translation.contact__message__error}
-                  </p>
-                  <p id="contact-message">
-                    {translation.contact__message__error__follow__up}
-                  </p>
-                </div>
-              )}
-            </ContactMessage>
+          </div>
 
-            <Button text={translation.contact__button} isSubmit={true} />
-          </form>
+          <ContactMessage>
+            {sendSuccess && (
+              <div className="__sucess">
+                <p id="contact-message">
+                  {translation.contact__message__success}
+                </p>
+                <p id="contact-message">
+                  {translation.contact__message__success__follow__up}
+                </p>
+              </div>
+            )}
+            {sendFailed && (
+              <div className="__error">
+                <p id="contact-message">
+                  {translation.contact__message__error}
+                </p>
+                <p id="contact-message">
+                  {translation.contact__message__error__follow__up}
+                </p>
+              </div>
+            )}
+          </ContactMessage>
+
+          <Button text={translation.contact__button} isSubmit={true} />
+        </form>
+
+        <div>
+          <a href="https://github.com/DJeanS03" target="_blank">
+            <img className="image" src={imagem} alt="Imagem aleatória" />
+          </a>
         </div>
       </div>
     </ContactContainer>

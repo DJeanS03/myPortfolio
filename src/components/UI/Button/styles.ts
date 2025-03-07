@@ -13,5 +13,6 @@ export const ButtonStyles = styled.a`
 
   :hover {
     box-shadow: 0 8px 24px ${({ theme }) => theme.colors["primaryColorAlt"]};;
+    background-color: pink;
 }
 `;
