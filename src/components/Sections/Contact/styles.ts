@@ -16,13 +16,22 @@ export const ContactContainer = styled.section`
   }
 
   .contact__input,
-  .user_category {
+  .user__category {
     width: 100%;
     height: 100%;
     padding: 1rem 1.25rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => theme.colors["containerColor"]};
     color: ${({ theme }) => theme.colors["titleColor"]};
+  }
+
+  .user__category:focus,
+  .contact__input:focus {
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors["primaryColorLighter"]};
+  }
+
+  .image {
+    filter: sepia(1) saturate(2) hue-rotate(173deg);
   }
 
   .contact__input::placeholder {

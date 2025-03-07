@@ -7,19 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-/* @media screen and (min-width: 968px) {
-    :root {
-        --biggest-font-size: 4rem;
-        --bigger-font-size: 3rem;
-        --h1-font-size: 2.25rem;
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-        --smaller-font-size: .813rem;
-    }
-} */
-
 html {
     scroll-behavior: smooth;
 }
@@ -31,7 +18,7 @@ body {
     user-select: none; //evita que algum texto seja selecionado
 }
 
-body, input, textarea, button {
+body, input, textarea, button, select{
     font-family: 'Poppins', sans-serif;
     font-size: ${({ theme }) => theme.fontSizes["normal"]};
  }
@@ -41,11 +28,6 @@ input, textarea, button, select {
     outline: none;
  }
 
-/*  select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-} */
 
 h1, h2, h3, h4 {
     color: ${({ theme }) => theme.colors["titleColor"]};
@@ -102,20 +84,6 @@ i {
 
 .main {
     overflow: hidden;
-}
-
-.button {
-    display: inline-block;
-    background-color: ${({ theme }) => theme.colors["primaryColor"]};
-    padding: 1rem 1.75rem;
-    border-radius: 0%.5rem;
-    color: ${({ theme }) => theme.colors["titleColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["medium"]};
-    transition: box-shadow .4s;
-}
-
-.button:hover {
-    box-shadow: 0 8px 24px ${({ theme }) => theme.colors["primaryColorAlt"]};;
 }
 
 ::-webkit-scrollbar {

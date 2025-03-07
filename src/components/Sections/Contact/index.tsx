@@ -5,6 +5,8 @@ import { Button } from "../../UI/Button";
 import { myTexts } from "../../../data/MyTexts";
 import { Language } from "../../../pages/Home";
 
+import imagem from "../../../assets/dev.svg";
+
 interface ContactProps {
   language: Language;
 }
@@ -30,7 +32,7 @@ export function Contact({ language }: ContactProps) {
 
     try {
       await emailjs.sendForm(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_IDs, // mudar antes de subir
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         form.current as HTMLFormElement,
         import.meta.env.VITE_APP_EMAILJS_USER_ID
@@ -84,14 +86,20 @@ export function Contact({ language }: ContactProps) {
             </div>
 
             <div className="form__field-group">
-							<label htmlFor="user_category">Selecione uma categoria</label>
-							<select className="user_category" id="user_category" name="user_category">
-								<option value="default" selected disabled hidden>Selecione uma categoria</option>
-								<option value="job_opportunity">Oportunidade de emprego</option>
-								<option value="freelance">Freelance</option>
-								<option value="other">Outro</option>
-							</select>
-						</div>
+              <label htmlFor="user_category">Selecione uma categoria</label>
+              <select
+                className="user__category"
+                id="user_category"
+                name="user_category"
+              >
+                <option value="default" selected disabled hidden>
+                  Selecione a categoria
+                </option>
+                <option value="job_opportunity">Oportunidade de emprego</option>
+                <option value="freelance">Freelance</option>
+                <option value="other">Outro</option>
+              </select>
+            </div>
           </div>
 
           <div className="form__field-group">
@@ -141,14 +149,11 @@ export function Contact({ language }: ContactProps) {
           <Button text={translation.contact__button} isSubmit={true} />
         </form>
 
-      {/*   <div>
+        <div>
           <a href="https://lorempicsum.com" target="_blank">
-            <img
-              src="https://picsum.photos/500/500?category=water"
-              alt="Imagem aleatória"
-            />
+            <img className="image" src={imagem} alt="Imagem aleatória" />
           </a>
-        </div> */}
+        </div>
       </div>
     </ContactContainer>
   );

@@ -30,7 +30,6 @@ export function Main() {
   const [language, setLanguage] = useState<Language>(
     () => (localStorage.getItem("language") as Language) || "en"
   );
-  
 
   useEffect(() => {
     localStorage.setItem("language", language);
@@ -49,11 +48,11 @@ export function Main() {
           onLanguageChange={handleLanguageChange}
         />
         <ScrollButton />
-        {/* <Home language={language} />
+        <Home language={language} />
         <About language={language} />
         <Skills language={language} />
         <Experiences language={language} />
-        <Projects language={language} /> */}
+        <Projects language={language} />
         <Contact language={language} />
         <Footer />
       </MainContainer>
