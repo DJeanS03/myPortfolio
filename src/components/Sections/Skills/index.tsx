@@ -1,72 +1,116 @@
+import { useMemo, useState } from "react";
 import { Button } from "../../UI/Button";
 import { SkilsContainer } from "./styles";
+import { myTexts } from "../../../data/MyTexts";
+
+type Language = "en" | "pt";
 
 interface SkillsProps {
-  language: string;
+  language: Language;
 }
 
+type Group = {
+  title: Record<Language, string>;
+  items: string[];
+  extra?: string; // fica menor e não polui
+};
+
 export function Skills({ language }: SkillsProps) {
-  const getText = () => {
-    if (language === "en") {
-      return (
-        <>
-          <h3 className="section__subtitle">
-            Favorite <span>Skills</span>
-          </h3>
-          <h2 className="section__title">My Skills</h2>
-          <p className="skills__description">
-            Here, you can see which abilities I have and how I can use them to
-            produce projects for you.
-          </p>
-          <Button text="See my Projects" url="#projects" />
-        </>
-      );
-    } else if (language === "pt") {
-      return (
-        <>
-          <h3 className="section__subtitle">
-            Habilidades <span>favoritas</span>
-          </h3>
-          <h2 className="section__title">Meus Conhecimentos</h2>
-          <p className="skills__description">
-            Aqui você pode ver quais habilidades possuo e como posso utilizá-las
-            para produzir projetos para você.
-          </p>
-          <Button text="Veja meus Projetos" url="#projects" />
-        </>
-      );
+  const [showAll, setShowAll] = useState(false);
+
+  const t =
+    myTexts[0].skill.translations[language] || myTexts[0].skill.translations.en;
+
+  const groups = useMemo<Group[]>(() => {
+    // Versão curta (limpa): só o essencial
+    if (!showAll) {
+      return [
+        {
+          title: { en: "Front-End", pt: "Front-End" },
+          items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+        },
+        {
+          title: { en: "Back-End", pt: "Back-End" },
+          items: ["Node.js", "NestJS", "Express", "Python / FastAPI", "REST / GraphQL"],
+        },
+        {
+          title: { en: "DevOps & Cloud", pt: "DevOps & Cloud" },
+          items: ["Docker", "Kubernetes", "CI/CD", "AWS"],
+        },
+        {
+          title: { en: "Data & AI", pt: "Dados & IA" },
+          items: ["PostgreSQL", "MongoDB", "Redis", "pgvector", "OpenAI / LangChain / RAG"],
+        },
+      ];
     }
-  };
+
+    // Versão completa (fiel ao CV): detalha, mas ainda organizado
+    return [
+      {
+        title: { en: "Front-End", pt: "Front-End" },
+        items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        title: { en: "Back-End", pt: "Back-End" },
+        items: ["Node.js", "NestJS", "Express", "Python", "FastAPI", "REST", "GraphQL"],
+      },
+      {
+        title: { en: "Databases", pt: "Bancos de Dados" },
+        items: ["PostgreSQL", "MongoDB", "Redis", "pgvector"],
+      },
+      {
+        title: { en: "DevOps & Cloud", pt: "DevOps & Cloud" },
+        items: ["Docker", "Docker Compose", "Kubernetes", "GitHub Actions", "GitLab CI"],
+        extra: "AWS: EC2, Lightsail, S3, Lambda, CloudWatch",
+      },
+      {
+        title: { en: "Testing & Quality", pt: "Testes & Qualidade" },
+        items: ["Jest", "Cypress", "Pytest", "Clean Architecture", "Code Review"],
+      },
+      {
+        title: { en: "GenAI & Automation", pt: "IA & Automação" },
+        items: ["OpenAI", "LangChain", "RAG", "Playwright", "Selenium", "BeautifulSoup", "Requests", "APIFLASH"],
+      },
+    ];
+  }, [showAll]);
+
   return (
     <SkilsContainer id="skills">
       <div className="skills__container container grid">
         <div className="skills__data">
-          {/* <h3 className="section__subtitle">
-            Favorite <span>Skills</span>
-          </h3>
-          <h2 className="section__title">My Skills</h2>
-          <p className="skills__description">
-            Here, you can see which abilities I have and how I can use them to
-            produce projects for you.
-          </p>
+          <h3
+            className="section__subtitle"
+            dangerouslySetInnerHTML={{ __html: t.skill__subtitle }}
+          />
+          <h2 className="section__title">{t.skill__title}</h2>
+          <p className="skills__description">{t.skill__description}</p>
 
-          <a href="#projects" className="button">
-            See my Projects
-          </a> */}
-          <div>{getText()}</div>
+          <div className="skills__actions">
+            <Button text={t.skill__button} url="#projects" />
+            <button
+              type="button"
+              className="skills__toggle"
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll ? t.skill__toggle__less : t.skill__toggle__more}
+            </button>
+          </div>
         </div>
-        <div className="skills__content">
-          <ol className="skills__group">
-            <li className="skills__item">HTML & CSS</li>
-            <li className="skills__item">JavaScript/TypeScript</li>
-            <li className="skills__item">React</li>
-            <li className="skills__item">Next</li>
-          </ol>
-          <ol className="skills__group" start={5}>
-            <li className="skills__item">Bootstrap</li>
-            <li className="skills__item">Node</li>
-            <li className="skills__item">Git & GitHub</li>
-          </ol>
+
+        <div className="skills__lists">
+          {groups.map((g) => (
+            <div key={g.title.en} className="skills__group">
+              <h3 className="skills__groupTitle">{g.title[language]}</h3>
+              <ul className="skills__items">
+                {g.items.map((item) => (
+                  <li key={item} className="skills__item">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              {g.extra ? <p className="skills__extra">{g.extra}</p> : null}
+            </div>
+          ))}
         </div>
       </div>
     </SkilsContainer>

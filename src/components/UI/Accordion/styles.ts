@@ -51,7 +51,7 @@ export const AccordionContent = styled.div<{ isOpen: boolean }>`
 
   ul {
     list-style-type: disc;
-    padding: 0 0.75rem;
+    padding: 0 2rem;
   }
 
   li {
