@@ -9,9 +9,9 @@ export function Footer() {
                         Jean <span>Victor</span>
                     </h1>
                     <h2 className="footer__education">
-                        Front-end Developer
+                        Full-Stack / Back-End & DevOps / Kubernetes.
                     </h2>
-                    <p>V1.2.0</p>
+                    <p>V1.7.2</p>
                 </div>
                 {/* <div className="footer__social">
                     <a href="" target="_blank" className="footer__social-link"></a>

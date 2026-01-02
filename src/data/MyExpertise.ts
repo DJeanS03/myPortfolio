@@ -1,94 +1,88 @@
 import React from "react";
 
-export const myExpertise = [
+type Lang = "en" | "pt";
+
+type ExpertiseItem = {
+  id: number;
+  icon: React.ReactElement;
+  translations: Record<
+    Lang,
+    {
+      title: string;
+      description: string;
+    }
+  >;
+};
+
+export const myExpertise: ExpertiseItem[] = [
   {
     id: 1,
     icon: React.createElement("i", {
-      className: "bx bx-server expertise__icon",
+      className: "bx bx-code-alt expertise__icon",
     }),
     translations: {
       en: {
-        title: "Back-End Development",
+        title: "Front-End Engineering",
         description:
-          "I prioritize efficient, scalable architectures with clear, optimized code.",
+          "Responsive interfaces, performance and clean component architecture with React/Next.js.",
       },
       pt: {
-        title: "Desenvolvimento Back-End",
+        title: "Engenharia Front-End",
         description:
-          "Valorizo arquiteturas eficientes e escaláveis, com código claro e otimizado.",
+          "Interfaces responsivas, performance e arquitetura limpa de componentes com React/Next.js.",
       },
     },
   },
   {
     id: 2,
     icon: React.createElement("i", {
-      className: "bx bx-code-alt expertise__icon",
+      className: "bx bx-server expertise__icon",
     }),
     translations: {
       en: {
-        title: "Front-End Development",
+        title: "Back-End Engineering",
         description:
-          "Using Next.js and React.js, I build intuitive, responsive interfaces focused on user experience",
+          "Secure APIs, authentication, integrations and performance with Node.js (NestJS/Express) and PostgreSQL.",
       },
       pt: {
-        title: "Desenvolvimento Back-End",
+        title: "Engenharia Back-End",
         description:
-          "Com Next.js e React.js, crio interfaces intuitivas e responsivas, sempre focadas na experiência do usuário.",
+          "APIs seguras, autenticação, integrações e performance com Node.js (NestJS/Express) e PostgreSQL.",
       },
     },
   },
   {
     id: 3,
     icon: React.createElement("i", {
-      className: "bx bxl-figma expertise__icon",
+      className: "bx bx-cloud expertise__icon",
     }),
     translations: {
       en: {
-        title: "UX/UI Design",
+        title: "DevOps & Cloud",
         description:
-          "User-centered, I create intuitive, functional interfaces using Figma for prototypes and layouts.",
+          "Docker, Kubernetes and CI/CD for predictable deployments and stable environments.",
       },
       pt: {
-        title: "Design UX/UI",
+        title: "DevOps & Cloud",
         description:
-          "Com foco no usuário, crio interfaces intuitivas e funcionais usando Figma para protótipos e layouts.",
+          "Docker, Kubernetes e CI/CD para deploy previsível e ambientes estáveis.",
       },
     },
   },
   {
     id: 4,
-    icon: React.createElement("i", {
-      className: "bx bx-devices expertise__icon",
-    }),
+    icon: React.createElement("i", { className: "bx bx-bot expertise__icon" }),
     translations: {
       en: {
-        title: "Mobile/Web Development",
+        title: "GenAI & Automation",
         description:
-          "I develop practical applications and websites to simplify daily life.",
+          "LLMs and RAG to automate workflows, speed up delivery and improve systems.",
       },
       pt: {
-        title: "Desenvolvimento Mobile/Web",
+        title: "IA & Automação",
         description:
-          "Desenvolvo aplicativos e sites úteis, que tornam o dia a dia mais prático.",
+          "LLMs e RAG para automatizar fluxos, acelerar entregas e evoluir sistemas.",
       },
     },
   },
-  /* {
-    id: 5,
-    icon: React.createElement("i", {
-      className: "bx bxl-figma expertise__icon",
-    }),
-    translations: {
-      en: {
-        title: "API Integration",
-        description:
-          "I ensure secure data flow and seamless communication through API integrations.",
-      },
-      pt: {
-        title: "Integração de APIs",
-        description:
-          "Integro APIs para garantir fluxo de dados seguro e comunicação fluida entre sistemas.",
-      },
-    },
-  }, */
 ];

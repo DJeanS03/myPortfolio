@@ -1,5 +1,5 @@
 import { HomeContainer } from "./styles";
-import imagem from "../../../assets/profile2.jpeg";
+import imagem from "../../../assets/profile2.jpg";
 import { RoundImage } from "../Home/styles";
 import { myTexts } from "../../../data/MyTexts";
 import { Language } from "../../../pages/Home";

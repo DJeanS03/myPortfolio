@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ServicesContainer = styled.section`
   padding-block: 5rem 2rem;
 
-  .services_container {
+  .services__container {
     row-gap: 2rem;
   }
 

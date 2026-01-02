@@ -5,15 +5,28 @@ export const ProjectsCardContainer = styled.nav`
   border-radius: 1rem;
   overflow: hidden;
 
+  /* ✅ define um "tamanho padrão" para todos os cards */
+  .projects__card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10; /* ajuste: 16/9 se quiser mais "wide" */
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  /* ✅ imagem sempre cobre o card sem distorcer */
   .projects__img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
     transition: 0.5s ease-in-out;
+    display: block;
   }
 
   .projects__card:hover .projects__img {
-    transform: scale(1.3);
-    filter: brightness(40%);
+    transform: scale(1.12);
+    filter: grayscale(1);
   }
 
   .projects__modal {
@@ -28,13 +41,15 @@ export const ProjectsCardContainer = styled.nav`
       ${({ theme }) => theme.colors["primaryColorAlt"]}
     );
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px); /*for safari*/
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: bottom 0.4s;
+    padding: 1rem; /* ✅ evita texto colado nas bordas */
+    text-align: center;
   }
 
   .projects__subtitle,
@@ -71,6 +86,7 @@ export const ProjectsCardContainer = styled.nav`
   #concluded {
     color: ${({ theme }) => theme.colors["concluded"]};
   }
+
   #in__progress {
     color: ${({ theme }) => theme.colors["inProgress"]};
   }

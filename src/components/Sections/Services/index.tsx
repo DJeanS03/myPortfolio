@@ -20,7 +20,6 @@ export function Experiences({ language }: ExperiencesProps) {
 
   return (
     <ServicesContainer id="services">
-      {/* {getText()} */}
       <div className="box">
         <h3
           className="section__subtitle"
