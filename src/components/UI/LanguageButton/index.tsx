@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { LanguageButtonContainer } from "./styles";
+import { useEffect, useRef, useState } from "react";
 import { Language } from "../../../pages/Home";
+import { LanguageButtonContainer } from "./styles";
 
 interface Props {
   language: Language;
@@ -8,79 +8,44 @@ interface Props {
 }
 
 export function LanguageButton({ language, onLanguageChange }: Props) {
-  const [showLanguageOptions, setShowLanguageOptions] = useState(false);
-  const [languageName, setLanguageName] = useState("");
-  const [isMobileView, setIsMobileView] = useState(false);
-
-  const handleToggleLanguageOptions = () => {
-    setShowLanguageOptions(!showLanguageOptions);
-  };
-
-  const handleLanguageChange = (lang: Language) => {
-    onLanguageChange(lang);
-    setShowLanguageOptions(false);
-  };
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      const innerWidth = window.innerWidth;
-
-      if (innerWidth <= 768) {
-        setIsMobileView(true);
-      } else {
-        setIsMobileView(false);
+    const handleOutside = (event: MouseEvent) => {
+      if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
+        setOpen(false);
       }
     };
-
-    // Definimos o estado inicialmente com base no tamanho da janela
-    handleResize();
-
-    // Adiciona o ouvinte para detectar a alteração no tamanho da tela
-    window.addEventListener("resize", handleResize);
-
-    // Remove o ouvinte ao desmontar o componente
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
   }, []);
 
-  useEffect(() => {
-    if (isMobileView) {
-      // Se a página foi rolada e a largura da janela é maior que 898px, defina a classe "hidden" em "language__name"
-      setLanguageName("hidden");
-    } else {
-      // Caso contrário, defina o texto normalmente
-      if (language === "en") {
-        setLanguageName("English");
-      } else if (language === "pt") {
-        setLanguageName("Português");
-      }
-    }
-  }, [language, isMobileView]);
-
   return (
-    <LanguageButtonContainer>
-      <div className="language-container">
-        <button className="toggle-btn" onClick={handleToggleLanguageOptions}>
-          <i className="bx bx-globe"></i>
-          <span
-            className={`language__name ${isMobileView ? "hidden" : ""}`}
-            style={{ transition: "opacity 0.3s" }}
-          >
-            {languageName}
-          </span>
-        </button>
-        {showLanguageOptions && (
-          <div className="language-options">
-            <button onClick={() => handleLanguageChange("en")}>
-              English (US)
-            </button>
-            <button onClick={() => handleLanguageChange("pt")}>
-              Português (Brasil)
-            </button>
-          </div>
-        )}
-      </div>
+    <LanguageButtonContainer ref={rootRef}>
+      <button
+        type="button"
+        className="language-trigger"
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        aria-label={language === "pt" ? "Alterar idioma" : "Change language"}
+      >
+        <i className="bx bx-globe" aria-hidden="true" />
+        <span>{language.toUpperCase()}</span>
+        <i className="bx bx-chevron-down" aria-hidden="true" />
+      </button>
+
+      {open && (
+        <div className="language-menu" role="menu">
+          <button type="button" role="menuitem" onClick={() => { onLanguageChange("pt"); setOpen(false); }}>
+            Português <span>PT-BR</span>
+          </button>
+          <button type="button" role="menuitem" onClick={() => { onLanguageChange("en"); setOpen(false); }}>
+            English <span>EN</span>
+          </button>
+        </div>
+      )}
     </LanguageButtonContainer>
   );
 }

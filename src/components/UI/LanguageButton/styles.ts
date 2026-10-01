@@ -1,77 +1,49 @@
 import styled from "styled-components";
 
-export const LanguageButtonContainer = styled.header`
-  .language-container {
-    position: relative;
-    display: inline-block;
-  }
+export const LanguageButtonContainer = styled.div`
+  position: relative;
+  justify-self: end;
 
-  .toggle-btn {
-    background-color: ${({ theme }) => theme.colors["primaryColor"]};
-    color: #fff;
-    padding: 0.625rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
+  .language-trigger {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.625rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    gap: .35rem;
+    min-height: 2.55rem;
+    padding: 0 .75rem;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: .7rem;
+    background: rgba(255,255,255,.025);
+    color: ${({ theme }) => theme.colors.titleColor};
+    cursor: pointer;
+    font-size: .72rem;
   }
 
-  .toggle-btn i {
-    font-size: 20px;
-  }
+  .language-trigger i { font-size: 1rem; }
 
-  .language-options {
+  .language-menu {
     position: absolute;
-    min-width: 12.5rem;
-    top: 100%;
-    right: 0px;
-    display: block;
-    margin-top: 5px;
-    padding: 0.313rem 0;
-    background-color: hsla(0, 0%, 10%, 0.8);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-radius: 0.313rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    top: calc(100% + .5rem);
+    right: 0;
+    width: 180px;
+    padding: .4rem;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: .8rem;
+    background: rgba(18,18,20,.96);
+    box-shadow: 0 18px 50px rgba(0,0,0,.3);
+    backdrop-filter: blur(20px);
   }
 
-  .language-options button {
-    display: block;
+  .language-menu button {
     width: 100%;
-    padding: 0.313rem 0.625rem;
-    border: none;
-    background-color: transparent;
-    color: ${({ theme }) => theme.colors["white"]};
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem .75rem;
+    border-radius: .55rem;
+    background: transparent;
+    color: ${({ theme }) => theme.colors.titleColor};
+    cursor: pointer;
+    font-size: .78rem;
   }
-
-  .language-options button:hover {
-    background-color: ${({ theme }) => theme.colors["primaryColorAlt"]};
-  }
-
-  @media screen and (max-width: 898px) {
-    position: relative;
-    width: 100%;
-    top: 5px;
-    left: 20px;
-    background-color: hsl(228, 15%, 15%);
-
-    .language-options {
-      left: 0;
-      min-width: 12.5rem;
-    }
-
-    .language__name {
-      transition: all 10s;
-    }
-
-    .hidden {
-      display: none;
-    }
-  }
+  .language-menu button:hover { background: rgba(255,255,255,.05); }
+  .language-menu span { color: ${({ theme }) => theme.colors.textLighter}; font-size: .65rem; }
 `;

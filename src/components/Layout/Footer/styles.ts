@@ -1,27 +1,25 @@
 import styled from "styled-components";
 
-export const FooterContainer = styled.section`
-  padding-block: 3.5rem 2rem;
-  background-color: ${({ theme }) => theme.colors["containerColor"]};
+export const FooterContainer = styled.footer`
+  padding: 2.2rem 0 6rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+  background: ${({ theme }) => theme.colors.containerColor};
 
-  .footer__container {
-    row-gap: 2rem;
-    text-align: center;
-    min-height: 130px;
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 2rem;
   }
+  strong { color: ${({ theme }) => theme.colors.titleColor}; }
+  p, small { color: ${({ theme }) => theme.colors.textLighter}; font-size: .75rem; }
+  p { margin-top: .2rem; }
+  .footer-links { display: flex; gap: 1rem; }
+  .footer-links a { color: ${({ theme }) => theme.colors.textLighter}; font-size: .78rem; }
+  .footer-links a:hover { color: white; }
 
-  .footer__title {
-    font-size: ${({ theme }) => theme.fontSizes["h1"]};
-    font-weight: ${({ theme }) => theme.colors["primaryColor"]};
-    font-weight: ${({ theme }) => theme.fontWeights["semiBold"]};
-    margin-bottom: 0.25rem;
-  }
-
-  .footer__title span {
-    color: ${({ theme }) => theme.colors["primaryColor"]};
-  }
-
-  .footer__education {
-    font-size: ${({ theme }) => theme.fontSizes["normal"]};
+  @media (max-width: 720px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    small { margin-top: .5rem; }
   }
 `;
