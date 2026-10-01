@@ -1,87 +1,65 @@
-import React from "react";
-
-type Lang = "en" | "pt";
-
-type ExpertiseItem = {
-  id: number;
-  icon: React.ReactElement;
-  translations: Record<
-    Lang,
-    {
-      title: string;
-      description: string;
-    }
-  >;
-};
-
-export const myExpertise: ExpertiseItem[] = [
+export const myExpertise = [
   {
     id: 1,
-    icon: React.createElement("i", {
-      className: "bx bx-code-alt expertise__icon",
-    }),
+    icon: "bx bx-server",
     translations: {
       en: {
-        title: "Front-End Engineering",
+        title: "Back-End & Integrations",
         description:
-          "Responsive interfaces, performance and clean component architecture with React/Next.js.",
+          "REST APIs, authentication, external services, legacy integrations and maintainable services with Node.js, NestJS, Express and Python.",
       },
       pt: {
-        title: "Engenharia Front-End",
+        title: "Back-End & Integrações",
         description:
-          "Interfaces responsivas, performance e arquitetura limpa de componentes com React/Next.js.",
+          "APIs REST, autenticação, serviços externos, sistemas legados e serviços sustentáveis com Node.js, NestJS, Express e Python.",
       },
     },
   },
   {
     id: 2,
-    icon: React.createElement("i", {
-      className: "bx bx-server expertise__icon",
-    }),
+    icon: "bx bx-code-alt",
     translations: {
       en: {
-        title: "Back-End Engineering",
+        title: "Full-Stack Products",
         description:
-          "Secure APIs, authentication, integrations and performance with Node.js (NestJS/Express) and PostgreSQL.",
+          "End-to-end product development with React/Next.js, TypeScript and API-driven architectures.",
       },
       pt: {
-        title: "Engenharia Back-End",
+        title: "Produtos Full-Stack",
         description:
-          "APIs seguras, autenticação, integrações e performance com Node.js (NestJS/Express) e PostgreSQL.",
+          "Desenvolvimento ponta a ponta com React/Next.js, TypeScript e arquiteturas orientadas a APIs.",
       },
     },
   },
   {
     id: 3,
-    icon: React.createElement("i", {
-      className: "bx bx-cloud expertise__icon",
-    }),
+    icon: "bx bx-cloud",
     translations: {
       en: {
-        title: "DevOps & Cloud",
+        title: "Delivery & Infrastructure",
         description:
-          "Docker, Kubernetes and CI/CD for predictable deployments and stable environments.",
+          "Docker, CI/CD, GitHub Actions and cloud fundamentals focused on predictable, repeatable delivery.",
       },
       pt: {
-        title: "DevOps & Cloud",
+        title: "Entrega & Infraestrutura",
         description:
-          "Docker, Kubernetes e CI/CD para deploy previsível e ambientes estáveis.",
+          "Docker, CI/CD, GitHub Actions e fundamentos de cloud com foco em entregas previsíveis e repetíveis.",
       },
     },
   },
   {
     id: 4,
-    icon: React.createElement("i", { className: "bx bx-bot expertise__icon" }),
+    icon: "bx bx-bot",
     translations: {
       en: {
-        title: "GenAI & Automation",
+        title: "Automation & AI",
         description:
-          "LLMs and RAG to automate workflows, speed up delivery and improve systems.",
+          "Python routines, workflow automation, LLMs and RAG used when they meaningfully improve a system or process.",
       },
       pt: {
-        title: "IA & Automação",
+        title: "Automação & IA",
         description:
-          "LLMs e RAG para automatizar fluxos, acelerar entregas e evoluir sistemas.",
+          "Rotinas em Python, automação de fluxos, LLMs e RAG usados quando realmente melhoram um sistema ou processo.",
       },
     },
   },

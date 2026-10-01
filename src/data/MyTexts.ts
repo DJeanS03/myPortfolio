@@ -3,147 +3,134 @@ export const myTexts = [
     hero: {
       translations: {
         en: {
-          home__subtitle: "Hello, <span>I&apos;m</span>",
-          home__title: "Jean Victor",
-          home__education:
-            "Full-Stack Developer | Back-End & DevOps | Kubernetes",
-          home__description:
-            "Full-Stack developer with 4+ years of experience across Back-End, DevOps, and databases. I build scalable and secure applications with Node.js (NestJS/Express) and PostgreSQL, using Docker & Kubernetes for reliable deployments. I also work with CI/CD, clean architecture, automated testing, and legacy system integration—delivering real business impact through efficient, high-performance solutions.",
+          eyebrow: "Back-End / Full-Stack Developer",
+          title: "I build reliable software for real-world problems.",
+          description:
+            "I work across APIs, integrations, automation and web products, connecting business needs to maintainable technical solutions.",
+          primaryCta: "Explore projects",
+          secondaryCta: "Get in touch",
         },
         pt: {
-          home__subtitle: "Olá, <span>Eu sou</span> ",
-          home__title: "Jean Victor",
-          home__education:
-            "Desenvolvedor Full-Stack | Back-End & DevOps | Kubernetes",
-          home__description:
-            "Desenvolvedor Full-Stack com 4+ anos de experiência em Back-End, DevOps e bancos de dados. Construo aplicações escaláveis e seguras com Node.js (NestJS/Express) e PostgreSQL, usando Docker e Kubernetes para deploys confiáveis. Atuo com CI/CD, arquitetura limpa, testes automatizados e integração de sistemas legados, entregando soluções de alta performance com impacto real no negócio.",
+          eyebrow: "Desenvolvedor Back-End / Full-Stack",
+          title: "Construo software confiável para problemas do mundo real.",
+          description:
+            "Atuo com APIs, integrações, automação e produtos web, conectando necessidades de negócio a soluções técnicas sustentáveis.",
+          primaryCta: "Ver projetos",
+          secondaryCta: "Entrar em contato",
         },
       },
     },
     aboutMe: {
       translations: {
         en: {
-          aboutMe__subtitle: "My <span>Intro</span>",
-          aboutMe__title: "About Me",
-          aboutMe__description:
-            "Hi! I’m a <strong>Full-Stack developer</strong> who delivers complete solutions — from the user interface to the back-end services and the deployment pipeline. I build end-to-end features with <strong>React/Next.js</strong> on the front-end and <strong>Node.js (NestJS/Express)</strong> on the back-end, supported by <strong>PostgreSQL</strong> and API integrations.<br/>" +
-            "<br/>" +
-            "In practice, I work across the stack:<br/>" +
-            "<ul>" +
-            "<li><strong>Front-End:</strong> responsive interfaces, state management, performance, and clean component architecture.</li>" +
-            "<li><strong>Back-End:</strong> secure APIs, authentication, integrations, and scalable services.</li>" +
-            "<li><strong>DevOps:</strong> Docker, Kubernetes, CI/CD and cloud fundamentals for predictable deployments.</li>" +
-            "<li><strong>Quality:</strong> clean architecture, automated tests, code review and technical standards.</li>" +
-            "<li><strong>GenAI/Automation:</strong> applying LLMs, RAG and tooling to speed up workflows and improve systems.</li>" +
-            "</ul>" +
-            "<br/>" +
-            "I like working close to the product, collaborating with teams, and shipping features that are reliable, maintainable and measurable in real business impact.",
-          aboutMe__button: "Download my CV",
+          eyebrow: "Profile",
+          title: "Engineering beyond the interface.",
+          description:
+            "I am a Back-End / Full-Stack developer with experience building REST APIs, system integrations, automation and end-to-end web solutions. I enjoy contexts where I need to understand the business problem, investigate how systems behave and turn requirements into clear, maintainable solutions.",
+          descriptionSecondary:
+            "My background spans React/Next.js, Node.js/NestJS, Python, databases, Docker and CI/CD, with AI and automation as complementary tools rather than the center of the product.",
+          button: "View LinkedIn profile",
         },
         pt: {
-          aboutMe__subtitle: "Minha <span>Introdução</span>",
-          aboutMe__title: "Sobre Mim",
-          aboutMe__description:
-            "Olá! Sou <strong>desenvolvedor Full-Stack</strong> e entrego soluções completas — da interface ao back-end e ao pipeline de deploy. Desenvolvo features ponta a ponta com <strong>React/Next.js</strong> no front-end e <strong>Node.js (NestJS/Express)</strong> no back-end, apoiado por <strong>PostgreSQL</strong> e integrações via API.<br/>" +
-            "<br/>" +
-            "Na prática, atuo em toda a stack:<br/>" +
-            "<ul>" +
-            "<li><strong>Front-End:</strong> interfaces responsivas, gerenciamento de estado, performance e arquitetura limpa de componentes.</li>" +
-            "<li><strong>Back-End:</strong> APIs seguras, autenticação, integrações e serviços escaláveis.</li>" +
-            "<li><strong>DevOps:</strong> Docker, Kubernetes, CI/CD e fundamentos de cloud para deploy previsível.</li>" +
-            "<li><strong>Qualidade:</strong> arquitetura limpa, testes automatizados, code review e padrões técnicos.</li>" +
-            "<li><strong>IA/Automação:</strong> uso de LLMs, RAG e automações para acelerar fluxos e evoluir sistemas.</li>" +
-            "</ul>" +
-            "<br/>" +
-            "Gosto de trabalhar perto do produto, colaborar com o time e colocar no ar features confiáveis, fáceis de manter e com impacto real no negócio.",
-          aboutMe__button: "Baixar meu CV",
+          eyebrow: "Perfil",
+          title: "Engenharia além da interface.",
+          description:
+            "Sou Desenvolvedor Back-End / Full-Stack com experiência em APIs REST, integrações entre sistemas, automação e soluções web ponta a ponta. Gosto de contextos em que preciso entender o problema de negócio, investigar o comportamento dos sistemas e transformar requisitos em soluções claras e sustentáveis.",
+          descriptionSecondary:
+            "Minha base passa por React/Next.js, Node.js/NestJS, Python, bancos de dados, Docker e CI/CD, usando IA e automação como ferramentas complementares quando agregam valor ao produto.",
+          button: "Ver perfil no LinkedIn",
         },
       },
     },
     skill: {
       translations: {
         en: {
-          skill__subtitle: "Core <span>Skills</span>",
-          skill__title: "My Skills",
-          skill__description:
-            "Key technologies I use to build full-stack products. You can expand to see the complete list from my resume.",
-          skill__button: "See my Projects",
-          skill__toggle__more: "See full list",
-          skill__toggle__less: "Show less",
+          eyebrow: "Capabilities",
+          title: "A stack organized by responsibility, not by logo count.",
+          description:
+            "The technologies below reflect the areas where I build, integrate, deliver and maintain software.",
+          button: "See projects",
+          toggleMore: "See complete stack",
+          toggleLess: "Show essentials",
         },
         pt: {
-          skill__subtitle: "Principais <span>Skills</span>",
-          skill__title: "Minhas Skills",
-          skill__description:
-            "Tecnologias principais que uso para construir produtos full-stack. Você pode expandir para ver a lista completa do currículo.",
-          skill__button: "Veja meus Projetos",
-          skill__toggle__more: "Ver lista completa",
-          skill__toggle__less: "Mostrar menos",
+          eyebrow: "Capacidades",
+          title: "Uma stack organizada por responsabilidade, não por quantidade de logos.",
+          description:
+            "As tecnologias abaixo representam as áreas em que construo, integro, entrego e mantenho software.",
+          button: "Ver projetos",
+          toggleMore: "Ver stack completa",
+          toggleLess: "Mostrar essenciais",
         },
       },
     },
     experiences: {
       translations: {
         en: {
-          experiences__subtitle: "Professional <span>Experience</span>",
-          experiences__title: "Places Where I've Made an Impact",
+          eyebrow: "Experience",
+          title: "Building, investigating and evolving real systems.",
+          intro:
+            "A timeline focused on responsibilities, technical decisions and the impact of each stage of my career.",
         },
         pt: {
-          experiences__subtitle: "Experiência <span>Profissional</span>",
-          experiences__title: "Locais Onde Deixei Minha Marca",
+          eyebrow: "Experiência",
+          title: "Construindo, investigando e evoluindo sistemas reais.",
+          intro:
+            "Uma linha do tempo focada em responsabilidades, decisões técnicas e no impacto de cada etapa da minha trajetória.",
         },
       },
     },
-    projects: {},
     contact: {
       translations: {
         en: {
-          contact__subtitle: "Get in <span>Touch</span>",
-          contact__title: "Contact Me",
-          contact__name: "Name",
-          contact__placeholder__name: "Enter your name",
-
-          contact__category__label: "Select a category",
-          contact__category__option__0: "Select category",
-          contact__category__option__1: "Job Opportunity",
-          contact__category__option__2: "Freelance",
-          contact__category__option__3: "Other",
-
-          contact__mail: "Email",
-          contact__placeholder__mail: "Enter your best email",
-          contact__message: "Message",
-          contact__placeholder__message: "Enter your message",
-          contact__message__success: "Your message has been sent successfully!",
-          contact__message__success__follow__up:
-            "We will get in touch with you shortly!",
-          contact__message__error:
-            "An error occurred while sending your message!",
-          contact__message__error__follow__up: "Please try again later.",
-          contact__button: "Send Message",
+          eyebrow: "Contact",
+          title: "Have a project, opportunity or technical challenge?",
+          intro:
+            "Send me a message through the form. If the email service is unavailable, a WhatsApp fallback will appear automatically.",
+          name: "Name",
+          placeholderName: "Your name",
+          categoryLabel: "Category",
+          categoryDefault: "Select a category",
+          categoryJob: "Job opportunity",
+          categoryFreelance: "Freelance / project",
+          categoryOther: "Other",
+          mail: "Email",
+          placeholderMail: "you@email.com",
+          message: "Message",
+          placeholderMessage: "Tell me a little about what you need",
+          success: "Message sent successfully.",
+          successFollowUp: "Thanks — I will get back to you as soon as possible.",
+          error: "I couldn't send your message by email.",
+          errorFollowUp: "You can try again or continue the conversation on WhatsApp.",
+          button: "Send message",
+          sending: "Sending...",
+          retry: "Try again",
+          whatsapp: "Talk on WhatsApp",
         },
         pt: {
-          contact__subtitle: "Entre em <span>Contato</span>",
-          contact__title: "Envie Sua Mensagem",
-          contact__name: "Nome",
-          contact__placeholder__name: "Digite seu nome",
-
-          contact__category__label: "Selecione uma categoria",
-          contact__category__option__0: "Selecione a categoria",
-          contact__category__option__1: "Oportunidade de emprego",
-          contact__category__option__2: "Freelance",
-          contact__category__option__3: "Outro",
-
-          contact__mail: "Email",
-          contact__placeholder__mail: "Digite seu melhor e-mail",
-          contact__message: "Mensagem",
-          contact__placeholder__message: "Digite sua mensagem",
-          contact__message__success: "A mensagem foi enviada com sucesso!",
-          contact__message__success__follow__up:
-            " Entraremos em contato em breve!",
-          contact__message__error: "Ocorreu um erro ao enviar sua mensagem!",
-          contact__message__error__follow__up:
-            "Por favor, tente novamente mais tarde.",
-          contact__button: "Enviar Mensagem",
+          eyebrow: "Contato",
+          title: "Tem um projeto, oportunidade ou desafio técnico?",
+          intro:
+            "Me envie uma mensagem pelo formulário. Se o serviço de e-mail estiver indisponível, o fallback do WhatsApp aparece automaticamente.",
+          name: "Nome",
+          placeholderName: "Seu nome",
+          categoryLabel: "Categoria",
+          categoryDefault: "Selecione uma categoria",
+          categoryJob: "Oportunidade de trabalho",
+          categoryFreelance: "Freelance / projeto",
+          categoryOther: "Outro",
+          mail: "E-mail",
+          placeholderMail: "voce@email.com",
+          message: "Mensagem",
+          placeholderMessage: "Conte um pouco sobre o que você precisa",
+          success: "Mensagem enviada com sucesso.",
+          successFollowUp: "Obrigado — responderei assim que possível.",
+          error: "Não consegui enviar sua mensagem por e-mail.",
+          errorFollowUp: "Você pode tentar novamente ou continuar a conversa pelo WhatsApp.",
+          button: "Enviar mensagem",
+          sending: "Enviando...",
+          retry: "Tentar novamente",
+          whatsapp: "Falar pelo WhatsApp",
         },
       },
     },
