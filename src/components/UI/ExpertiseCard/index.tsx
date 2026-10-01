@@ -1,49 +1,30 @@
+import type { CSSProperties } from "react";
 import { ExpertiseContainer } from "./styles";
 
 export interface Expertise {
   id: number;
-  icon: JSX.Element;
-  translations: Translations;
-}
-
-interface Translations {
-  en: {
-    title: string;
-    description: string;
-  };
-  pt: {
-    title: string;
-    description: string;
+  icon: string;
+  translations: {
+    en: { title: string; description: string };
+    pt: { title: string; description: string };
   };
 }
 
 interface ExpertiseProps {
   myExpertise: Expertise;
-  language: string;
+  language: "en" | "pt";
+  index?: number;
 }
 
-export function ExpertiseCard({ myExpertise, language }: ExpertiseProps) {
-  const getTranslation = () => {
-    if (language === "en") {
-      return myExpertise.translations.en;
-    } else if (language === "pt") {
-      return myExpertise.translations.pt;
-    } else {
-      return myExpertise.translations.en; // Retorno padrão em inglês
-    }
-  };
-
-  const translation = getTranslation();
+export function ExpertiseCard({ myExpertise, language, index = 0 }: ExpertiseProps) {
+  const translation = myExpertise.translations[language];
 
   return (
-    <ExpertiseContainer>
-      <article className="expertise__card">
-        <span className="expertise__header">
-          <h2 className="expertise__title">{translation.title}</h2>
-          {myExpertise.icon}
-        </span>
-        <p className="expertise__description">{translation.description}</p>
-      </article>
+    <ExpertiseContainer style={{ "--index": index } as CSSProperties}>
+      <div className="expertise-number">0{index + 1}</div>
+      <i className={`${myExpertise.icon} expertise-icon`} aria-hidden="true" />
+      <h3>{translation.title}</h3>
+      <p>{translation.description}</p>
     </ExpertiseContainer>
   );
 }
