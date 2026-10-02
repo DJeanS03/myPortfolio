@@ -1,116 +1,96 @@
 import { useMemo, useState } from "react";
-import { Button } from "../../UI/Button";
-import { SkilsContainer } from "./styles";
+import { Language } from "../../../pages/Home";
 import { myTexts } from "../../../data/MyTexts";
+import { SkilsContainer } from "./styles";
 
-type Language = "en" | "pt";
-
-interface SkillsProps {
-  language: Language;
-}
+interface SkillsProps { language: Language; }
 
 type Group = {
+  number: string;
   title: Record<Language, string>;
+  description: Record<Language, string>;
   items: string[];
-  extra?: string; // fica menor e não polui
 };
+
+const coreGroups: Group[] = [
+  {
+    number: "01",
+    title: { en: "Back-End", pt: "Back-End" },
+    description: { en: "Services, APIs and integrations.", pt: "Serviços, APIs e integrações." },
+    items: ["Node.js", "TypeScript", "NestJS", "Express", "Python", "FastAPI", "REST"],
+  },
+  {
+    number: "02",
+    title: { en: "Front-End", pt: "Front-End" },
+    description: { en: "Product interfaces and web applications.", pt: "Interfaces de produto e aplicações web." },
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Context API / Redux"],
+  },
+  {
+    number: "03",
+    title: { en: "Data", pt: "Dados" },
+    description: { en: "Persistence, queries and modeling.", pt: "Persistência, consultas e modelagem." },
+    items: ["PostgreSQL", "MongoDB", "SQL", "Data Modeling"],
+  },
+  {
+    number: "04",
+    title: { en: "Delivery", pt: "Entrega" },
+    description: { en: "Build, ship and maintain.", pt: "Construir, entregar e manter." },
+    items: ["Docker", "GitHub Actions", "CI/CD", "AWS", "Git", "Code Review"],
+  },
+];
+
+const extraGroups: Group[] = [
+  {
+    number: "05",
+    title: { en: "Quality", pt: "Qualidade" },
+    description: { en: "Maintainable systems and safer changes.", pt: "Sistemas sustentáveis e mudanças mais seguras." },
+    items: ["Jest", "Cypress", "Clean Architecture", "Scrum", "Kanban"],
+  },
+  {
+    number: "06",
+    title: { en: "AI & Automation", pt: "IA & Automação" },
+    description: { en: "Tools used when they improve the solution.", pt: "Ferramentas usadas quando melhoram a solução." },
+    items: ["OpenAI API", "LangChain", "RAG", "LLMs", "Web Scraping", "Selenium", "APIFLASH"],
+  },
+];
 
 export function Skills({ language }: SkillsProps) {
   const [showAll, setShowAll] = useState(false);
-
-  const t =
-    myTexts[0].skill.translations[language] || myTexts[0].skill.translations.en;
-
-  const groups = useMemo<Group[]>(() => {
-    // Versão curta (limpa): só o essencial
-    if (!showAll) {
-      return [
-        {
-          title: { en: "Front-End", pt: "Front-End" },
-          items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-        },
-        {
-          title: { en: "Back-End", pt: "Back-End" },
-          items: ["Node.js", "NestJS", "Express", "Python / FastAPI", "REST / GraphQL"],
-        },
-        {
-          title: { en: "DevOps & Cloud", pt: "DevOps & Cloud" },
-          items: ["Docker", "Kubernetes", "CI/CD", "AWS"],
-        },
-        {
-          title: { en: "Data & AI", pt: "Dados & IA" },
-          items: ["PostgreSQL", "MongoDB", "Redis", "pgvector", "OpenAI / LangChain / RAG"],
-        },
-      ];
-    }
-
-    // Versão completa (fiel ao CV): detalha, mas ainda organizado
-    return [
-      {
-        title: { en: "Front-End", pt: "Front-End" },
-        items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-      },
-      {
-        title: { en: "Back-End", pt: "Back-End" },
-        items: ["Node.js", "NestJS", "Express", "Python", "FastAPI", "REST", "GraphQL"],
-      },
-      {
-        title: { en: "Databases", pt: "Bancos de Dados" },
-        items: ["PostgreSQL", "MongoDB", "Redis", "pgvector"],
-      },
-      {
-        title: { en: "DevOps & Cloud", pt: "DevOps & Cloud" },
-        items: ["Docker", "Docker Compose", "Kubernetes", "GitHub Actions", "GitLab CI"],
-        extra: "AWS: EC2, Lightsail, S3, Lambda, CloudWatch",
-      },
-      {
-        title: { en: "Testing & Quality", pt: "Testes & Qualidade" },
-        items: ["Jest", "Cypress", "Pytest", "Clean Architecture", "Code Review"],
-      },
-      {
-        title: { en: "GenAI & Automation", pt: "IA & Automação" },
-        items: ["OpenAI", "LangChain", "RAG", "Playwright", "Selenium", "BeautifulSoup", "Requests", "APIFLASH"],
-      },
-    ];
-  }, [showAll]);
+  const t = myTexts[0].skill.translations[language];
+  const groups = useMemo(() => showAll ? [...coreGroups, ...extraGroups] : coreGroups, [showAll]);
 
   return (
-    <SkilsContainer id="skills">
-      <div className="skills__container container grid">
-        <div className="skills__data">
-          <h3
-            className="section__subtitle"
-            dangerouslySetInnerHTML={{ __html: t.skill__subtitle }}
-          />
-          <h2 className="section__title">{t.skill__title}</h2>
-          <p className="skills__description">{t.skill__description}</p>
+    <SkilsContainer id="skills" className="section-shell">
+      <div className="container">
+        <header className="section-heading" data-reveal>
+          <span className="section-eyebrow">{t.eyebrow}</span>
+          <h2 className="section-title">{t.title}</h2>
+          <p className="section-intro">{t.description}</p>
+        </header>
 
-          <div className="skills__actions">
-            <Button text={t.skill__button} url="#projects" />
-            <button
-              type="button"
-              className="skills__toggle"
-              onClick={() => setShowAll((v) => !v)}
-            >
-              {showAll ? t.skill__toggle__less : t.skill__toggle__more}
-            </button>
-          </div>
+        <div className="skills-grid">
+          {groups.map((group) => (
+            <article className="skill-group" key={group.number} data-reveal>
+              <div className="skill-group-head">
+                <span>{group.number}</span>
+                <div>
+                  <h3>{group.title[language]}</h3>
+                  <p>{group.description[language]}</p>
+                </div>
+              </div>
+              <div className="skill-list">
+                {group.items.map((item) => <span key={item}>{item}</span>)}
+              </div>
+            </article>
+          ))}
         </div>
 
-        <div className="skills__lists">
-          {groups.map((g) => (
-            <div key={g.title.en} className="skills__group">
-              <h3 className="skills__groupTitle">{g.title[language]}</h3>
-              <ul className="skills__items">
-                {g.items.map((item) => (
-                  <li key={item} className="skills__item">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              {g.extra ? <p className="skills__extra">{g.extra}</p> : null}
-            </div>
-          ))}
+        <div className="skills-actions" data-reveal>
+          <button type="button" onClick={() => setShowAll((value) => !value)}>
+            {showAll ? t.toggleLess : t.toggleMore}
+            <i className={`bx ${showAll ? "bx-minus" : "bx-plus"}`} aria-hidden="true" />
+          </button>
+          <a href="#projects">{t.button} <i className="bx bx-right-arrow-alt" aria-hidden="true" /></a>
         </div>
       </div>
     </SkilsContainer>

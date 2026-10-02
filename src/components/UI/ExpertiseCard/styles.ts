@@ -1,42 +1,34 @@
 import styled from "styled-components";
 
 export const ExpertiseContainer = styled.article`
-  width: 100%;  
-  max-width: 550px;  
-  margin-bottom: 1rem;
+  min-height: 240px;
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255,255,255,.07);
+  background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.2,.75,.2,1), border-color .35s ease, background .35s ease;
 
-  .expertise__card {
-    padding: 1rem;
-    background-color: ${({ theme }) => theme.colors["containerColor"]};
-    border-radius: 1rem;
-    border: 2px solid ${({ theme }) => theme.colors["containerColor"]};
-    transition: border 0.4s;
-  }
-  .expertise__card:hover {
-    border: 2px solid ${({ theme }) => theme.colors["primaryColor"]};
-  }
-
-  .expertise__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(4,138,191,.5);
+    background: linear-gradient(145deg, rgba(4,138,191,.09), rgba(255,255,255,.015));
   }
 
-  .expertise__title {
-    font-size: ${({ theme }) => theme.fontSizes["h2"]};
+  .expertise-number {
+    color: rgba(255,255,255,.22);
+    font-size: .7rem;
+    letter-spacing: .16em;
   }
 
-  .expertise__icon {
+  .expertise-icon {
     display: block;
+    margin: 2.4rem 0 1.2rem;
+    color: ${({ theme }) => theme.colors.primaryColorLighter};
     font-size: 2rem;
-    color: ${({ theme }) => theme.colors["primaryColor"]};
   }
 
-  @media screen and (max-width: 767px) {
-    .expertise__card {
-      min-height: 100%;
-      min-width: 100%;
-    }
-  }
+  h3 { font-size: 1.15rem; font-weight: 600; }
+  p { margin-top: .75rem; color: ${({ theme }) => theme.colors.textLighter}; font-size: .9rem; }
 `;

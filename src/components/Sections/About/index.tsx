@@ -1,43 +1,35 @@
-import { AboutContainer } from "./styles";
-//import CV from "../../../assets/CV-Jean-Victor.pdf";
-import { Button } from "../../UI/Button";
-import { myTexts } from "../../../data/MyTexts";
-import { ExpertiseCard } from "../../UI/ExpertiseCard";
-import { myExpertise } from "../../../data/MyExpertise";
 import { Language } from "../../../pages/Home";
+import { myTexts } from "../../../data/MyTexts";
+import { myExpertise } from "../../../data/MyExpertise";
+import { ExpertiseCard } from "../../UI/ExpertiseCard";
+import { AboutContainer } from "./styles";
 
-interface AboutProps {
-  language: Language;
-}
+interface AboutProps { language: Language; }
 
 export function About({ language }: AboutProps) {
-  const translation =
-    myTexts[0].aboutMe.translations[language] || myTexts[0].aboutMe.translations.en;
+  const t = myTexts[0].aboutMe.translations[language];
 
   return (
-    <AboutContainer id="about">
-      <h3
-        className="section__subtitle"
-        dangerouslySetInnerHTML={{ __html: translation.aboutMe__subtitle }}
-      />
-      <h2 className="section__title">{translation.aboutMe__title}</h2>
-
-      <div className="about__container container grid box">
-        <div className="about__data">
-          <div
-            className="about__description"
-            dangerouslySetInnerHTML={{ __html: translation.aboutMe__description }}
-          />
-
-          <div className="about__cta">
-            {/* <Button text={translation.aboutMe__button} url={CV} fileName={"CV-Jean-Victor"} /> */}
-            <Button text={translation.aboutMe__button} />
-          </div>
+    <AboutContainer id="about" className="section-shell">
+      <div className="container about-grid">
+        <div className="about-copy" data-reveal>
+          <span className="section-eyebrow">{t.eyebrow}</span>
+          <h2 className="section-title">{t.title}</h2>
+          <p className="about-lead">{t.description}</p>
+          <p>{t.descriptionSecondary}</p>
+          <a
+            className="resume-link"
+            href="https://www.linkedin.com/in/jean-victor200"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t.button} <i className="bx bx-up-arrow-alt" aria-hidden="true" />
+          </a>
         </div>
 
-        <div className="about__expertise">
-          {myExpertise.map((item) => (
-            <ExpertiseCard key={item.id} myExpertise={item} language={language} />
+        <div className="expertise-grid" data-reveal>
+          {myExpertise.map((item, index) => (
+            <ExpertiseCard key={item.id} myExpertise={item} language={language} index={index} />
           ))}
         </div>
       </div>

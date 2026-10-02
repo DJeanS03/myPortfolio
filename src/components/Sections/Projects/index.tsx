@@ -1,45 +1,54 @@
+import { Language } from "../../../pages/Home";
 import { myProjects } from "../../../data/MyProjects";
 import { ProjectsCard } from "../../UI/ProjectsCard";
 import { ProjectsContainer } from "./styles";
 
-interface ProjectsProps {
-  language: string;
-}
+interface ProjectsProps { language: Language; }
 
 export function Projects({ language }: ProjectsProps) {
-  const getText = () => {
-    if (language === "en") {
-      return (
-        <>
-          <h3 className="section__subtitle">
-            Work <span>Examples</span>
-          </h3>
-          <h2 className="section__title">Recent Projects</h2>
-        </>
-      );
-    } else if (language === "pt") {
-      return (
-        <>
-          <h3 className="section__subtitle">
-            Exemplos de <span>Trabalho</span>
-          </h3>
-          <h2 className="section__title">Realizações Recentes</h2>
-        </>
-      );
-    }
-  };
-  return (
-    <ProjectsContainer id="projects">
-      {getText()}
+  const featured = myProjects.filter((project) => project.featured);
+  const archive = myProjects.filter((project) => !project.featured);
 
-      <div className="projects__container container grid">
-        {myProjects.map((myProjects) => (
-          <ProjectsCard
-            key={myProjects.id}
-            myProjects={myProjects}
-            language={language}
-          />
-        ))}
+  const copy = language === "pt"
+    ? {
+        eyebrow: "Projetos selecionados",
+        title: "Problema, contexto e decisão — não apenas screenshots.",
+        intro: "Uma seleção de projetos profissionais, acadêmicos e técnicos que representam melhor a forma como construo software.",
+        archive: "Outros projetos / Labs",
+      }
+    : {
+        eyebrow: "Selected work",
+        title: "Problem, context and decisions — not just screenshots.",
+        intro: "A selection of professional, academic and technical projects that better represent how I build software.",
+        archive: "Other projects / Labs",
+      };
+
+  return (
+    <ProjectsContainer id="projects" className="section-shell">
+      <div className="container">
+        <header className="section-heading" data-reveal>
+          <span className="section-eyebrow">{copy.eyebrow}</span>
+          <h2 className="section-title">{copy.title}</h2>
+          <p className="section-intro">{copy.intro}</p>
+        </header>
+
+        <div className="featured-projects">
+          {featured.map((project, index) => (
+            <ProjectsCard key={project.id} myProjects={project} language={language} index={index} featured />
+          ))}
+        </div>
+
+        <div className="archive" data-reveal>
+          <div className="archive-heading">
+            <h3>{copy.archive}</h3>
+            <span>{String(archive.length).padStart(2, "0")}</span>
+          </div>
+          <div className="archive-grid">
+            {archive.map((project, index) => (
+              <ProjectsCard key={project.id} myProjects={project} language={language} index={index} />
+            ))}
+          </div>
+        </div>
       </div>
     </ProjectsContainer>
   );

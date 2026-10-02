@@ -1,65 +1,49 @@
+import { Project } from "../../../data/MyProjects";
 import { ProjectsCardContainer } from "./styles";
-
-export interface Project {
-  id: number;
-  tags: string;
-  name: string;
-  photo: string;
-  link: string;
-  status: string;
-  state: string;
-  translations: Translations;
-}
-
-interface Translations {
-  en: {
-    name: string;
-    status: string;
-  };
-  pt: {
-    name: string;
-    status: string;
-  };
-}
 
 interface ProjectsProps {
   myProjects: Project;
-  language: string;
+  language: "en" | "pt";
+  index?: number;
+  featured?: boolean;
 }
 
-export function ProjectsCard({ myProjects, language }: ProjectsProps) {
-  const getButtonText = () => (language === "en" ? "View demo" : "Ver demo");
-
-  const getTranslation = () => {
-    if (language === "en") {
-      return myProjects.translations.en;
-    } else if (language === "pt") {
-      return myProjects.translations.pt;
-    } else {
-      return myProjects.translations.en; // Retorno padrão em inglês
-    }
-  };
-
-  const translation = getTranslation();
+export function ProjectsCard({ myProjects, language, index = 0, featured = false }: ProjectsProps) {
+  const t = myProjects.translations[language];
+  const openLabel = language === "pt" ? "Abrir projeto" : "Open project";
 
   return (
-    <ProjectsCardContainer>
-      <article className="projects__card">
-        <img src={myProjects.photo} alt="" className="projects__img" />
+    <ProjectsCardContainer $featured={featured} data-reveal>
+      <article className="project-card">
+        <div className={`project-visual ${myProjects.photo ? "has-image" : "is-abstract"}`}>
+          {myProjects.photo ? (
+            <img src={myProjects.photo} alt={`Preview do projeto ${t.name}`} loading="lazy" />
+          ) : (
+            <div className="abstract-visual" aria-hidden="true">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div className="abstract-lines"><i /><i /><i /></div>
+            </div>
+          )}
+          <span className="project-status">{t.status}</span>
+        </div>
 
-        <div className="projects__modal">
-          <span className="projects__subtitle">{myProjects.tags}</span>
-          <span className="projects__subtitle" id={myProjects.state}>
-            {translation?.status}
-          </span>
-          <h2 className="projects__title">{translation?.name}</h2>
-          <a
-            href={myProjects.link}
-            className="projects__button"
-            target="_blank"
-          >
-            {getButtonText()} <i className="bx bx-link-external"></i>
-          </a>
+        <div className="project-content">
+          <div>
+            <p className="project-eyebrow">{t.eyebrow}</p>
+            <h3>{t.name}</h3>
+          </div>
+          <p className="project-description">{t.description}</p>
+          <div className="project-meta">
+            <span>{t.role}</span>
+            <div className="project-tags">
+              {myProjects.tags.map((tag) => <span key={tag}>{tag}</span>)}
+            </div>
+          </div>
+          {myProjects.link && (
+            <a href={myProjects.link} target="_blank" rel="noreferrer" className="project-link">
+              {openLabel} <i className="bx bx-up-arrow-alt" aria-hidden="true" />
+            </a>
+          )}
         </div>
       </article>
     </ProjectsCardContainer>
