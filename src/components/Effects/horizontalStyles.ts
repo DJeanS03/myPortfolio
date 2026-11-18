@@ -15,7 +15,8 @@ export const HorizontalScrollContainer = styled.div`
     top: 0;
     height: 100svh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
   }
 
@@ -25,11 +26,11 @@ export const HorizontalScrollContainer = styled.div`
     margin-inline: 0;
     gap: 1.6rem;
     padding-inline: max(1.5rem, calc((100vw - 1180px) / 2)) 12vw;
-    padding-top: 3rem;
+    padding-top: 2.5rem;
     will-change: transform;
   }
 
   &.is-pinned .track > * {
-    flex: 0 0 min(1040px, 80vw);
+    flex: 0 0 var(--item-width, min(1040px, 80vw));
   }
 `;

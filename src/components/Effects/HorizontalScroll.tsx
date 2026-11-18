@@ -1,16 +1,20 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
 import { clamp01, subscribeScroll } from "./scroll";
 import { HorizontalScrollContainer } from "./horizontalStyles";
 
 interface HorizontalScrollProps {
   children: ReactNode;
+  /** Largura de cada item com a seção fixada (padrão: cartões largos). */
+  itemWidth?: string;
+  /** Conteúdo que fica preso no topo da área fixada (ex.: título da seção). */
+  header?: ReactNode;
 }
 
 const DESKTOP = "(min-width: 901px)";
 
 // Seção fixada na tela: o scroll vertical move os cards para o lado.
 // Abaixo de 901px vira uma lista vertical comum.
-export function HorizontalScroll({ children }: HorizontalScrollProps) {
+export function HorizontalScroll({ children, itemWidth = "min(1040px, 80vw)", header }: HorizontalScrollProps) {
   const outerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [enabled, setEnabled] = useState(() => window.matchMedia(DESKTOP).matches);
@@ -57,8 +61,13 @@ export function HorizontalScroll({ children }: HorizontalScrollProps) {
   }, [enabled]);
 
   return (
-    <HorizontalScrollContainer ref={outerRef} className={enabled ? "is-pinned" : ""}>
+    <HorizontalScrollContainer
+      ref={outerRef}
+      className={enabled ? "is-pinned" : ""}
+      style={{ "--item-width": itemWidth } as CSSProperties}
+    >
       <div className="pin">
+        {header}
         <div className="track" ref={trackRef}>
           {children}
         </div>

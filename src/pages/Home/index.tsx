@@ -1,31 +1,22 @@
 import { useEffect, useState } from "react";
-import { Header } from "../../components/Layout/Header";
-import { Footer } from "../../components/Layout/Footer";
-import { Home } from "../../components/Sections/Home";
-import { About } from "../../components/Sections/About";
-import { Projects } from "../../components/Sections/Projects";
-import { Experiences } from "../../components/Sections/Services";
-import { Skills } from "../../components/Sections/Skills";
-import { Education } from "../../components/Sections/Education";
-import { Contact } from "../../components/Sections/Contact";
-import { ScrollButton } from "../../components/UI/ScrollButton";
 import { GlobalEffects } from "../../components/Effects/GlobalEffects";
+import { RefGlobal } from "../../components/Ref/RefGlobal";
+import { RefHeader } from "../../components/Ref/Header";
+import { RefHero } from "../../components/Ref/Hero";
+import { RefAbout } from "../../components/Ref/About";
+import { RefServices } from "../../components/Ref/Services";
+import { RefExperience } from "../../components/Ref/Experience";
+import { RefProjects } from "../../components/Ref/Projects";
+import { RefStack } from "../../components/Ref/Stack";
+import { RefContact } from "../../components/Ref/Contact";
 import { MainContainer } from "./styles";
 
 export type Language = "en" | "pt";
 
 export function Main() {
-  const [scrolled, setScrolled] = useState(false);
   const [language, setLanguage] = useState<Language>(
     () => (localStorage.getItem("language") as Language) || "pt"
   );
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 18);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("language", language);
@@ -53,21 +44,16 @@ export function Main() {
 
   return (
     <MainContainer>
+      <RefGlobal />
       <GlobalEffects />
-      <Header
-        Catch={scrolled}
-        language={language}
-        onLanguageChange={setLanguage}
-      />
-      <ScrollButton />
-      <Home language={language} />
-      <About language={language} />
-      <Projects language={language} />
-      <Experiences language={language} />
-      <Skills language={language} />
-      <Education language={language} />
-      <Contact language={language} />
-      <Footer language={language} />
+      <RefHeader language={language} onLanguageChange={setLanguage} />
+      <RefHero language={language} />
+      <RefAbout language={language} />
+      <RefServices language={language} />
+      <RefExperience language={language} />
+      <RefProjects language={language} />
+      <RefStack language={language} />
+      <RefContact language={language} />
     </MainContainer>
   );
 }
