@@ -3,18 +3,20 @@ export const myTexts = [
     hero: {
       translations: {
         en: {
-          eyebrow: "Back-End / Full-Stack Developer",
-          title: "I build reliable software for real-world problems.",
+          eyebrow: "Full-stack developer focused on backend",
+          title: "I build software that solves real problems.",
           description:
-            "I work across APIs, integrations, automation and web products, connecting business needs to maintainable technical solutions.",
+            "I work on APIs, integrations, automation and web products used in everyday business operations. I am deepening my knowledge of applied AI through graduate study and independent learning.",
+          location: "Salvador, Brazil · available for remote work",
           primaryCta: "Explore projects",
           secondaryCta: "Get in touch",
         },
         pt: {
-          eyebrow: "Desenvolvedor Back-End / Full-Stack",
-          title: "Construo software confiável para problemas do mundo real.",
+          eyebrow: "Desenvolvedor full-stack com foco em backend",
+          title: "Construo sistemas que resolvem problemas reais.",
           description:
-            "Atuo com APIs, integrações, automação e produtos web, conectando necessidades de negócio a soluções técnicas sustentáveis.",
+            "Trabalho com APIs, integrações, automações e produtos web usados no dia a dia de empresas. Aprofundo meus estudos em IA aplicada na pós-graduação e por conta própria.",
+          location: "Salvador, BA, Brasil · disponível para trabalho remoto",
           primaryCta: "Ver projetos",
           secondaryCta: "Entrar em contato",
         },
@@ -26,18 +28,18 @@ export const myTexts = [
           eyebrow: "Profile",
           title: "Engineering beyond the interface.",
           description:
-            "I am a Back-End / Full-Stack developer with experience building REST APIs, system integrations, automation and end-to-end web solutions. I enjoy contexts where I need to understand the business problem, investigate how systems behave and turn requirements into clear, maintainable solutions.",
+            "I am a full-stack developer focused on backend engineering. At Fundação José Silveira, I work on APIs, integrations, automation and production issue investigation across systems used by different teams. I also built an eligibility platform end to end at VerdeSaber and was Copartners' first developer, later taking on a technical leadership role.",
           descriptionSecondary:
-            "My background spans React/Next.js, Node.js/NestJS, Python, databases, Docker and CI/CD, with AI and automation as complementary tools rather than the center of the product.",
+            "I like to understand the problem before choosing a solution, build from database to interface when needed, and keep improving a system after delivery. I am pursuing a postgraduate MIT program in Software Architecture: Cloud, Data and AI at Instituto Infnet while deepening my knowledge of AI applications, LLMs and RAG.",
           button: "View LinkedIn profile",
         },
         pt: {
           eyebrow: "Perfil",
           title: "Engenharia além da interface.",
           description:
-            "Sou Desenvolvedor Back-End / Full-Stack com experiência em APIs REST, integrações entre sistemas, automação e soluções web ponta a ponta. Gosto de contextos em que preciso entender o problema de negócio, investigar o comportamento dos sistemas e transformar requisitos em soluções claras e sustentáveis.",
+            "Sou desenvolvedor full-stack com foco em backend. Na Fundação José Silveira, trabalho com APIs, integrações, automações e investigação de falhas em sistemas usados por diferentes áreas. Também desenvolvi integralmente uma plataforma de elegibilidade na VerdeSaber e fui o primeiro desenvolvedor da Copartners, onde depois atuei como líder técnico.",
           descriptionSecondary:
-            "Minha base passa por React/Next.js, Node.js/NestJS, Python, bancos de dados, Docker e CI/CD, usando IA e automação como ferramentas complementares quando agregam valor ao produto.",
+            "Gosto de entender o problema antes de escolher a solução, construir do banco de dados à interface quando necessário e acompanhar o sistema depois da entrega. Curso o MIT em Arquitetura de Software: Cloud, Dados e IA no Instituto Infnet e aprofundo meus estudos em aplicações com IA, LLMs e RAG.",
           button: "Ver perfil no LinkedIn",
         },
       },
@@ -46,18 +48,18 @@ export const myTexts = [
       translations: {
         en: {
           eyebrow: "Capabilities",
-          title: "A stack organized by responsibility, not by logo count.",
+          title: "What I use at work and what I am studying.",
           description:
-            "The technologies below reflect the areas where I build, integrate, deliver and maintain software.",
+            "The technologies below reflect my professional work and the areas I am currently studying. Project experience and topics I am still learning are shown separately.",
           button: "See projects",
           toggleMore: "See complete stack",
           toggleLess: "Show essentials",
         },
         pt: {
           eyebrow: "Capacidades",
-          title: "Uma stack organizada por responsabilidade, não por quantidade de logos.",
+          title: "O que uso no trabalho e o que estou estudando.",
           description:
-            "As tecnologias abaixo representam as áreas em que construo, integro, entrego e mantenho software.",
+            "As tecnologias abaixo fazem parte da minha prática profissional e dos estudos que venho aprofundando. Indico a diferença entre experiência de projeto e temas em aprendizado.",
           button: "Ver projetos",
           toggleMore: "Ver stack completa",
           toggleLess: "Mostrar essenciais",
@@ -68,15 +70,15 @@ export const myTexts = [
       translations: {
         en: {
           eyebrow: "Experience",
-          title: "Building, investigating and evolving real systems.",
+          title: "Real systems, from internship to full-stack.",
           intro:
-            "A timeline focused on responsibilities, technical decisions and the impact of each stage of my career.",
+            "My path at Fundação José Silveira went from internship to trainee to junior developer, alongside a fintech where I was the first developer.",
         },
         pt: {
           eyebrow: "Experiência",
-          title: "Construindo, investigando e evoluindo sistemas reais.",
+          title: "Sistemas reais, do estágio ao full-stack.",
           intro:
-            "Uma linha do tempo focada em responsabilidades, decisões técnicas e no impacto de cada etapa da minha trajetória.",
+            "Na Fundação José Silveira passei de estagiário a trainee e a desenvolvedor júnior. Em paralelo, fui o primeiro desenvolvedor de uma fintech.",
         },
       },
     },

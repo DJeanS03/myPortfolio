@@ -8,20 +8,30 @@ interface ProjectsProps {
   featured?: boolean;
 }
 
-export function ProjectsCard({ myProjects, language, index = 0, featured = false }: ProjectsProps) {
+export function ProjectsCard({ myProjects, language, featured = false }: ProjectsProps) {
   const t = myProjects.translations[language];
   const openLabel = language === "pt" ? "Abrir projeto" : "Open project";
 
   return (
     <ProjectsCardContainer $featured={featured} data-reveal>
-      <article className="project-card">
+      <article className="project-card" data-glow data-cursor={myProjects.link ? (language === "pt" ? "abrir" : "open") : ""}>
         <div className={`project-visual ${myProjects.photo ? "has-image" : "is-abstract"}`}>
           {myProjects.photo ? (
-            <img src={myProjects.photo} alt={`Preview do projeto ${t.name}`} loading="lazy" />
+            <img
+              src={myProjects.photo}
+              alt={language === "pt" ? `Captura de tela do projeto ${t.name}` : `Screenshot of the ${t.name} project`}
+              loading="lazy"
+            />
           ) : (
-            <div className="abstract-visual" aria-hidden="true">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <div className="abstract-lines"><i /><i /><i /></div>
+            // Sem captura pública: o espaço da imagem mostra fatos do projeto em texto,
+            // sem simular uma interface.
+            <div className="abstract-visual">
+              <span className="abstract-name" aria-hidden="true">{t.name}</span>
+              {t.highlights && (
+                <ul className="abstract-facts">
+                  {t.highlights.map((fact) => <li key={fact}>{fact}</li>)}
+                </ul>
+              )}
             </div>
           )}
           <span className="project-status">{t.status}</span>

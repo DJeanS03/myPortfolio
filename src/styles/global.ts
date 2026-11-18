@@ -66,8 +66,9 @@ export const GlobalStyle = createGlobalStyle`
     gap: .6rem;
     margin-bottom: .9rem;
     color: ${({ theme }) => theme.colors.primaryColorLighter};
-    font-size: .78rem;
-    font-weight: 600;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .74rem;
+    font-weight: 500;
     letter-spacing: .16em;
     text-transform: uppercase;
   }
@@ -80,10 +81,79 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .section-title {
-    max-width: 16ch;
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    font-weight: 600;
-    letter-spacing: -.045em;
+    max-width: 18ch;
+    font-family: "Syne", "Poppins", sans-serif;
+    font-size: clamp(1.6rem, 5.4vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  /* Títulos em colunas laterais (Sobre, Experiência, Contato) são menores
+     para palavras longas como "oportunidade" não vazarem da coluna. */
+  .about-copy .section-title,
+  .experience-heading .section-title,
+  .contact-copy .section-title {
+    font-size: clamp(1.9rem, 3vw, 2.9rem);
+  }
+
+  @media (max-width: 900px) {
+    .about-copy .section-title,
+    .experience-heading .section-title,
+    .contact-copy .section-title {
+      font-size: clamp(2rem, 8vw, 3.4rem);
+    }
+  }
+
+  /* ---------- Efeitos ---------- */
+
+  /* Títulos palavra por palavra (SplitWords) */
+  .split-words .sw { display: inline-block; margin-right: .22em; }
+  .split-words .sw:last-child { margin-right: 0; }
+  .split-words:not(.is-in) .sw { opacity: 0; }
+
+  /* Gradiente animado no texto */
+  .aurora {
+    background: linear-gradient(90deg, #05A3D4, #8fd8ff, #a99bff, #8fd8ff, #05A3D4);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: aurora 8s linear infinite;
+  }
+  @keyframes aurora { to { background-position: 300% 0; } }
+  .split-words:not(.on-screen) .aurora { animation-play-state: paused; }
+
+  /* Texto vazado */
+  .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(242, 242, 242, .55);
+  }
+
+  /* Parágrafo que acende com o scroll (ScrollLitText) */
+  .scroll-lit .lw { opacity: .2; transition: opacity .3s linear; }
+  .scroll-lit .lw.on { opacity: 1; }
+
+  /* Luz que segue o mouse nos cards */
+  [data-glow] { position: relative; }
+  [data-glow]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .4s ease;
+    background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(5, 163, 212, .16), transparent 60%);
+  }
+  [data-glow]:hover::after { opacity: 1; }
+
+  /* Cursor customizado: some o nativo só com mouse, menos em campos de texto */
+  @media (hover: hover) and (pointer: fine) {
+    html.cursor-on, html.cursor-on *:not(input):not(textarea):not(select) { cursor: none !important; }
   }
 
   .section-intro {
@@ -95,24 +165,23 @@ export const GlobalStyle = createGlobalStyle`
 
   [data-reveal] {
     opacity: 0;
-    transform: translateY(26px);
+    transform: translateY(40px);
     transition:
-      opacity .7s cubic-bezier(.2,.75,.2,1),
-      transform .7s cubic-bezier(.2,.75,.2,1);
+      opacity .9s cubic-bezier(.16, 1, .3, 1),
+      transform .9s cubic-bezier(.16, 1, .3, 1);
   }
+
+  [data-reveal="slide"] { transform: translateX(-60px); }
 
   [data-reveal].is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 
+  /* Os efeitos ficam ligados mesmo com "reduzir movimento" no sistema,
+     como o Motion faz por padrão. Só o scroll suave é desligado. */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      scroll-behavior: auto !important;
-      animation-duration: .01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: .01ms !important;
-    }
+    html { scroll-behavior: auto; }
   }
 
   ::selection {

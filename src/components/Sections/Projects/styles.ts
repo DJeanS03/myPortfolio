@@ -1,7 +1,21 @@
 import styled from "styled-components";
 
 export const ProjectsContainer = styled.section`
-  .featured-projects { display: grid; gap: 1.4rem; }
+  .section-heading { margin-bottom: 0; }
+
+  .scroll-hint {
+    margin-top: 1.4rem;
+    color: ${({ theme }) => theme.colors.textLighter};
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .72rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .section-heading { margin-bottom: 2.2rem; }
+    .scroll-hint { display: none; }
+  }
 
   .archive {
     margin-top: clamp(4rem, 8vw, 7rem);

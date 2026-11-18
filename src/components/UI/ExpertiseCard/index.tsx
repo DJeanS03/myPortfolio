@@ -20,7 +20,7 @@ export function ExpertiseCard({ myExpertise, language, index = 0 }: ExpertisePro
   const translation = myExpertise.translations[language];
 
   return (
-    <ExpertiseContainer style={{ "--index": index } as CSSProperties}>
+    <ExpertiseContainer style={{ "--index": index } as CSSProperties} data-glow>
       <div className="expertise-number">0{index + 1}</div>
       <i className={`${myExpertise.icon} expertise-icon`} aria-hidden="true" />
       <h3>{translation.title}</h3>

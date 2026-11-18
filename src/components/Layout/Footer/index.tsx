@@ -9,7 +9,7 @@ export function Footer({ language }: FooterProps) {
       <div className="container footer-grid">
         <div>
           <strong>Jean Victor</strong>
-          <p>{language === "pt" ? "Back-End / Full-Stack Developer" : "Back-End / Full-Stack Developer"}</p>
+          <p>{language === "pt" ? "Desenvolvedor full-stack com foco em backend" : "Full-stack developer focused on backend"}</p>
         </div>
         <div className="footer-links">
           <a href="https://github.com/DJeanS03" target="_blank" rel="noreferrer">GitHub</a>

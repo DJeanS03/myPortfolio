@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Language } from "../../../pages/Home";
 import { myTexts } from "../../../data/MyTexts";
+import { SplitWords } from "../../Effects/SplitWords";
 import { ContactContainer } from "./styles";
 
 interface ContactProps { language: Language; }
@@ -49,7 +50,7 @@ export function Contact({ language }: ContactProps) {
       <div className="container contact-layout">
         <div className="contact-copy" data-reveal>
           <span className="section-eyebrow">{t.eyebrow}</span>
-          <h2 className="section-title">{t.title}</h2>
+          <SplitWords className="section-title" text={t.title} accent={2} />
           <p className="section-intro">{t.intro}</p>
 
           <div className="contact-links">

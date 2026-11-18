@@ -8,9 +8,11 @@ export const HeaderContainer = styled.header`
   transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
 
   &.is-scrolled {
-    background: rgba(16,16,18,.78);
+    /* Fundo mais opaco com blur menor: o blur é recalculado a cada quadro
+       em que algo se move por baixo do header (faixa, títulos, scroll). */
+    background: rgba(16,16,18,.9);
     border-color: rgba(255,255,255,.06);
-    backdrop-filter: blur(22px);
+    backdrop-filter: blur(10px);
   }
 
   .nav {

@@ -9,6 +9,7 @@ import { Skills } from "../../components/Sections/Skills";
 import { Education } from "../../components/Sections/Education";
 import { Contact } from "../../components/Sections/Contact";
 import { ScrollButton } from "../../components/UI/ScrollButton";
+import { GlobalEffects } from "../../components/Effects/GlobalEffects";
 import { MainContainer } from "./styles";
 
 export type Language = "en" | "pt";
@@ -33,12 +34,6 @@ export function Main() {
 
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>("[data-reveal]");
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reducedMotion) {
-      elements.forEach((element) => element.classList.add("is-visible"));
-      return;
-    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -58,6 +53,7 @@ export function Main() {
 
   return (
     <MainContainer>
+      <GlobalEffects />
       <Header
         Catch={scrolled}
         language={language}

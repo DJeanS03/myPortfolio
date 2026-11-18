@@ -6,7 +6,7 @@ export const EducationContainer = styled.section`
 
   .education-grid {
     display: grid;
-    grid-template-columns: 1.15fr 1.15fr .7fr;
+    grid-template-columns: 1.2fr 1fr 1fr .8fr;
     border-top: 1px solid rgba(255,255,255,.08);
   }
 
@@ -16,6 +16,22 @@ export const EducationContainer = styled.section`
   h3 { margin-top: 1.4rem; font-size: clamp(1.2rem, 2vw, 1.65rem); letter-spacing: -.025em; }
   p { margin-top: .8rem; color: ${({ theme }) => theme.colors.textLighter}; font-size: .88rem; }
   small { display: block; margin-top: .8rem; color: ${({ theme }) => theme.colors.textLighter}; }
+
+  .status-live { display: inline-flex; align-items: center; gap: .5rem; color: ${({ theme }) => theme.colors.primaryColorLighter}; }
+  .status-live::before {
+    content: "";
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 4px rgba(5,163,212,.18);
+  }
+
+  @media (max-width: 1100px) and (min-width: 851px) {
+    .education-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    article:nth-child(3) { padding-left: 0; border-left: 0; }
+    article:nth-child(n + 3) { border-top: 1px solid rgba(255,255,255,.08); padding-bottom: 2rem; }
+  }
 
   @media (max-width: 850px) {
     .education-grid { grid-template-columns: 1fr; }

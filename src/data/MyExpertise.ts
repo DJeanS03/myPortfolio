@@ -6,12 +6,12 @@ export const myExpertise = [
       en: {
         title: "Back-End & Integrations",
         description:
-          "REST APIs, authentication, external services, legacy integrations and maintainable services with Node.js, NestJS, Express and Python.",
+          "REST APIs, external services, legacy and Fluig integrations, and maintainable services with Node.js, NestJS and Python.",
       },
       pt: {
         title: "Back-End & Integrações",
         description:
-          "APIs REST, autenticação, serviços externos, sistemas legados e serviços sustentáveis com Node.js, NestJS, Express e Python.",
+          "APIs REST, serviços externos, integrações com sistemas legados e Fluig, e serviços sustentáveis com Node.js, NestJS e Python.",
       },
     },
   },
@@ -38,12 +38,12 @@ export const myExpertise = [
       en: {
         title: "Delivery & Infrastructure",
         description:
-          "Docker, CI/CD, GitHub Actions and cloud fundamentals focused on predictable, repeatable delivery.",
+          "Docker, CI/CD and GitHub Actions to ship and maintain services with predictable, repeatable deliveries.",
       },
       pt: {
         title: "Entrega & Infraestrutura",
         description:
-          "Docker, CI/CD, GitHub Actions e fundamentos de cloud com foco em entregas previsíveis e repetíveis.",
+          "Docker, CI/CD e GitHub Actions para entregar e manter serviços com entregas previsíveis e repetíveis.",
       },
     },
   },
@@ -54,12 +54,12 @@ export const myExpertise = [
       en: {
         title: "Automation & AI",
         description:
-          "Python routines, workflow automation, LLMs and RAG used when they meaningfully improve a system or process.",
+          "Team-built RPAs and process automation with Node.js and Python. LLMs, RAG and embeddings are topics I am studying in my postgraduate program.",
       },
       pt: {
         title: "Automação & IA",
         description:
-          "Rotinas em Python, automação de fluxos, LLMs e RAG usados quando realmente melhoram um sistema ou processo.",
+          "RPAs e automação de processos construídos em equipe com Node.js e Python. LLMs, RAG e embeddings são temas que estudo na pós-graduação.",
       },
     },
   },

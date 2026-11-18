@@ -17,6 +17,22 @@ export const SkilsContainer = styled.section`
   .skill-group-head { display: flex; gap: 1.1rem; }
   .skill-group-head > span { color: ${({ theme }) => theme.colors.primaryColorLighter}; font-size: .68rem; letter-spacing: .1em; padding-top: .3rem; }
   h3 { font-size: 1.4rem; letter-spacing: -.025em; }
+  .skill-level {
+    display: inline-block;
+    margin-bottom: .55rem;
+    padding: .22rem .55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.1);
+    color: ${({ theme }) => theme.colors.textLighter};
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .64rem;
+    font-style: normal;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .skill-level.is-practice { color: ${({ theme }) => theme.colors.primaryColorLighter}; border-color: rgba(5,163,212,.35); }
+  .skill-level.is-study { color: #b9adff; border-color: rgba(169,155,255,.35); border-style: dashed; }
+  .skill-group:has(.is-study) .skill-list span { border-style: dashed; }
   .skill-group-head p { margin-top: .35rem; color: ${({ theme }) => theme.colors.textLighter}; font-size: .8rem; }
 
   .skill-list { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 2rem; }

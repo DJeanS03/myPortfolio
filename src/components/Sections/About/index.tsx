@@ -2,6 +2,8 @@ import { Language } from "../../../pages/Home";
 import { myTexts } from "../../../data/MyTexts";
 import { myExpertise } from "../../../data/MyExpertise";
 import { ExpertiseCard } from "../../UI/ExpertiseCard";
+import { SplitWords } from "../../Effects/SplitWords";
+import { ScrollLitText } from "../../Effects/ScrollLitText";
 import { AboutContainer } from "./styles";
 
 interface AboutProps { language: Language; }
@@ -14,8 +16,8 @@ export function About({ language }: AboutProps) {
       <div className="container about-grid">
         <div className="about-copy" data-reveal>
           <span className="section-eyebrow">{t.eyebrow}</span>
-          <h2 className="section-title">{t.title}</h2>
-          <p className="about-lead">{t.description}</p>
+          <SplitWords className="section-title" text={t.title} accent={1} />
+          <ScrollLitText className="about-lead" text={t.description} />
           <p>{t.descriptionSecondary}</p>
           <a
             className="resume-link"

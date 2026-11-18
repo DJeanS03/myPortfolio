@@ -1,6 +1,16 @@
 import fjsSaude from "../assets/fjssSaude.png";
 import marqenda from "../assets/marqenda.png";
 
+export type ProjectCopy = {
+  name: string;
+  eyebrow: string;
+  description: string;
+  role: string;
+  status: string;
+  /** Fatos curtos exibidos no lugar da imagem quando o projeto não tem captura. */
+  highlights?: string[];
+};
+
 export type Project = {
   id: number;
   featured: boolean;
@@ -9,71 +19,111 @@ export type Project = {
   link?: string;
   repository?: string;
   translations: {
-    en: {
-      name: string;
-      eyebrow: string;
-      description: string;
-      role: string;
-      status: string;
-    };
-    pt: {
-      name: string;
-      eyebrow: string;
-      description: string;
-      role: string;
-      status: string;
-    };
+    en: ProjectCopy;
+    pt: ProjectCopy;
   };
 };
 
+// Ordem dos destaques: VerdeSaber, Marqenda, Copartners, FJS Saúde, KubeRNP.
+// VerdeSaber e Copartners ficam só em texto: não há captura segura para publicar.
 export const myProjects: Project[] = [
+  {
+    id: 7,
+    featured: true,
+    tags: ["PHP/Laravel", "React/Inertia", "SQL", "Jobs / workers"],
+    translations: {
+      en: {
+        name: "VerdeSaber",
+        eyebrow: "Eligibility and compliance platform",
+        description:
+          "I built the platform as its sole developer, from company lookup and validation flows to interfaces, external integrations, asynchronous processing and reports. The work brought together PHP/Laravel, React/Inertia, SQL, queues and workers, including failure handling for external services.",
+        role: "End-to-end development · sole developer",
+        status: "Used by customers",
+        highlights: ["Sole developer", "Used by customers", "External integrations", "Async processing & reports"],
+      },
+      pt: {
+        name: "VerdeSaber",
+        eyebrow: "Plataforma de elegibilidade e compliance",
+        description:
+          "Desenvolvi a plataforma como único desenvolvedor, do fluxo de consulta e validação de empresas até as interfaces, integrações externas, processamento assíncrono e geração de relatórios. O trabalho reuniu PHP/Laravel, React/Inertia, SQL, filas e workers, com tratamento de falhas em serviços externos.",
+        role: "Desenvolvimento ponta a ponta · único desenvolvedor",
+        status: "Usado por clientes",
+        highlights: ["Único desenvolvedor", "Usado por clientes", "Integrações externas", "Processamento assíncrono e relatórios"],
+      },
+    },
+  },
   {
     id: 1,
     featured: true,
-    tags: ["SaaS", "Scheduling", "Beta"],
+    tags: ["SaaS", "Beta"],
     photo: marqenda,
     link: "https://marqenda.vercel.app",
     translations: {
       en: {
         name: "Marqenda",
-        eyebrow: "Scheduling & service operations app",
+        eyebrow: "Dental SaaS product",
         description:
-          "A product in closed beta that brings scheduling, staff, services, availability, blocks and public booking into a single operational panel for service-based businesses.",
-        role: "Product & software development",
+          "I built the complete product to organize dental clinic operations. Its closed beta brings scheduling, staff, services, availability, blocked time slots and public booking into one workflow.",
+        role: "Product ownership and end-to-end development",
         status: "Closed beta",
       },
       pt: {
         name: "Marqenda",
-        eyebrow: "App de agenda e operação de atendimentos",
+        eyebrow: "SaaS odontológico",
         description:
-          "Produto em beta fechado que reúne agenda, equipe, serviços, disponibilidade, bloqueios e agendamento público em um único painel para negócios que trabalham com atendimentos.",
-        role: "Produto & desenvolvimento de software",
+          "Construí o produto completo para organizar a operação de clínicas odontológicas. O beta fechado reúne agenda, equipe, serviços, disponibilidade, bloqueios e agendamento público em um só fluxo.",
+        role: "Produto e desenvolvimento integral",
         status: "Beta fechado",
+      },
+    },
+  },
+  {
+    id: 8,
+    featured: true,
+    tags: ["NestJS", "TypeScript", "PostgreSQL", "Next.js"],
+    translations: {
+      en: {
+        name: "Copartners",
+        eyebrow: "Fintech operations platform",
+        description:
+          "I was the fintech's first developer and built data collection and processing flows, integrations and tools that supported credit analysis and business operations. As the team grew, I took on technical leadership while continuing to implement features.",
+        role: "Full-stack development and technical leadership",
+        status: "Used in the company's operations",
+        highlights: ["First developer", "Data collection & integrations", "Landing page & admin panel", "Technical leadership"],
+      },
+      pt: {
+        name: "Copartners",
+        eyebrow: "Plataforma de operação de uma fintech",
+        description:
+          "Fui o primeiro desenvolvedor da fintech e construí soluções de captação e tratamento de dados, integrações e ferramentas que apoiavam a análise de crédito e a operação da empresa. Com a expansão do time, assumi a liderança técnica e continuei participando da implementação.",
+        role: "Desenvolvimento full-stack e liderança técnica",
+        status: "Utilizado na operação da empresa",
+        highlights: ["Primeiro desenvolvedor", "Captação de dados e integrações", "Landing page e painel administrativo", "Liderança técnica"],
       },
     },
   },
   {
     id: 2,
     featured: true,
-    tags: ["Next.js", "Web", "Production"],
+    tags: ["Next.js", "Web"],
     photo: fjsSaude,
     link: "https://fjsaude.fjs.org.br",
     translations: {
       en: {
         name: "FJS Saúde",
-        eyebrow: "Institutional health platform",
+        eyebrow: "Public page for a healthcare service",
         description:
-          "A production web experience built for a healthcare organization, presented here as one of the portfolio's professional delivery highlights.",
-        role: "Full-Stack development / delivery",
-        status: "Live",
+          "I developed the entire page from a supplied design and contributed improvement suggestions during implementation.",
+        role: "Page development",
+        status: "Published page",
       },
       pt: {
         name: "FJS Saúde",
-        eyebrow: "Plataforma institucional de saúde",
+        eyebrow: "Página pública para serviço de saúde",
         description:
-          "Experiência web em produção para uma organização de saúde, apresentada como um dos destaques de entrega profissional do portfólio.",
-        role: "Desenvolvimento Full-Stack / entrega",
-        status: "Em produção",
+          "Desenvolvi toda a página a partir de um design fornecido, contribuindo também com sugestões de melhoria durante a implementação.",
+        role: "Desenvolvimento da página",
+        status: "Página publicada",
       },
     },
   },

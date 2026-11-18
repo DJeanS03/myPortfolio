@@ -50,6 +50,7 @@ export const ProjectsCardContainer = styled.div<{ $featured: boolean }>`
   }
 
   .abstract-visual {
+    container-type: inline-size;
     position: absolute;
     inset: 0;
     display: flex;
@@ -61,17 +62,36 @@ export const ProjectsCardContainer = styled.div<{ $featured: boolean }>`
       linear-gradient(135deg, #111419, #0d0d0f);
   }
 
-  .abstract-visual > span {
-    color: rgba(255,255,255,.15);
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 600;
-    letter-spacing: -.08em;
+  .abstract-name {
+    margin-top: 2.2rem;
+    color: transparent;
+    -webkit-text-stroke: 1.2px rgba(242,242,242,.32);
+    font-family: "Syne", "Poppins", sans-serif;
+    /* Tamanho relativo à largura do cartão, para o nome nunca quebrar no meio. */
+    font-size: min(10.5cqi, 5.2rem);
+    font-weight: 800;
+    line-height: .95;
+    letter-spacing: -.03em;
+    white-space: nowrap;
   }
 
-  .abstract-lines { display: grid; gap: .55rem; width: 70%; }
-  .abstract-lines i { display: block; height: 1px; background: rgba(255,255,255,.14); }
-  .abstract-lines i:nth-child(2) { width: 75%; }
-  .abstract-lines i:nth-child(3) { width: 50%; }
+  .abstract-facts { display: grid; gap: 0; }
+  .abstract-facts li {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .7rem 0;
+    border-top: 1px solid rgba(255,255,255,.09);
+    color: ${({ theme }) => theme.colors.titleColor};
+    font-size: .95rem;
+  }
+  .abstract-facts li::before {
+    content: "";
+    flex: 0 0 .45rem;
+    height: .45rem;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.colors.primaryColorLighter};
+  }
 
   .project-content {
     display: flex;

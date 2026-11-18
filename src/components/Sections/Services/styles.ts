@@ -14,14 +14,22 @@ export const ServicesContainer = styled.section`
   .experience-heading { position: sticky; top: 7rem; margin-bottom: 0; }
   .timeline { position: relative; display: grid; }
 
-  .timeline::before {
-    content: "";
+  .timeline-rail {
     position: absolute;
     left: 1.05rem;
     top: 1.8rem;
     bottom: 2rem;
     width: 1px;
-    background: linear-gradient(${({ theme }) => theme.colors.primaryColor}, rgba(255,255,255,.08));
+    background: rgba(255,255,255,.08);
+  }
+
+  .timeline-fill {
+    position: absolute;
+    inset: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    background: linear-gradient(#05A3D4, #8fd8ff, #a99bff);
+    box-shadow: 0 0 12px rgba(5, 163, 212, .6);
   }
 
   .timeline-item {
