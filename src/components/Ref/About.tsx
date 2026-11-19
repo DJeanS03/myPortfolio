@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import photo from "../../assets/profile2.jpg";
+import stageTalk from "../../assets/stage-talk.jpg";
+import stageEvent from "../../assets/stage-event.jpg";
 import type { Language } from "../../pages/Home";
 import { about, aboutHighlights } from "./content";
 import { LitText } from "./LitText";
@@ -17,8 +18,11 @@ export function RefAbout({ language }: AboutProps) {
 
       <div className="grid">
         <div className="photos" data-reveal>
-          <figure className="card">
-            <img src={photo} alt="Jean Victor" loading="lazy" />
+          <figure className="card main">
+            <img src={stageTalk} alt={language === "pt" ? "Jean Victor falando ao microfone em um palco" : "Jean Victor speaking on stage"} loading="lazy" />
+          </figure>
+          <figure className="card second">
+            <img src={stageEvent} alt={language === "pt" ? "Jean Victor apresentando em um evento ao ar livre" : "Jean Victor presenting at an outdoor event"} loading="lazy" />
           </figure>
           <svg className="badge" viewBox="0 0 120 120" aria-hidden="true">
             <defs>
@@ -77,20 +81,36 @@ const Section = styled.section`
     top: 7rem;
   }
 
+  /* Duas fotos de palco sobrepostas, inclinadas para lados opostos. */
+  .photos { padding-bottom: 22%; }
   .card {
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 28px;
     background: var(--ink-2);
-    transform: rotate(-3deg);
     box-shadow: 0 30px 80px rgba(0,0,0,.45);
+    transition: transform .8s var(--expo);
   }
   .card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .main { width: 84%; transform: rotate(-4deg); }
+  .main img { object-position: 50% 20%; }
+  .second {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    border: 6px solid var(--ink);
+    outline: 1px solid var(--line);
+    transform: rotate(5deg);
+  }
+  .second img { object-position: 45% 25%; }
+  .photos:hover .main { transform: rotate(-2deg) translateY(-6px); }
+  .photos:hover .second { transform: rotate(2deg) translate(6px, -4px); }
 
   .badge {
     position: absolute;
     top: -2.6rem;
-    right: -1.6rem;
+    right: 4%;
     width: 8.5rem;
     height: 8.5rem;
     animation: spin 14s linear infinite;
@@ -144,6 +164,6 @@ const Section = styled.section`
   @media (max-width: 860px) {
     .grid { grid-template-columns: 1fr; }
     .photos { position: relative; top: 0; max-width: 22rem; margin-inline: auto; }
-    .badge { right: -1rem; width: 7rem; height: 7rem; }
+    .badge { right: 0; width: 7rem; height: 7rem; }
   }
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import portrait from "../../assets/profile2.png";
+import portrait from "../../assets/profile2.jpg";
 import type { Language } from "../../pages/Home";
 import { Marquee } from "../Effects/Marquee";
 import { hero } from "./content";
@@ -7,7 +7,7 @@ import { Scramble } from "./Scramble";
 
 interface HeroProps { language: Language; }
 
-// Primeira dobra: nome gigante (sobrenome vazado atrás do retrato recortado),
+// Primeira dobra: nome gigante (sobrenome vazado atrás do retrato em arco),
 // texto que embaralha entre papéis, localização, ações e a faixa inclinada.
 export function RefHero({ language }: HeroProps) {
   const t = hero[language];
@@ -23,7 +23,10 @@ export function RefHero({ language }: HeroProps) {
         <span className="mask" aria-hidden="true"><span className="last">Victor</span></span>
       </h1>
 
-      <img className="portrait" src={portrait} alt="Jean Victor" />
+      <div className="arch-line" aria-hidden="true" />
+      <figure className="portrait">
+        <img src={portrait} alt="Jean Victor" />
+      </figure>
       <div className="fade" aria-hidden="true" />
 
       <div className="bottom r-wrap">
@@ -101,9 +104,10 @@ const Section = styled.section`
   }
   .mask { display: block; overflow: hidden; padding-bottom: .03em; }
   .mask > span { display: block; animation: mask-up 1.1s var(--expo) both; }
-  .first { font-size: clamp(5rem, 20vw, 18rem); color: var(--text); }
+  /* O tamanho também respeita a altura da tela, para o nome não invadir o texto de baixo. */
+  .first { font-size: clamp(5rem, min(20vw, 25svh), 18rem); color: var(--text); }
   .last {
-    font-size: clamp(3.4rem, 13.5vw, 12rem);
+    font-size: clamp(3.4rem, min(13.5vw, 17svh), 12rem);
     letter-spacing: -.02em;
     color: transparent;
     -webkit-text-stroke: 1.5px rgba(238,242,250,.6);
@@ -111,16 +115,52 @@ const Section = styled.section`
   }
   @keyframes mask-up { from { transform: translateY(110%); } to { transform: translateY(0); } }
 
-  .portrait {
+  /* Retrato em arco, com um contorno lilás deslocado atrás dele. */
+  .portrait, .arch-line {
     position: absolute;
     left: 50%;
     bottom: 0;
-    z-index: 2;
-    height: min(76svh, 780px);
-    width: auto;
-    max-width: none;
+    aspect-ratio: 4 / 5;
+    border-radius: 999px 999px 0 0;
     transform: translateX(-50%);
+  }
+  .portrait {
+    z-index: 2;
+    height: min(60svh, 44vw, 620px);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.14);
+    border-bottom: 0;
+    background: var(--ink-2);
+    box-shadow: 0 -30px 90px rgba(168,216,255,.10);
     animation: portrait-in 1.4s var(--expo) .5s both;
+  }
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    filter: saturate(.9) contrast(1.04);
+  }
+  .portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 60% at 50% 0%, rgba(168,216,255,.16), transparent 60%),
+      linear-gradient(to top, rgba(6,7,11,.55), transparent 40%);
+    pointer-events: none;
+  }
+  .arch-line {
+    z-index: 1;
+    height: calc(min(60svh, 44vw, 620px) + 3.2rem);
+    border: 1px solid rgba(201,184,255,.35);
+    border-bottom: 0;
+    margin-left: 1.6rem;
+    animation: arch-in 1.6s var(--expo) .7s both;
+  }
+  @keyframes arch-in {
+    from { opacity: 0; transform: translate(-50%, 60px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
   }
   @keyframes portrait-in {
     from { opacity: 0; filter: blur(20px); transform: translate(-50%, 120px); }
@@ -139,7 +179,7 @@ const Section = styled.section`
   .bottom {
     position: absolute;
     left: 0; right: 0;
-    bottom: 5.5rem;
+    bottom: clamp(9.5rem, 19svh, 11.5rem);
     z-index: 4;
     display: flex;
     justify-content: space-between;
@@ -196,7 +236,7 @@ const Section = styled.section`
   .band {
     position: absolute;
     left: 0; right: 0;
-    bottom: -2.4rem;
+    bottom: clamp(1.2rem, 3svh, 2rem);
     z-index: 5;
     animation: rise .8s ease-out 1.4s both;
   }
@@ -206,8 +246,11 @@ const Section = styled.section`
   @media (max-width: 760px) {
     .top-label { top: 5.6rem; letter-spacing: .3em; font-size: 10px; }
     .name { top: 7rem; }
-    .portrait { height: 58svh; }
-    .bottom { flex-direction: column; align-items: stretch; bottom: 4.5rem; gap: 1.2rem; }
+    /* No celular o arco fica logo abaixo do nome, sem deixar vazio no meio. */
+    .portrait, .arch-line { bottom: auto; }
+    .portrait { top: 15rem; height: min(38svh, 70vw); }
+    .arch-line { top: 13rem; height: calc(min(38svh, 70vw) + 2rem); margin-left: 1rem; }
+    .bottom { flex-direction: column; align-items: stretch; bottom: 7rem; gap: 1.2rem; }
     .right { justify-items: stretch; grid-template-columns: 1fr 1fr; }
     .talk, .ghost { justify-content: center; text-align: center; }
     .talk { padding: .9rem 1rem; font-size: .95rem; }
