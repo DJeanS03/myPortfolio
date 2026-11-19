@@ -299,7 +299,6 @@ export const contact: L<{
   modes: string;
   clock: string;
   made: string;
-  credit: string;
 }> = {
   pt: {
     eyebrow: "06 · Contato",
@@ -314,7 +313,6 @@ export const contact: L<{
     modes: "Vagas · Freelance · Remoto",
     clock: "Salvador agora",
     made: "Feito com React, Vite e muito café",
-    credit: "design inspirado em luizrenato.dev",
   },
   en: {
     eyebrow: "06 · Contact",
@@ -329,6 +327,5 @@ export const contact: L<{
     modes: "Jobs · Freelance · Remote",
     clock: "Salvador now",
     made: "Built with React, Vite and lots of coffee",
-    credit: "design inspired by luizrenato.dev",
   },
 };

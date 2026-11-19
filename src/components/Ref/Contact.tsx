@@ -161,7 +161,7 @@ export function RefContact({ language }: ContactProps) {
         <footer>
           <span>© Jean Victor</span>
           <span>{t.clock}: {clock}</span>
-          <span>{t.made} · <em>{t.credit}</em></span>
+          <span>{t.made}</span>
         </footer>
       </div>
     </Section>
@@ -310,7 +310,6 @@ const Section = styled.section`
     font-family: var(--mono);
     font-size: .72rem;
   }
-  footer em { font-style: normal; color: var(--sky); }
 
   @media (max-width: 760px) {
     border-radius: 32px 32px 0 0;
